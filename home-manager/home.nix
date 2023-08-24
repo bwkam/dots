@@ -114,6 +114,8 @@ in
     obsidian
     blender
     grapejuice
+    zoom-us
+
 
     #calibre
 
@@ -192,6 +194,15 @@ in
             path                    "/tmp/mpd.fifo"
             format                  "44100:16:2"
         }
+      '';
+    };
+
+    postgresql = {
+      enable = true;
+      ensureDatabases = [ "mydatabase" ];
+      authentication = pkgs.lib.mkOverride 10 ''
+        #type database  DBuser  auth-method
+        local all       all     trust
       '';
     };
   };
