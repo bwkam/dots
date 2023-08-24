@@ -116,7 +116,6 @@ in
     grapejuice
     zoom-us
 
-
     #calibre
 
     # fonts
@@ -142,7 +141,6 @@ in
 
     (nerdfonts.override { fonts = [ "Iosevka" "JetBrainsMono" "Meslo" ]; })
   ];
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -197,27 +195,18 @@ in
       '';
     };
 
-    postgresql = {
-      enable = true;
-      ensureDatabases = [ "mydatabase" ];
-      authentication = pkgs.lib.mkOverride 10 ''
-        #type database  DBuser  auth-method
-        local all       all     trust
-      '';
-    };
+
   };
+
 
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (pkg: true);
-
+      allowUnfreePredicate = pkg: true;
     };
-
 
     overlays = [ haxe-overlay inputs.nurpkgs.overlay ];
   };
-
 
   nix.extraOptions = "experimental-features = nix-command flakes";
   # nix.package = pkgs.nix;

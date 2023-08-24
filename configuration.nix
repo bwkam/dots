@@ -74,6 +74,15 @@
 
   # Enable touchpad support (enabled default in most desktopManager).
    services.xserver.libinput.enable = true;
+   
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "mydatabase" ];
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+    '';
+  };
 
    programs.fish.enable = true;
    programs.dconf.enable = true;
