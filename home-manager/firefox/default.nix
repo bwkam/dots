@@ -32,10 +32,10 @@
 
 
 
-  home.file.".mozilla/firefox/myprofile/chrome" = {
-    source = ./chrome;
-    recursive = true;
-  };
+  #home.file.".mozilla/firefox/myprofile/chrome" = {
+  #source = ./chrome;
+  # recursive = true;
+  #};
 
 
 
