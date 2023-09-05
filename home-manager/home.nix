@@ -78,6 +78,11 @@ in
     gradle
     cargo-watch
     gping
+    wrangler_1
+    postman
+    openssl
+    nodePackages_latest.pnpm
+
 
     # languages
     haxe
@@ -91,14 +96,14 @@ in
     python311Packages.pip
     zip
     clang-tools
-    flutter
+    # flutter
 
     # gui
     gtk3
     gtk4
+    hplip
     dmenu
     pavucontrol
-    aseprite
     flameshot
     (discord.override {
       withOpenASAR = true;
@@ -109,12 +114,13 @@ in
     feh
     obs-studio
     google-chrome
-    thunderbird-bin-unwrapped
     neochat
     obsidian
     blender
     grapejuice
     zoom-us
+    lmms
+    audacity
 
     #calibre
 

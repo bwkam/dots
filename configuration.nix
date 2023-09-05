@@ -1,4 +1,5 @@
 # Edit this configuration file to define what should be installed on
+
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
@@ -29,6 +30,10 @@
    services.gvfs.enable = true;
    services.tumbler.enable = true;
 
+
+  services.avahi.enable = true;
+  services.avahi.nssmdns = true;
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -50,6 +55,9 @@
     #desktopManager.xterm.enable = false;
    #};
 
+
+   nix.extraOptions = "experimental-features = nix-command flakes";
+
    services.xserver = {
      enable = true;
      layout = "us";
@@ -62,6 +70,14 @@
  
   # Configure keymap in X11
    services.xserver.xkbOptions = "eurosign:e,caps:escape";
+
+   services.flatpak.enable = true;
+   xdg.portal.enable = true;
+
+   xdg.portal = {
+    #wlr.enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  };
 
   # Enable CUPS to print documents.
    services.printing.enable = true;
