@@ -30,9 +30,16 @@
    services.gvfs.enable = true;
    services.tumbler.enable = true;
 
+   services.avahi = {
+      enable = true;
+      nssmdns = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        userServices = true;
+      };
+    };
 
-  services.avahi.enable = true;
-  services.avahi.nssmdns = true;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -70,6 +77,7 @@
  
   # Configure keymap in X11
    services.xserver.xkbOptions = "eurosign:e,caps:escape";
+   services.blueman.enable = true;
 
    services.flatpak.enable = true;
    xdg.portal.enable = true;
@@ -79,8 +87,18 @@
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
-  # Enable CUPS to print documents.
-   services.printing.enable = true;
+  hardware.sane.enable = true;
+  hardware.bluetooth.enable = true;
+	
+	
+
+
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+
+  services.printing = {
+  enable = true;
+  drivers = [ pkgs.hplipWithPlugin ];
+};
 
   # Enable sound.
    sound.enable = true;
@@ -106,9 +124,11 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.bwkam = {
      isNormalUser = true;
-     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
      shell = pkgs.fish;
 };
+
+nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -11,6 +11,7 @@ let
   my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
   nur = inputs.nurpkgs;
   spicetify-nix = inputs.spicetify-nix;
+  nixvim = inputs.nixvim;
 in
 {
   imports = [
@@ -23,7 +24,7 @@ in
     (import ./xdg.nix { inherit config lib pkgs; })
     (import ./picom.nix { inherit config lib pkgs; })
     (import ./rofi { inherit config lib pkgs; })
-    (import ./neovim.nix { inherit config lib pkgs; })
+    (import ./neovim { inherit config lib pkgs nixvim; })
     (import ./neofetch { inherit config lib pkgs; })
     (import ./ncmpcpp.nix { inherit config lib pkgs; })
     (import ./firefox { inherit config lib pkgs nur; })
@@ -66,6 +67,10 @@ in
     exa
     xorg.xkill
     xclip
+    xsel
+    xdotool
+    cava
+    cypress
     git
     playerctl
     yt-dlp
@@ -81,6 +86,7 @@ in
     wrangler_1
     postman
     openssl
+    usbutils
     nodePackages_latest.pnpm
 
 
@@ -96,6 +102,7 @@ in
     python311Packages.pip
     zip
     clang-tools
+    nil
     # flutter
 
     # gui
@@ -105,6 +112,7 @@ in
     dmenu
     pavucontrol
     flameshot
+    inputs.gpt4all.packages.${pkgs.system}.gpt4all-chat-avx
     (discord.override {
       withOpenASAR = true;
       withVencord = true;
@@ -121,6 +129,10 @@ in
     zoom-us
     lmms
     audacity
+    gnome.simple-scan
+    gnome.cheese
+    rofimoji
+    teams
 
     #calibre
 

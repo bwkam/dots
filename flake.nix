@@ -7,9 +7,19 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+	
+     gpt4all.url = github:polygon/gpt4all-nix;
      nurpkgs.url = github:nix-community/NUR;
      spicetify-nix.url = github:the-argus/spicetify-nix;
+
+    nixvim = {
+    url = "github:nix-community/nixvim";
+    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+    # url = "github:nix-community/nixvim/nixos-23.05";
+
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {

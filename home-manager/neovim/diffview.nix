@@ -1,0 +1,1 @@
+{ plugins.diffview = { enable = true; }; }
