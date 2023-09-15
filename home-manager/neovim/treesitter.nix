@@ -1,4 +1,6 @@
 {
+
+programs.nixvim = {
   plugins.treesitter = {
     enable = true;
     indent = true;
@@ -8,4 +10,5 @@
   plugins.treesitter-context = { enable = true; };
 
   plugins.treesitter-refactor = { enable = true; };
+  };
 }

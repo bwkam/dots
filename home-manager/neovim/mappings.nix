@@ -1,5 +1,7 @@
 {
-  maps = {
+
+  programs.nixvim = {
+maps = {
     normal = {
       "<leader>g" = {
         desc = "  Git";
@@ -25,6 +27,7 @@
       ">" = ">gv";
       "<" = "<gv";
     };
+  };
   };
 
 }

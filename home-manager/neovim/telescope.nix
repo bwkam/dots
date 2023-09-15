@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  
+  programs.nixvim = {
+
   plugins.telescope = {
     enable = true;
     extensions.fzf-native.enable = true;
@@ -43,5 +46,6 @@
     };
   };
   extraPackages = with pkgs; [ fzf ];
+  };
 }
 

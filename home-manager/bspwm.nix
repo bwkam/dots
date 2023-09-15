@@ -16,6 +16,7 @@ with lib;
       "super + m" = "bspc desktop -l next";
       "super + r" = "rofi -i -show drun -modi drun -show-icons";
       "super + g" = "bspc node -s biggest.window";
+      "super + l" = "betterlockscreen -l dim";
       "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
       "super + {_,shift + }{h,j,k,l}" = "bspc node -{f,s} {west,south,north,east}";
       "super + {_,shift + }{1-5,0}" = "bspc {desktop -f,node -d} '^{1-5}'";

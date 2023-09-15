@@ -1,5 +1,7 @@
 {
-  plugins.floaterm = { enable = true; };
+
+  programs.nixvim = {
+plugins.floaterm = { enable = true; };
 
   maps = {
     normal = {
@@ -9,5 +11,6 @@
         silent = true;
       };
     };
+  };
   };
 }

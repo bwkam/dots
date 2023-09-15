@@ -1,5 +1,7 @@
 {
-  plugins.harpoon = { enable = true; };
+
+  programs.nixvim = {
+plugins.harpoon = { enable = true; };
 
   maps = {
     normal = {
@@ -27,5 +29,6 @@
         silent = true;
       };
     };
+  };
   };
 }

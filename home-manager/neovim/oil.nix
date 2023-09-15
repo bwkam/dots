@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+
+programs.nixvim = {
   plugins.oil = { enable = true; };
 
   plugins.oil.columns.icon = { enable = true; };
@@ -11,6 +13,7 @@
         silent = true;
       };
     };
+  };
   };
 }
 

@@ -1,1 +1,1 @@
-{ plugins.gitsigns = { enable = true; }; }
+{ programs.nixvim.plugins.gitsigns = { enable = true; }; }

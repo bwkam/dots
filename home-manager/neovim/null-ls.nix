@@ -1,5 +1,5 @@
 {
-  plugins.null-ls = {
+  programs.nixvim.plugins.null-ls = {
     enable = true;
     sources = {
       code_actions = {

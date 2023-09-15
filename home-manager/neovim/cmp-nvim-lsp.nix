@@ -1,5 +1,7 @@
 { pkgs, ... }:
 {
+  programs.nixvim = {
+
   plugins.lsp = {
     enable = true;
     servers = {
@@ -9,6 +11,7 @@
       terraformls.enable = true;
       yamlls.enable = true;
       gopls.enable = true;
+      rust-analyzer.enable = true;
     };
   };
 
@@ -65,5 +68,6 @@
         silent = true;
       };
     };
+  };
   };
 }

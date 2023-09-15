@@ -1,5 +1,5 @@
-{ colorschemes.tokyonight = { 
+{ programs.nixvim.colorschemes.catppuccin = { 
   enable = true;
-  style = "night";
+  flavour = "mocha";
 }; 
 }

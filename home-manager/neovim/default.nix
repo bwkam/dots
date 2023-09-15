@@ -28,7 +28,7 @@
     ./noice.nix
     ./null-ls.nix
     ./oil.nix
-    ./options.nix
+ #   ./options.nix
     ./surround.nix
     ./telescope.nix
     ./treesitter.nix

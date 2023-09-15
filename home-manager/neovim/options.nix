@@ -4,11 +4,9 @@
     clipboard = {
       # Use system clipboard
       register = "unnamedplus";
-
-      providers.wl-copy.enable = true;
+      providers.xclip.enable = true;
     };
     options = {
-      relativenumber = true; # Show relative line numbers
       number = true; # Show line numbers
       undofile = true; # Automatically save and restore undo history
       signcolumn = "yes"; # Whether to show the signcolumn

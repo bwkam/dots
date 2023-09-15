@@ -1,4 +1,5 @@
 {
+programs.nixvim = {
   plugins.neogit = {
     enable = true;
     disableCommitConfirmation = true;
@@ -12,5 +13,6 @@
         silent = true;
       };
     };
+  };
   };
 }
