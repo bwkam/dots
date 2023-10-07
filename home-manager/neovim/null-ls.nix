@@ -11,6 +11,7 @@
         statix.enable = true;
         flake8.enable = true;
         shellcheck.enable = true;
+        eslint_d.enable = true;
       };
 
       formatting = {
@@ -18,6 +19,7 @@
         black.enable = true;
         isort.enable = true;
         shfmt.enable = true;
+        prettier.enable = true;
       };
     };
   };

@@ -65,6 +65,7 @@ in
     helix
     htop
     exa
+    ripgrep
     xorg.xkill
     xclip
     xsel
@@ -88,11 +89,13 @@ in
     openssl
     usbutils
     nodePackages_latest.pnpm
+    nodePackages.http-server
 
 
     # languages
     haxe
     python39
+    go
     rustc
     cargo
     rust-analyzer

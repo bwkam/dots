@@ -1,14 +1,29 @@
-{config, lib, pkgs, nixvim, ...}:
-
 {
-
- programs.nixvim = {
+  config,
+  lib,
+  pkgs,
+  nixvim,
+  ...
+}: {
+  programs.nixvim = {
     enable = true;
- };  
+
+    plugins = {
+      treesitter = {
+        nixGrammars = true;
+        ensureInstalled = "all";
+        moduleConfig.autotag = {
+          enable = true;
+          filetypes = ["html" "xml" "javascriptreact" "typescriptreact" "svelte" "vue"];
+        };
+        nixvimInjections = true;
+      };
+    };
+  };
 
   # Import all your configuration modules here
   imports = [
-     nixvim.homeManagerModules.nixvim
+    nixvim.homeManagerModules.nixvim
     ./autopairs.nix
     ./cmp-nvim-lsp.nix
     ./colorscheme.nix
@@ -18,7 +33,7 @@
     ./diffview.nix
     ./floaterm.nix
     ./gitsigns.nix
-#    ./nvim-ufo.nix
+    #    ./nvim-ufo.nix
     ./harpoon.nix
     ./leap.nix
     ./lualine.nix
@@ -28,12 +43,13 @@
     ./noice.nix
     ./null-ls.nix
     ./oil.nix
- #   ./options.nix
+    ./options.nix
     ./surround.nix
     ./telescope.nix
     ./treesitter.nix
     ./trouble.nix
     ./undotree.nix
     ./which-key.nix
+    ./presence.nix
   ];
 }

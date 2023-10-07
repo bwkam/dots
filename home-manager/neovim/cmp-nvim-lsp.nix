@@ -5,13 +5,15 @@
   plugins.lsp = {
     enable = true;
     servers = {
-      #      nixd.enable = true;
+      nixd.enable = true;
       pyright.enable = true;
       bashls.enable = true;
       terraformls.enable = true;
       yamlls.enable = true;
       gopls.enable = true;
       rust-analyzer.enable = true;
+      tsserver.enable = true;
+      tailwindcss.enable = true;
     };
   };
 
