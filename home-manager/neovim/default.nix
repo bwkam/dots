@@ -51,5 +51,6 @@
     ./undotree.nix
     ./which-key.nix
     ./presence.nix
+    ./toggleterm.nix
   ];
 }
