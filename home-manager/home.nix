@@ -73,7 +73,7 @@ in
     xclip
     xsel
     xdotool
-    cava.override 
+    cava
     cypress
     git
     playerctl
