@@ -73,7 +73,7 @@ in
     xclip
     xsel
     xdotool
-    (cava.override {withPipewire = true;})
+    cava.override 
     cypress
     git
     playerctl
@@ -253,11 +253,11 @@ in
 # For alsa 'source' will be the capture device.
 # For fifo 'source' will be the path to fifo-file.
 # For shmem 'source' will be /squeezelite-AA:BB:CC:DD:EE:FF where 'AA:BB:CC:DD:EE:FF' will be squeezelite's MAC address
-; method = pulse
-; source = auto
+  method = pulse
+  source = auto
 
-method = pipewire
-source = auto
+; method = pipewire
+; source = auto
 
 ; method = alsa
 ; source = hw:Loopback,1
