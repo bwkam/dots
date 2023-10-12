@@ -63,6 +63,7 @@ in
     # cli
     neofetch
     helix
+    pipewire
     cmatrix
     pipes
     nix-prefetch-github
@@ -256,11 +257,11 @@ in
 ; method = pulse
 ; source = auto
 
-; method = pipewire
-; source = auto
+method = pipewire
+ source = auto
 
-  method = alsa
-  source = hw:Loopback,1
+; method = alsa
+; source = hw:Loopback,1
 
 ; method = fifo
 ; source = /tmp/mpd.fifo
