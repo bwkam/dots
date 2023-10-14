@@ -62,6 +62,7 @@ in
 
     # cli
     neofetch
+    links2
     helix
     pipewire
     cmatrix
