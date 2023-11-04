@@ -13,7 +13,7 @@
 
     ".." = "cd ..";
     cat = "${bat}/bin/bat";
-    ls = "${exa}/bin/exa --group-directories-first --git --icons";
+    ls = "${eza}/bin/eza --group-directories-first --git --icons";
     ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
     lime = "haxelib run lime";
     flixel = "haxelib run flixel-tools";

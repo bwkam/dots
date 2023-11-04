@@ -124,7 +124,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
    users.users.bwkam = {
      isNormalUser = true;
-     extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
+     extraGroups = [ "wheel" "scanner" "lp" "libvirtd" ]; # Enable ‘sudo’ for the user.
      shell = pkgs.fish;
 };
 
@@ -136,12 +136,32 @@ nixpkgs.config.allowUnfree = true;
      vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
      wget
      xfce.thunar
+    virt-manager
+    virt-viewer
+    spice 
+    spice-gtk
+    spice-protocol
+    win-virtio
+    win-spice
    ];
 
    programs.thunar.plugins = with pkgs.xfce; [
   thunar-archive-plugin
   thunar-volman
 ];
+
+  virtualisation = {
+    libvirtd = {
+      enable = true;
+      qemu = {
+        swtpm.enable = true;
+        ovmf.enable = true;
+        ovmf.packages = [ pkgs.OVMFFull.fd ];
+      };
+    };
+    spiceUSBRedirection.enable = true;
+  };
+  services.spice-vdagentd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

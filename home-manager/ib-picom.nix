@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, pkgconfig, uthash, asciidoc, docbook_xml_dtd_45
+{ stdenv, lib, fetchFromGitHub, pkg-config, uthash, asciidoc, docbook_xml_dtd_45
 , docbook_xsl, libxslt, libxml2, makeWrapper, meson, ninja, xorgproto, libxcb
 , xcbutilrenderutil, xcbutilimage, pixman, libev, dbus, libconfig, libdrm, libGL
 , pcre, libX11, libXinerama, libXext, xwininfo, libxdg_basedir }:
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [
     meson
     ninja
-    pkgconfig
+    pkg-config
     uthash
     asciidoc
     docbook_xml_dtd_45

@@ -29,7 +29,7 @@
     ./colorscheme.nix
     ./comment-nvim.nix
     ./dadbod.nix
-    ./dap.nix
+    # ./dap.nix
     ./diffview.nix
     ./floaterm.nix
     ./gitsigns.nix

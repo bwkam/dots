@@ -6,12 +6,11 @@
     enable = true;
 
     profiles.myprofile.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-      enhanced-github
-      enhancer-for-youtube
-      refined-github
+#      enhanced-github
+ #     enhancer-for-youtube
+  #    refined-github
       stylus
       react-devtools
-      ublock-origin
     ];
 
     profiles.myprofile = {
