@@ -12,6 +12,7 @@ let
   nur = inputs.nurpkgs;
   spicetify-nix = inputs.spicetify-nix;
   nixvim = inputs.nixvim;
+  helix = inputs.helix;
 in
 {
   imports = [
@@ -29,6 +30,7 @@ in
     (import ./ncmpcpp.nix { inherit config lib pkgs; })
     (import ./firefox { inherit config lib pkgs nur; })
     (import ./zathura { inherit config lib pkgs; })
+    (import ./helix {inherit config lib pkgs helix;})
     (import ./spicetify.nix { inherit config lib pkgs spicetify-nix; })
   ];
 
@@ -62,7 +64,6 @@ in
 
     # cli
     neofetch
-    helix
     pipewire
     cmatrix
     pipes

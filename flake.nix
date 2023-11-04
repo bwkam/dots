@@ -12,6 +12,11 @@
      nurpkgs.url = github:nix-community/NUR;
      spicetify-nix.url = github:the-argus/spicetify-nix;
 
+    helix = {
+      url = "github:SoraTenshi/helix/new-daily-driver";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixvim = {
     url = "github:nix-community/nixvim";
     # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
