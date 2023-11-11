@@ -71,7 +71,7 @@ in
     pipes
     nix-prefetch-github
     htop
-    exa
+    eza
     gnumeric
     ripgrep
     xorg.xkill
@@ -143,7 +143,7 @@ in
     gnome.simple-scan
     gnome.cheese
     rofimoji
-    teams
+    #teams
 
     #calibre
 
