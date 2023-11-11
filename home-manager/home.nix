@@ -30,7 +30,7 @@ in
     (import ./ncmpcpp.nix { inherit config lib pkgs; })
     (import ./firefox { inherit config lib pkgs nur; })
     (import ./zathura { inherit config lib pkgs; })
-    (import ./helix {inherit config lib pkgs helix;})
+    #(import ./helix {inherit config lib pkgs helix;})
     (import ./spicetify.nix { inherit config lib pkgs spicetify-nix; })
   ];
 
@@ -70,6 +70,7 @@ in
     nix-prefetch-github
     htop
     exa
+    gnumeric
     ripgrep
     xorg.xkill
     xclip
@@ -180,7 +181,7 @@ in
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    # ''; 11
   };
 
     home.file.".config/cava/config".text = ''
