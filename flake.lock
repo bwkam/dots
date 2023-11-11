@@ -90,6 +90,7 @@
         "systems": "systems"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1689068808,
         "narHash": "sha256-6ixXo3wt24N/melDWjq70UuHQLxGV8jZvooRanIHXw0=",
         "owner": "numtide",
@@ -110,9 +111,13 @@
       "locked": {
         "lastModified": 1694529238,
         "narHash": "sha256-zsNZZGTGnMOf9YpHKJqMSsa0dXbfmxeoJ7xHlrt+xmY=",
+=======
+        "lastModified": 1692799911,
+        "narHash": "sha256-3eihraek4qL744EvQXsK1Ha6C3CR7nnT8X2qWap4RNk=",
+>>>>>>> parent of 0b5a62e (broken shit)
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "ff7b65b44d01cf9ba6a71320833626af21126384",
+        "rev": "f9e7cf818399d17d347f847525c5a5a8032e4e44",
         "type": "github"
       },
       "original": {
@@ -185,11 +190,19 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699308269,
         "narHash": "sha256-uFHc0GMp+hfPHB/kw46YFDWvpPdGI/c6kFXXGgmif7s=",
         "owner": "polygon",
         "repo": "gpt4all-nix",
         "rev": "6d8d5346895ffde4383c34aa8eb68dc95f05076c",
+=======
+        "lastModified": 1690583208,
+        "narHash": "sha256-PHgx8pd4rNuf28K1UrXuT8T4bHjOXN0mXJdNiDF2D08=",
+        "owner": "polygon",
+        "repo": "gpt4all-nix",
+        "rev": "d80a923ea94c5ef46f507b6a4557093ad9086ef6",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -201,11 +214,19 @@
     "gpt4all_2": {
       "flake": false,
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699024904,
         "narHash": "sha256-Y1wizN2prgY2zKYLRpIi9wZLH0RdNe4s9lqDpWAXz7Y=",
         "ref": "refs/heads/main",
         "rev": "8fabf0be4a1bc7629762a1456a4adeb6941c71c7",
         "revCount": 1526,
+=======
+        "lastModified": 1690578056,
+        "narHash": "sha256-Rs2tC9bhwOcCEGwnTGpCCdnDvXaJWEzfGyX1Z4mFu8M=",
+        "ref": "refs/heads/main",
+        "rev": "91a32c0e84a091ce7e0a3c4d08a058c75c770306",
+        "revCount": 1316,
+>>>>>>> parent of 0b5a62e (broken shit)
         "submodules": true,
         "type": "git",
         "url": "https://github.com/nomic-ai/gpt4all"
@@ -247,11 +268,19 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699368917,
         "narHash": "sha256-nUtGIWf86BOkUbtksWtfglvCZ/otP0FTZlQH8Rzc7PA=",
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "6a8444467c83c961e2f5ff64fb4f422e303c98d3",
+=======
+        "lastModified": 1693399033,
+        "narHash": "sha256-yXhiMo8MnE86sGtPIHAKaLHhmhe8v9tqGGotlUgKJvY=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "f5c15668f9842dd4d5430787d6aa8a28a07f7c10",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -263,11 +292,19 @@
     },
     "nixpkgs": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699099776,
         "narHash": "sha256-X09iKJ27mGsGambGfkKzqvw5esP1L/Rf8H3u3fCqIiU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "85f1ba3e51676fa8cc604a3d863d729026a6b8eb",
+=======
+        "lastModified": 1690367991,
+        "narHash": "sha256-2VwOn1l8y6+cu7zjNE8MgeGJNNz1eat1HwHrINeogFA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c9cf0708f00fbe553319258e48ca89ff9a413703",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -295,11 +332,19 @@
     },
     "nixpkgs_2": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699099776,
         "narHash": "sha256-X09iKJ27mGsGambGfkKzqvw5esP1L/Rf8H3u3fCqIiU=",
         "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "85f1ba3e51676fa8cc604a3d863d729026a6b8eb",
+=======
+        "lastModified": 1693377291,
+        "narHash": "sha256-vYGY9bnqEeIncNarDZYhm6KdLKgXMS+HA2mTRaWEc80=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "e7f38be3775bab9659575f192ece011c033655f0",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -335,11 +380,19 @@
         "pre-commit-hooks": "pre-commit-hooks"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699308475,
         "narHash": "sha256-sFHOFiE+GV1JkwDmHi0LLJLSRyggdIK1Yra02oj2eZg=",
         "owner": "nix-community",
         "repo": "nixvim",
         "rev": "6b93c8fa6db999320d53f13e0ebd555e33f86577",
+=======
+        "lastModified": 1694341786,
+        "narHash": "sha256-7xp0lZ0Ihx1f9WLYxOWP73PlM0HOa0Wrp3/iF7D++zc=",
+        "owner": "nix-community",
+        "repo": "nixvim",
+        "rev": "9e6892e8391a5bcc3727802b6a9fb2b9b52537df",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -350,11 +403,19 @@
     },
     "nurpkgs": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699425944,
         "narHash": "sha256-RSzvDmiXxjvfFFQOztUCbp1KU4xclOF+BtssTFNHgFw=",
         "owner": "nix-community",
         "repo": "NUR",
         "rev": "de716699c325dde290d0d6c40e41f7104c7d7f32",
+=======
+        "lastModified": 1693507593,
+        "narHash": "sha256-RNN70LmnhpA81F+j9916PQjaDUDG8WfDBc4Rl0r5Reg=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "e83256abe46aad9493edbbd960a20beedb8b0f8d",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -402,11 +463,19 @@
         "nixpkgs-stable": "nixpkgs-stable"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1698852633,
         "narHash": "sha256-Hsc/cCHud8ZXLvmm8pxrXpuaPEeNaaUttaCvtdX/Wug=",
         "owner": "cachix",
         "repo": "pre-commit-hooks.nix",
         "rev": "dec10399e5b56aa95fcd530e0338be72ad6462a0",
+=======
+        "lastModified": 1692274144,
+        "narHash": "sha256-BxTQuRUANQ81u8DJznQyPmRsg63t4Yc+0kcyq6OLz8s=",
+        "owner": "cachix",
+        "repo": "pre-commit-hooks.nix",
+        "rev": "7e3517c03d46159fdbf8c0e5c97f82d5d4b0c8fa",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
@@ -457,11 +526,19 @@
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1699382208,
         "narHash": "sha256-71UvzMralsQb3twK31ukqRXu3hyDItY96adEOdveW4Q=",
         "owner": "the-argus",
         "repo": "spicetify-nix",
         "rev": "df171efae183ef0b29979c3ce7f912654e3558c1",
+=======
+        "lastModified": 1693075322,
+        "narHash": "sha256-O/qmWiE23pzYMSKNhA74jfY1D5TyiJrHx35PYkRx9Gs=",
+        "owner": "the-argus",
+        "repo": "spicetify-nix",
+        "rev": "78495ade242ad155942c2e33e3930e4a05963f13",
+>>>>>>> parent of 0b5a62e (broken shit)
         "type": "github"
       },
       "original": {
