@@ -5,10 +5,10 @@
 , ...
 }:
 let
-  my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
+  # my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
   nur = inputs.nurpkgs;
   # spicetify-nix = inputs.spicetify-nix;
-  nixvim = inputs.nixvim;
+  # nixvim = inputs.nixvim;
   # helix = inputs.helix;
 in
 {
@@ -75,7 +75,6 @@ in
     xclip
     xsel
     xdotool
-    cava
     git
     playerctl
     yt-dlp
@@ -120,7 +119,6 @@ in
     kdenlive
     feh
     obs-studio
-    google-chrome
     neochat
     obsidian
     grapejuice
