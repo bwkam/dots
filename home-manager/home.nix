@@ -5,14 +5,11 @@
 , ...
 }:
 let
-  haxe-overlay = import ./haxe.nix {
-    inherit config lib pkgs;
-  };
   my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
   nur = inputs.nurpkgs;
-  spicetify-nix = inputs.spicetify-nix;
+  # spicetify-nix = inputs.spicetify-nix;
   nixvim = inputs.nixvim;
-  helix = inputs.helix;
+  # helix = inputs.helix;
 in
 {
   imports = [
@@ -25,13 +22,13 @@ in
     (import ./xdg.nix { inherit config lib pkgs; })
     (import ./picom.nix { inherit config lib pkgs; })
     (import ./rofi { inherit config lib pkgs; })
-    (import ./neovim { inherit config lib pkgs nixvim; })
+    #(import ./neovim { inherit config lib pkgs nixvim; })
     (import ./neofetch { inherit config lib pkgs; })
     (import ./ncmpcpp.nix { inherit config lib pkgs; })
     (import ./firefox { inherit config lib pkgs nur; })
     (import ./zathura { inherit config lib pkgs; })
     #(import ./helix {inherit config lib pkgs helix;})
-    (import ./spicetify.nix { inherit config lib pkgs spicetify-nix; })
+   # (import ./spicetify.nix { inherit config lib pkgs spicetify-nix; })
   ];
 
   home.username = "bwkam";
@@ -65,7 +62,7 @@ in
     # cli
     neofetch
     links2
-    helix
+    # helix
     pipewire
     cmatrix
     pipes
@@ -79,11 +76,9 @@ in
     xsel
     xdotool
     cava
-    cypress
     git
     playerctl
     yt-dlp
-    spotdl
     cmus
     hugo
     wine-staging
@@ -92,24 +87,17 @@ in
     gradle
     cargo-watch
     gping
-    wrangler_1
-    postman
     openssl
     usbutils
-    nodePackages_latest.pnpm
-    nodePackages.http-server
 
 
     # languages
-    haxe
     python39
-    go
     rustc
     cargo
     rust-analyzer
     nodejs_20
-    neko
-    jdk11
+#    jdk11
     python311Packages.pip
     zip
     clang-tools
@@ -119,11 +107,11 @@ in
     # gui
     gtk3
     gtk4
-    hplip
+    foliate
+    # hplip
     dmenu
     pavucontrol
     flameshot
-    inputs.gpt4all.packages.${pkgs.system}.gpt4all-chat-avx
     (discord.override {
       withOpenASAR = true;
       withVencord = true;
@@ -135,7 +123,6 @@ in
     google-chrome
     neochat
     obsidian
-    blender
     grapejuice
     zoom-us
     lmms
@@ -435,33 +422,6 @@ method = pipewire
 
     gnome-keyring.enable = true;
 
-    mpd = {
-      dataDir = "/home/bwkam/.config/mpd";
-      musicDirectory = "/home/bwkam/Music";
-      playlistDirectory = "/home/bwkam/Music";
-      enable = true;
-      network = {
-        port = 6601;
-      };
-      extraConfig = ''
-        #db_file "~/.mpd/mpd.db"
-        #log_file "~/.mpd/mpd.log"
-        #pid_file "~/.mpd/mpd.pid"
-        #state_file "~/.mpd/mpdstate"
-        audio_output {
-        	type "pulse"
-        	name "pulse audio"
-        }
-        audio_output {
-            type                    "fifo"
-            name                    "my_fifo"
-            path                    "/tmp/mpd.fifo"
-            format                  "44100:16:2"
-        }
-      '';
-    };
-
-
   };
 
 
@@ -471,7 +431,7 @@ method = pipewire
       allowUnfreePredicate = pkg: true;
     };
 
-    overlays = [ haxe-overlay inputs.nurpkgs.overlay ];
+    overlays = [ inputs.nurpkgs.overlay ];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
@@ -494,7 +454,7 @@ method = pipewire
   programs.git = {
     enable = true;
     userName = "bwkam";
-    userEmail = "userdev987@gmail.com";
+    userEmail = "beshoykamel391@gmail.com";
   };
 
   # Let Home Manager install and manage itself.
