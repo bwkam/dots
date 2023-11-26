@@ -30,6 +30,8 @@
    services.gvfs.enable = true;
    services.tumbler.enable = true;
 
+   security.polkit.enable = true;
+
    services.avahi = {
       enable = true;
       nssmdns = true;
@@ -69,6 +71,7 @@
      enable = true;
      layout = "us";
      displayManager.lightdm.enable = true;
+     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
      displayManager.defaultSession = "none+bspwm";
      desktopManager.xterm.enable = false;
      windowManager.bspwm.enable = true;
@@ -93,11 +96,11 @@
 	
 
 
-  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+#  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.printing = {
   enable = true;
-  drivers = [ pkgs.hplipWithPlugin ];
+ # drivers = [ pkgs.hplipWithPlugin ];
 };
 
   # Enable sound.
