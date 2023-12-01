@@ -80,7 +80,8 @@ in
     yt-dlp
     cmus
     hugo
-    wine-staging
+    #wine-staging
+    wine
     appimage-run
     unzip
     gradle
