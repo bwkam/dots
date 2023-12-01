@@ -4,8 +4,8 @@
 
   services.picom = {
     enable = true;
-    #package = pkgs.callPackage ./ib-picom.nix { };
-    package = pkgs.picom-jonaburg;
+    package = pkgs.callPackage ./ib-picom.nix { };
+    #package = pkgs.picom-jonaburg;
     backend = "glx";
     vSync = true;
 

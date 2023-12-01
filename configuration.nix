@@ -77,6 +77,8 @@
      windowManager.bspwm.enable = true;
    };
 
+services.xserver.displayManager.startx.enable = true;
+
  
   # Configure keymap in X11
    services.xserver.xkbOptions = "eurosign:e,caps:escape";
