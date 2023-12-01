@@ -410,7 +410,7 @@ method = pipewire
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    GTK_THEME = "Catppuccin-Mocha-Standard-Pink-dark";
+    GTK_THEME = "Catppuccin-Mocha-Standard-Pink-Dark";
     NIX_PATH = "nixpkgs=flake:nixpkgs$\{NIX_PATH:+:$NIX_PATH}";
   };
 
