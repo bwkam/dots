@@ -81,7 +81,6 @@ in
     cmus
     hugo
     #wine-staging
-    wine
     appimage-run
     unzip
     gradle
