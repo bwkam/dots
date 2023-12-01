@@ -55,7 +55,6 @@ bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 bspc config focus_follows_pointer true
 
-picom --experimental-backends &
 systemctl --user restart polybar.service 
 feh --bg-scale --randomize /etc/nixos/home-manager/wallpapers &
 
