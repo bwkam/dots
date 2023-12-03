@@ -3,9 +3,8 @@
 {
   programs.ncmpcpp = {
     enable = true;
-    mpdMusicDir = "${config.home.homeDirectory}/Music";
     settings = {
-      mpd_music_dir = "~/Music/";
+      mpd_music_dir = "${config.home.homeDirectory}/Music";
       visualizer_in_stereo = "yes";
       visualizer_data_source = "/tmp/mpd.fifo";
       visualizer_output_name = "my_fifo";

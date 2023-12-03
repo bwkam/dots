@@ -48,7 +48,7 @@
     };
 
    homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
         
         modules = [ ./home-manager/home.nix ];
         extraSpecialArgs = {inherit inputs;};
