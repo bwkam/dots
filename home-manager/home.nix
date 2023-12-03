@@ -128,7 +128,9 @@ in
     gnome.simple-scan
     gnome.cheese
     rofimoji
+    teams-for-linux
     #teams
+
 
     #calibre
 

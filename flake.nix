@@ -38,13 +38,20 @@
 
 
 	  # HM
-	  home-manager.nixosModules.home-manager {
-	  home-manager.useUserPackages = true;
-	   home-manager.users.bwkam = import ./home-manager/home.nix;
-	   home-manager.extraSpecialArgs = {inherit inputs;};
-	  }
+	 # home-manager.nixosModules.home-manager {
+	 # home-manager.useUserPackages = true;
+	 #  home-manager.users.bwkam = import ./home-manager/home.nix;
+	 #  home-manager.extraSpecialArgs = {inherit inputs;};
+	 # }
         ];
       };
     };
+
+   homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+        
+        modules = [ ./home-manager/home.nix ];
+        extraSpecialArgs = {inherit inputs;};
+      };
   };
 }

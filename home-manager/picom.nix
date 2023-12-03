@@ -11,10 +11,6 @@
 
     settings = {
       shadow = false;
-      shadow-offset-x = -23;
-      shadow-offset-y = -22;
-      shadow-radius = 18;
-      shadow-color = "#000000";
 
       dithered-present = false;
       mark-wmwin-focused = true;
@@ -76,9 +72,9 @@
 
       wintypes = {
         dock = {
-          fade = false;
-          shadow = false;
-          full-shadow = false;
+           fade = false;
+           shadow = false;
+           full-shadow = false;
         };
       };
 
