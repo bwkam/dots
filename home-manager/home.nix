@@ -118,6 +118,7 @@ in
     gimp
     kdenlive
     feh
+    warp-terminal
     obs-studio
     neochat
     obsidian
