@@ -13,22 +13,22 @@ let
 in
 {
   imports = [
-    (import ./bspwm.nix { inherit config lib pkgs; })
-    (import ./fish.nix { inherit config lib pkgs; })
-    (import ./kitty.nix { inherit config lib pkgs; })
-    (import ./codium.nix { inherit config lib pkgs; })
-    (import ./gtk.nix { inherit config lib pkgs; })
-    (import ./polybar { inherit config lib pkgs; })
-    (import ./xdg.nix { inherit config lib pkgs; })
-    (import ./picom.nix { inherit config lib pkgs; })
-    (import ./rofi { inherit config lib pkgs; })
-    #(import ./neovim { inherit config lib pkgs nixvim; })
-    (import ./neofetch { inherit config lib pkgs; })
-    (import ./ncmpcpp.nix { inherit config lib pkgs; })
-    (import ./firefox { inherit config lib pkgs nur; })
-    (import ./zathura { inherit config lib pkgs; })
-    #(import ./helix {inherit config lib pkgs helix;})
-   # (import ./spicetify.nix { inherit config lib pkgs spicetify-nix; })
+    ./bspwm.nix
+    ./fish.nix
+    ./kitty.nix
+    ./codium.nix
+    ./gtk.nix
+    ./polybar
+    ./xdg.nix
+    ./picom.nix
+    ./rofi
+    # ./neovim
+    ./neofetch 
+    ./ncmpcpp.nix 
+    ./firefox 
+    ./zathura 
+    # ./helix
+    # ./spicetify.nix
   ];
 
   home.username = "bwkam";
