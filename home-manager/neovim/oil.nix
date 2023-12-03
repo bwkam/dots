@@ -1,9 +1,9 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.nixvim = {
-    plugins.oil = {enable = true;};
+    plugins.oil = { enable = true; };
 
-    plugins.oil.columns.icon = {enable = true;};
-    extraPlugins = with pkgs.vimPlugins; [nvim-web-devicons];
+    plugins.oil.columns.icon = { enable = true; };
+    extraPlugins = with pkgs.vimPlugins; [ nvim-web-devicons ];
 
     plugins.oil.keymaps = {
       "g?" = "actions.show_help";

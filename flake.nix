@@ -7,10 +7,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-	
-     gpt4all.url = github:polygon/gpt4all-nix;
-     nurpkgs.url = github:nix-community/NUR;
-     spicetify-nix.url = github:the-argus/spicetify-nix;
+
+    gpt4all.url = "github:polygon/gpt4all-nix";
+    nurpkgs.url = "github:nix-community/NUR";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
 
     helix = {
       url = "github:SoraTenshi/helix/new-daily-driver";
@@ -18,12 +18,12 @@
     };
 
     nixvim = {
-    url = "github:nix-community/nixvim";
-    # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-    # url = "github:nix-community/nixvim/nixos-23.05";
+      url = "github:nix-community/nixvim";
+      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+      # url = "github:nix-community/nixvim/nixos-23.05";
 
-    inputs.nixpkgs.follows = "nixpkgs";
-  };
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
   };
 
@@ -34,24 +34,25 @@
         modules = [
           ./configuration.nix
 
-	  {nix.nixPath = ["nixpkgs=flake:nixpkgs"];}
+          {
+            nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+          }
 
-
-	  # HM
-	 # home-manager.nixosModules.home-manager {
-	 # home-manager.useUserPackages = true;
-	 #  home-manager.users.bwkam = import ./home-manager/home.nix;
-	 #  home-manager.extraSpecialArgs = {inherit inputs;};
-	 # }
+          # HM
+          # home-manager.nixosModules.home-manager {
+          # home-manager.useUserPackages = true;
+          #  home-manager.users.bwkam = import ./home-manager/home.nix;
+          #  home-manager.extraSpecialArgs = {inherit inputs;};
+          # }
         ];
       };
     };
 
-   homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        
-        modules = [ ./home-manager/home.nix ];
-        extraSpecialArgs = {inherit inputs;};
-      };
+    homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+
+      modules = [ ./home-manager/home.nix ];
+      extraSpecialArgs = { inherit inputs; };
+    };
   };
 }

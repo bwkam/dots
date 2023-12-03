@@ -1,15 +1,11 @@
 { pkgs, config, lib, ... }: {
-  programs.zathura = {
-    enable = true;
-  };
+  programs.zathura = { enable = true; };
 
   xdg.configFile."zathura/zathurarc" = {
-    text = '' 
+    text = ''
       include catppuccin-mocha
     '';
   };
 
-  xdg.configFile."zathura/catppuccin-mocha" = {
-    source = ./catppuccin-mocha;
-  };
+  xdg.configFile."zathura/catppuccin-mocha" = { source = ./catppuccin-mocha; };
 }

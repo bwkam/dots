@@ -1,10 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  nixvim,
-  ...
-}: {
+{ config, lib, pkgs, nixvim, ... }: {
   programs.nixvim = {
     enable = true;
 
@@ -14,7 +8,8 @@
         ensureInstalled = "all";
         moduleConfig.autotag = {
           enable = true;
-          filetypes = ["html" "xml" "javascriptreact" "typescriptreact" "svelte" "vue"];
+          filetypes =
+            [ "html" "xml" "javascriptreact" "typescriptreact" "svelte" "vue" ];
         };
         nixvimInjections = true;
       };

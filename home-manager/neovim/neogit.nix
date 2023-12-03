@@ -1,18 +1,18 @@
 {
-programs.nixvim = {
-  plugins.neogit = {
-    enable = true;
-    disableCommitConfirmation = true;
-  };
+  programs.nixvim = {
+    plugins.neogit = {
+      enable = true;
+      disableCommitConfirmation = true;
+    };
 
-  maps = {
-    normal = {
-      "<leader>gg" = {
-        desc = "Neogit";
-        action = ":Neogit<CR>";
-        silent = true;
+    maps = {
+      normal = {
+        "<leader>gg" = {
+          desc = "Neogit";
+          action = ":Neogit<CR>";
+          silent = true;
+        };
       };
     };
-  };
   };
 }

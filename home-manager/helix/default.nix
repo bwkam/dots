@@ -1,4 +1,4 @@
-{ config, lib, pkgs, helix }: 
+{ config, lib, pkgs, helix }:
 
 {
   programs.helix = {
@@ -31,7 +31,7 @@
           display-messages = true;
           display-inlay-hints = true;
         };
-        
+
         whitespace.render = "all";
         whitespace.characters = {
           space = "·";
@@ -40,12 +40,26 @@
           newline = "⤶";
         };
 
-        gutters = [ "diagnostics" "line-numbers" "spacer" "diff"];
+        gutters = [ "diagnostics" "line-numbers" "spacer" "diff" ];
         statusline = {
           separator = "of";
-          left = [ "mode" "selections" "file-type" "register" "spinner" "diagnostics" ];
+          left = [
+            "mode"
+            "selections"
+            "file-type"
+            "register"
+            "spinner"
+            "diagnostics"
+          ];
           center = [ "file-name" ];
-          right = [ "file-encoding" "file-line-ending" "position-percentage" "spacer" "separator" "total-line-numbers" ];
+          right = [
+            "file-encoding"
+            "file-line-ending"
+            "position-percentage"
+            "spacer"
+            "separator"
+            "total-line-numbers"
+          ];
           mode = {
             normal = "NORMAL";
             insert = "INSERT";
@@ -58,5 +72,5 @@
         };
       };
     };
-  }; 
+  };
 }

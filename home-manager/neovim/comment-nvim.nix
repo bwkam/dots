@@ -1,3 +1,1 @@
-{
-  programs.nixvim.plugins.comment-nvim = {enable = true;};
-}
+{ programs.nixvim.plugins.comment-nvim = { enable = true; }; }

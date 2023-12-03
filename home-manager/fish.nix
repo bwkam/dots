@@ -1,13 +1,10 @@
 { config, lib, pkgs, ... }:
 
-
 {
 
   programs.fish.enable = true;
-  home.packages = [
-    pkgs.fishPlugins.done
-    pkgs.fishPlugins.github-copilot-cli-fish
-  ];
+  home.packages =
+    [ pkgs.fishPlugins.done pkgs.fishPlugins.github-copilot-cli-fish ];
 
   programs.fish.shellAliases = with pkgs; {
 

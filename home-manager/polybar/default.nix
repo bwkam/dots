@@ -8,13 +8,12 @@ let
   };
 
   config = builtins.readFile ./config.ini;
-in
-{
+in {
   services = {
     polybar = {
       enable = true;
       script = ''
-        	   polybar -q emi-bar -c /etc/nixos/home-manager/polybar/config.ini &
+        polybar -q emi-bar -c /etc/nixos/home-manager/polybar/config.ini &
       ''; # Gets fixed in the bspwmrc file
       package = mypolybar;
       extraConfig = config;

@@ -40,7 +40,7 @@
       state_flags_color = "red";
       progressbar_color = "yellow";
       statusbar_color = "cyan";
-      visualizer_color = "cyan"; #magenta #cyan #green #red #blue
+      visualizer_color = "cyan"; # magenta #cyan #green #red #blue
 
       mpd_host = "127.0.0.1";
       mpd_port = "6601";
@@ -48,7 +48,8 @@
       lines_scrolled = "1";
       #ask_before_clearing_main_playlist = "yes"
       enable_window_title = "yes";
-      song_columns_list_format = "(25)[cyan]{a} (40)[]{f} (30)[red]{b} (7f)[green]{l}";
+      song_columns_list_format =
+        "(25)[cyan]{a} (40)[]{f} (30)[red]{b} (7f)[green]{l}";
     };
   };
 }

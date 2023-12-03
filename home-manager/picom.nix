@@ -22,15 +22,11 @@
       glx-no-stencil = true;
       use-damage = true;
 
-
       inactive-opacity = 1.0;
       active-opacity = 1.0;
       inactive-opacity-override = false;
 
-      focus-exclude = [
-        "class_g = 'Cairo-clock'"
-        "class_g = 'slop'"
-      ];
+      focus-exclude = [ "class_g = 'Cairo-clock'" "class_g = 'slop'" ];
 
       opacity-rule = [
         "100:class_g = 'Alacritty'"
@@ -38,7 +34,6 @@
         "95:class_g = 'Updating'"
         "90:class_g = 'scratch'"
       ];
-
 
       corner-radius = 6;
 
@@ -54,7 +49,6 @@
         "class_g = 'mpv'"
         "class_g = 'retroarch'"
       ];
-
 
       shadow-exclude = [
         "name = 'Notification'"
@@ -72,15 +66,13 @@
 
       wintypes = {
         dock = {
-           fade = false;
-           shadow = false;
-           full-shadow = false;
+          fade = false;
+          shadow = false;
+          full-shadow = false;
         };
       };
 
-
     };
-
 
   };
 }

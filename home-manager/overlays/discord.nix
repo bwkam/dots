@@ -1,5 +1,8 @@
 { pkgs, config, lib, ... }:
 
 {
-  discord = pkgs.discord.override { withOpenASAR = true; withVencord = true; };
+  discord = pkgs.discord.override {
+    withOpenASAR = true;
+    withVencord = true;
+  };
 }

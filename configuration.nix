@@ -6,10 +6,9 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -19,29 +18,29 @@
   # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
-   networking.hostName = "wolfburger"; # Define your hostname.
+  networking.hostName = "wolfburger"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+  networking.networkmanager.enable =
+    true; # Easiest to use and most distros use this by default.
 
   # Set your time zone.
-   time.timeZone = "Africa/Cairo";
+  time.timeZone = "Africa/Cairo";
 
-   services.gvfs.enable = true;
-   services.tumbler.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
 
-   security.polkit.enable = true;
+  security.polkit.enable = true;
 
-   services.avahi = {
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    publish = {
       enable = true;
-      nssmdns = true;
-      publish = {
-        enable = true;
-        addresses = true;
-        userServices = true;
-      };
+      addresses = true;
+      userServices = true;
     };
-
+  };
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -56,64 +55,59 @@
   # };
 
   # Enable the X11 windowing system.
-   #services.xserver.enable = true;
- 
-   #services.xserver = {
-    #displayManager.defaultSession = "none+bspwm";
-    #windowManager.bspwm.enable = true;
-    #desktopManager.xterm.enable = false;
-   #};
+  #services.xserver.enable = true;
 
+  #services.xserver = {
+  #displayManager.defaultSession = "none+bspwm";
+  #windowManager.bspwm.enable = true;
+  #desktopManager.xterm.enable = false;
+  #};
 
-   nix.extraOptions = "experimental-features = nix-command flakes";
+  nix.extraOptions = "experimental-features = nix-command flakes";
 
-   services.xserver = {
-     enable = true;
-     layout = "us";
-     displayManager.lightdm.enable = true;
-     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
-     displayManager.defaultSession = "none+bspwm";
-     desktopManager.xterm.enable = false;
+  services.xserver = {
+    enable = true;
+    layout = "us";
+    displayManager.lightdm.enable = true;
+    displayManager.lightdm.extraConfig = "logind-check-graphical=true";
+    displayManager.defaultSession = "none+bspwm";
+    desktopManager.xterm.enable = false;
     windowManager.bspwm.enable = true;
-};
+  };
 
-services.xserver.displayManager.startx.enable = true;
+  services.xserver.displayManager.startx.enable = true;
 
- 
   # Configure keymap in X11
-   services.xserver.xkbOptions = "eurosign:e,caps:escape";
-   services.blueman.enable = true;
+  services.xserver.xkbOptions = "eurosign:e,caps:escape";
+  services.blueman.enable = true;
 
-   services.flatpak.enable = true;
-   xdg.portal.enable = true;
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
 
-   xdg.portal = {
+  xdg.portal = {
     #wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
-	
-	
 
-
-#  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  #  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.printing = {
-  enable = true;
- # drivers = [ pkgs.hplipWithPlugin ];
-};
+    enable = true;
+    # drivers = [ pkgs.hplipWithPlugin ];
+  };
 
   # Enable sound.
-   sound.enable = true;
-   hardware.pulseaudio.enable = true;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
-   hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.driSupport32Bit = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-   services.xserver.libinput.enable = true;
-   
+  services.xserver.libinput.enable = true;
+
   services.postgresql = {
     enable = true;
     ensureDatabases = [ "mydatabase" ];
@@ -123,53 +117,46 @@ services.xserver.displayManager.startx.enable = true;
     '';
   };
 
-   programs.fish.enable = true;
-   programs.dconf.enable = true;
+  programs.fish.enable = true;
+  programs.dconf.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-   users.users.bwkam = {
-     isNormalUser = true;
-     extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
-     shell = pkgs.fish;
-};
+  users.users.bwkam = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
+    shell = pkgs.fish;
+  };
 
-nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-   environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-     xfce.thunar
+  environment.systemPackages = with pkgs; [
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    wget
+    xfce.thunar
     wine
-   ];
+  ];
 
-   programs.thunar.plugins = with pkgs.xfce; [
-  thunar-archive-plugin
-  thunar-volman
-];
+  programs.thunar.plugins = with pkgs.xfce; [
+    thunar-archive-plugin
+    thunar-volman
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-   programs.mtr.enable = true;
-   programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
-   };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
-   
-
-
-fonts.fontDir.enable = true;
-
-
-
-
+  fonts.fontDir.enable = true;
 
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-   services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
