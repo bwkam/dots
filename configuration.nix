@@ -64,6 +64,11 @@
   #};
 
   nix.extraOptions = "experimental-features = nix-command flakes";
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
 
   services.xserver = {
     enable = true;
@@ -92,11 +97,11 @@
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
 
-  #  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.printing = {
     enable = true;
-    # drivers = [ pkgs.hplipWithPlugin ];
+    drivers = [ pkgs.hplipWithPlugin ];
   };
 
   # Enable sound.

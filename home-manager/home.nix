@@ -100,7 +100,7 @@ in {
     gtk3
     gtk4
     foliate
-    # hplip
+    hplip
     dmenu
     pavucontrol
     flameshot
@@ -118,6 +118,7 @@ in {
     zoom-us
     lmms
     audacity
+    jetbrains.rust-rover
     gnome.simple-scan
     gnome.cheese
     rofimoji
