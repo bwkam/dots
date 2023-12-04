@@ -56,6 +56,7 @@ in {
     # cli
     neofetch
     links2
+    gh	    
     # helix
     pipewire
     cmatrix
