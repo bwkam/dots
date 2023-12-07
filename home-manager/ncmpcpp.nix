@@ -1,55 +1,74 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   programs.ncmpcpp = {
     enable = true;
+    package = pkgs.ncmpcpp.override {
+      visualizerSupport = true;
+      clockSupport = true;
+      taglibSupport = true;
+    };
+    mpdMusicDir = "${config.home.homeDirectory}/Music";
     settings = {
-      mpd_music_dir = "${config.home.homeDirectory}/Music";
-      visualizer_in_stereo = "yes";
-      visualizer_data_source = "/tmp/mpd.fifo";
-      visualizer_output_name = "my_fifo";
-      progressbar_look = "━━╸";
-      #visualizer_sync_interval = "30"
-
-      visualizer_type = "spectrum";
-      #visualizer_type = "wave"
-      #visualizer_type = "wave_filled"
-      #visualizer_type = "ellipse"
-
-      visualizer_look = "◆▋";
-      #visualizer_look = "+|"
-      #visualizer_look = "●●"
-
-      message_delay_time = "3";
-      playlist_shorten_total_times = "yes";
-      playlist_display_mode = "columns";
-      browser_display_mode = "columns";
-      search_engine_display_mode = "columns";
-      playlist_editor_display_mode = "columns";
+      # Miscelaneous
+      ncmpcpp_directory = "${config.home.homeDirectory}/.config/ncmpcpp";
+      ignore_leading_the = true;
+      external_editor = "nvim";
+      message_delay_time = 1;
+      playlist_disable_highlight_delay = 2;
       autocenter_mode = "yes";
       centered_cursor = "yes";
-      user_interface = "alternative";
+      allow_for_physical_item_deletion = "no";
+      lines_scrolled = "0";
       follow_now_playing_lyrics = "yes";
-      locked_screen_width_part = "60";
-      display_bitrate = "yes";
-      external_editor = "nano";
-      use_console_editor = "yes";
-      header_window_color = "cyan";
-      volume_color = "red";
-      state_line_color = "yellow";
-      state_flags_color = "red";
-      progressbar_color = "yellow";
-      statusbar_color = "cyan";
-      visualizer_color = "cyan"; # magenta #cyan #green #red #blue
+      lyrics_fetchers = "musixmatch";
 
-      mpd_host = "127.0.0.1";
-      mpd_port = "6601";
-      mouse_list_scroll_whole_page = "yes";
-      lines_scrolled = "1";
-      #ask_before_clearing_main_playlist = "yes"
-      enable_window_title = "yes";
-      song_columns_list_format =
-        "(25)[cyan]{a} (40)[]{f} (30)[red]{b} (7f)[green]{l}";
+      # visualizer
+      visualizer_data_source = "/tmp/mpd.fifo";
+      visualizer_output_name = "mpd_visualizer";
+      visualizer_type = "ellipse";
+      visualizer_look = "●●";
+      visualizer_color = "blue, green";
+
+      # appearance
+      colors_enabled = "yes";
+      playlist_display_mode = "classic";
+      user_interface = "classic";
+      volume_color = "white";
+
+      # window
+      song_window_title_format = "Music";
+      statusbar_visibility = "no";
+      header_visibility = "no";
+      titles_visibility = "no";
+      # progress bar
+      progressbar_look = "━━━";
+      progressbar_color = "black";
+      progressbar_elapsed_color = "blue";
+
+      # song list
+      song_status_format = "$7%t";
+      song_list_format = "$(008)%t$R  $(247)%a$R$5  %l$8";
+      song_columns_list_format = "(53)[blue]{tr} (45)[blue]{a}";
+
+      current_item_prefix = "$b$2| ";
+      current_item_suffix = "$/b$5";
+
+      now_playing_prefix = "$b$5| ";
+      now_playing_suffix = "$/b$5";
+
+      song_library_format = "{{%a - %t} (%b)}|{%f}";
+
+      # colors
+      main_window_color = "blue";
+
+      current_item_inactive_column_prefix = "$b$5";
+      current_item_inactive_column_suffix = "$/b$5";
+
+      color1 = "white";
+      color2 = "blue";
     };
   };
 }

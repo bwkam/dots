@@ -59,7 +59,7 @@ with lib;
         bspc config focus_follows_pointer true
 
         systemctl --user restart polybar.service 
-        feh --bg-scale --randomize /etc/nixos/home-manager/wallpapers &
+        feh --bg-scale --randomize wallpapers &
 
       '';
     };

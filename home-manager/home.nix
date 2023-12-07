@@ -19,8 +19,10 @@ in {
     # ./neovim
     ./neofetch
     ./ncmpcpp.nix
+    ./mpd.nix
     ./firefox
     ./zathura
+
     # ./helix
     # ./spicetify.nix
   ];
@@ -56,7 +58,9 @@ in {
     # cli
     neofetch
     links2
-    gh	    
+    gh
+    nil
+    nmap	    
     # helix
     pipewire
     cmatrix
