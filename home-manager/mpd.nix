@@ -1,7 +1,7 @@
 {config, ...}: {
   services.mpd = {
     enable = true;
-    musicDirectory = "${config.home.homeDirectory}/Music";
+    musicDirectory = "${config.home.homeDirectory}/new_music";
     dataDir = "${config.home.homeDirectory}/.config/mpd";
     extraConfig = ''
       auto_update           "yes"

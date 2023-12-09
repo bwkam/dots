@@ -5,12 +5,12 @@
 }: {
   programs.ncmpcpp = {
     enable = true;
-    package = pkgs.ncmpcpp.override {
-      visualizerSupport = true;
-      clockSupport = true;
-      taglibSupport = true;
-    };
-    mpdMusicDir = "${config.home.homeDirectory}/Music";
+    #package = pkgs.ncmpcpp.override {
+     # visualizerSupport = true;
+     # clockSupport = true;
+     # taglibSupport = true;
+    #};
+    mpdMusicDir = "${config.home.homeDirectory}/new_music";
     settings = {
       # Miscelaneous
       ncmpcpp_directory = "${config.home.homeDirectory}/.config/ncmpcpp";

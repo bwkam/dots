@@ -59,6 +59,8 @@ in {
     neofetch
     links2
     gh
+    traceroute
+    tcpdump
     nil
     nmap	    
     # helix
