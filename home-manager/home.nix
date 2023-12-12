@@ -109,6 +109,8 @@ in {
     foliate
     gnome.gnome-music
     tracker
+    mpv
+    tracker-miners
     hplip
     dmenu
     pavucontrol
