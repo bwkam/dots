@@ -108,6 +108,7 @@ in {
     gtk4
     foliate
     gnome.gnome-music
+    tracker
     hplip
     dmenu
     pavucontrol
