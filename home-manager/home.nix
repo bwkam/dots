@@ -107,6 +107,7 @@ in {
     gtk3
     gtk4
     foliate
+    gnome.gnome-music
     hplip
     dmenu
     pavucontrol
