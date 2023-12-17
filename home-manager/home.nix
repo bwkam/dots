@@ -110,6 +110,7 @@ in {
     gnome.gnome-music
     tracker
     mpv
+    libresprite
     tracker-miners
     hplip
     dmenu
@@ -431,6 +432,7 @@ in {
     config = {
       allowUnfree = true;
       allowUnfreePredicate = pkg: true;
+      firefox.speechSynthesisSupport = true;
     };
 
     overlays = [ inputs.nurpkgs.overlay ];
