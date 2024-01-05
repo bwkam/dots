@@ -1,6 +1,9 @@
-{ config, lib, pkgs, ... }:
-
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   mypolybar = pkgs.polybar.override {
     # Extra packages to run polybar (mostly sound atm)
     alsaSupport = true;
@@ -19,5 +22,4 @@ in {
       extraConfig = config;
     };
   };
-
 }
