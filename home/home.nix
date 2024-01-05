@@ -26,10 +26,17 @@ in {
     ./mpd.nix
     ./firefox
     ./zathura
+    ./emacs.nix
 
     # ./helix
     # ./spicetify.nix
   ];
+
+  modules = {
+    editors = {
+      emacs.enable = true;
+    };
+  };
 
   home.username = "bwkam";
   home.homeDirectory = "/home/bwkam";

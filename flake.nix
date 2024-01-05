@@ -8,22 +8,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    gpt4all.url = "github:polygon/gpt4all-nix";
     nurpkgs.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
 
-    helix = {
-      url = "github:SoraTenshi/helix/new-daily-driver";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
-      # url = "github:nix-community/nixvim/nixos-23.05";
-
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
   };
 
   outputs = {
