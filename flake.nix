@@ -24,10 +24,14 @@
 
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: {
     nixosConfigurations = {
       alpha-wolf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -35,7 +39,7 @@
           ./configuration.nix
 
           {
-            nix.nixPath = [ "nixpkgs=flake:nixpkgs" ];
+            nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
 
           # HM
@@ -51,8 +55,8 @@
     homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-      modules = [ ./home-manager/home.nix ];
-      extraSpecialArgs = { inherit inputs; };
+      modules = [./home/home.nix];
+      extraSpecialArgs = {inherit inputs;};
     };
   };
 }
