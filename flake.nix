@@ -10,7 +10,6 @@
 
     nurpkgs.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
