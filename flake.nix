@@ -29,13 +29,6 @@
           {
             nix.nixPath = ["nixpkgs=flake:nixpkgs"];
           }
-
-          # HM
-          # home-manager.nixosModules.home-manager {
-          # home-manager.useUserPackages = true;
-          #  home-manager.users.bwkam = import ./home-manager/home.nix;
-          #  home-manager.extraSpecialArgs = {inherit inputs;};
-          # }
         ];
       };
     };

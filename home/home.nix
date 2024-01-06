@@ -33,9 +33,9 @@ in {
   ];
 
   modules = {
-    editors = {
-      emacs.enable = true;
-    };
+    # editors = {
+    # emacs.enable = true;
+    # };
     desktop = {
       bspwm.enable = true;
     };
