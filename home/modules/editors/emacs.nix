@@ -12,7 +12,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.doom-emacs = {
-      enable = true;
+      enable = false;
       package = pkgs.emacs29-pgtk;
       doomPrivateDir = ./.;
     };

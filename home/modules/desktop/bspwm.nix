@@ -4,9 +4,13 @@
   lib,
   ...
 }:
-with lib;
-# bspwm
-  {
+with lib; let
+  cfg = config.modules.desktop.bspwm;
+in {
+  options.modules.desktop.bspwm.enable = lib.mkEnableOption "bspwm";
+
+  # bspwm
+  config = lib.mkIf cfg.enable {
     services.sxhkd = {
       enable = true;
       keybindings = {
@@ -58,9 +62,10 @@ with lib;
           bspc config focus_follows_pointer true
 
           systemctl --user restart polybar.service
-          feh --bg-scale --randomize wallpapers &
+          feh --bg-scale /etc/nixos/home-manager/wallpapers/dark-cat-rosewater.png &
 
         '';
       };
     };
-  }
+  };
+}

@@ -10,14 +10,7 @@
 
     nurpkgs.url = "github:nix-community/NUR";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
-
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-    };
-
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = {
@@ -29,6 +22,7 @@
     nixosConfigurations = {
       alpha-wolf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
         modules = [
           ./configuration.nix
 

@@ -1,28 +1,25 @@
 # Edit this configuration file to define what should be installed on
-
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-
-{ config, pkgs, ... }:
-
 {
-  imports = [ # Include the results of the hardware scan.
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
     ./hardware-configuration.nix
   ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
   networking.hostName = "wolfburger"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable =
-    true; # Easiest to use and most distros use this by default.
+    true;
 
   # Set your time zone.
   time.timeZone = "Africa/Cairo";
@@ -42,27 +39,6 @@
     };
   };
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkbOptions in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  #services.xserver.enable = true;
-
-  #services.xserver = {
-  #displayManager.defaultSession = "none+bspwm";
-  #windowManager.bspwm.enable = true;
-  #desktopManager.xterm.enable = false;
-  #};
-
   nix.extraOptions = "experimental-features = nix-command flakes";
   nix.gc = {
     automatic = true;
@@ -70,14 +46,23 @@
     options = "--delete-older-than 14d";
   };
 
+  # X11
   services.xserver = {
     enable = true;
     layout = "us";
     displayManager.lightdm.enable = true;
     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
-    displayManager.defaultSession = "none+bspwm";
     desktopManager.xterm.enable = false;
+    # BSPWM
+    displayManager.defaultSession = "none+bspwm";
     windowManager.bspwm.enable = true;
+  };
+
+  # Wayland
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   services.xserver.displayManager.startx.enable = true;
@@ -91,17 +76,17 @@
 
   xdg.portal = {
     #wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
 
-  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  hardware.sane.extraBackends = [pkgs.hplipWithPlugin];
 
   services.printing = {
     enable = true;
-    drivers = [ pkgs.hplipWithPlugin ];
+    drivers = [pkgs.hplipWithPlugin];
   };
 
   # Enable sound.
@@ -115,7 +100,7 @@
 
   services.postgresql = {
     enable = true;
-    ensureDatabases = [ "mydatabase" ];
+    ensureDatabases = ["mydatabase"];
     authentication = pkgs.lib.mkOverride 10 ''
       #type database  DBuser  auth-method
       local all       all     trust
@@ -128,7 +113,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bwkam = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "scanner" "lp"]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 
@@ -180,6 +165,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
-
 }
-

@@ -11,7 +11,7 @@
   # helix = inputs.helix;
 in {
   imports = [
-    ./bspwm.nix
+    ./modules/desktop/bspwm.nix
     ./fish.nix
     ./kitty.nix
     ./codium.nix
@@ -26,7 +26,7 @@ in {
     ./mpd.nix
     ./firefox
     ./zathura
-    ./emacs.nix
+    # ./emacs.nix
 
     # ./helix
     # ./spicetify.nix
@@ -35,6 +35,9 @@ in {
   modules = {
     editors = {
       emacs.enable = true;
+    };
+    desktop = {
+      bspwm.enable = true;
     };
   };
 
