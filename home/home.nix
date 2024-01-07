@@ -75,6 +75,7 @@ in {
     neofetch
     links2
     gh
+    zellij
     traceroute
     tcpdump
     nil

@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }: let
   cfg = config.modules.editors.nvim;
@@ -16,6 +15,17 @@ in {
     };
     programs.neovim = {
       enable = true;
+      plugins = with pkgs.vimPlugins; [
+        markdown-preview-nvim
+        catppuccin-nvim
+        nvim-cmp
+        luasnip
+        cmp_luasnip
+        cmp-nvim-lsp
+        cmp-buffer
+        cmp-path
+        nvim-lspconfig
+      ];
     };
   };
 }
