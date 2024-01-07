@@ -27,5 +27,10 @@ in {
         nvim-lspconfig
       ];
     };
+
+    home.packages = with pkgs; [
+      haskell-language-server
+      ghc
+    ];
   };
 }

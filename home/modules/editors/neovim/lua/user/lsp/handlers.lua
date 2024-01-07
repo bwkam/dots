@@ -25,7 +25,7 @@ M.setup = function()
     local config = {
         virtual_text = false, -- disable virtual text
         signs = {
-            active = signs, -- show signs
+            active = signs,   -- show signs
         },
         update_in_insert = true,
         underline = true,
@@ -60,6 +60,7 @@ local function lsp_keymaps(bufnr)
     keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
     keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
     keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+    -- Those don't work, why?
     keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format{ async = true }<cr>", opts)
     keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
     keymap(bufnr, "n", "<leader>lI", "<cmd>LspInstallInfo<cr>", opts)
