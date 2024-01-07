@@ -12,6 +12,8 @@
 in {
   imports = [
     ./modules/desktop/bspwm.nix
+    ./modules/desktop/hyprland.nix
+    ./modules/editors/neovim
     ./fish.nix
     ./kitty.nix
     ./codium.nix
@@ -20,7 +22,6 @@ in {
     ./xdg.nix
     ./picom.nix
     ./rofi
-    # ./neovim
     ./neofetch
     ./ncmpcpp.nix
     ./mpd.nix
@@ -33,11 +34,12 @@ in {
   ];
 
   modules = {
-    # editors = {
-    # emacs.enable = true;
-    # };
+    editors = {
+      nvim.enable = true;
+    };
     desktop = {
       bspwm.enable = true;
+      hyprland.enable = true;
     };
   };
 

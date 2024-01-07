@@ -37,5 +37,17 @@
       modules = [./home/home.nix];
       extraSpecialArgs = {inherit inputs;};
     };
+
+    devShells.x86_64-linux = {
+      default = with nixpkgs.legacyPackages.x86_64-linux;
+        mkShell {
+          buildInputs = [
+            git
+            lua-language-server
+            vscode-extensions.sumneko.lua
+            lua
+          ];
+        };
+    };
   };
 }
