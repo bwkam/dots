@@ -217,7 +217,7 @@ in {
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [inputs.nurpkgs.overlay];
+    overlays = [];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
