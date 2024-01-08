@@ -13,6 +13,7 @@
     ls = "${eza}/bin/eza --group-directories-first --git --icons";
     ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
     nvim = "$HOME/script-nvim.sh";
+    
 };
 
   programs.fish.shellInit = ''

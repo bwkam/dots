@@ -1,10 +1,7 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}: let
+{ config, lib, pkgs, ... }:
+let
   cfg = config.modules.editors.nvim;
+  languages = (p: map (x: p.${x}) [ "haskell" "nix" ]);
 in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
@@ -17,7 +14,7 @@ in {
       enable = true;
       plugins = with pkgs.vimPlugins; [
         markdown-preview-nvim
-        catppuccin-nvim
+                catppuccin-nvim
         nvim-cmp
         luasnip
         cmp_luasnip
@@ -27,13 +24,7 @@ in {
         nvim-lspconfig
         telescope-nvim
         telescope-media-files-nvim
-        (nvim-treesitter.withPlugins (
-          plugins:
-            with plugins; [
-              haskell
-              nix
-            ]
-        ))
+        (nvim-treesitter.withPlugins languages)
         nvim-autopairs
         comment-nvim
         nvim-ts-context-commentstring
@@ -42,12 +33,12 @@ in {
         nvim-web-devicons
         bufferline-nvim
         alpha-nvim
-];
+        dashboard-nvim
+        null-ls-nvim
+        impatient-nvim
+      ];
     };
     #
-    home.packages = with pkgs; [
-      haskell-language-server
-      ghc
-    ];
+    home.packages = with pkgs; [ haskell-language-server ghc ];
   };
 }
