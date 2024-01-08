@@ -72,7 +72,9 @@ in {
     gdb
 
     # cli
-    neofetch
+    ranger
+neofetch
+    chafa
     links2
     gh
     zellij

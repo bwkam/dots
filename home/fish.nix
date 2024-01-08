@@ -12,9 +12,8 @@
     cat = "${bat}/bin/bat";
     ls = "${eza}/bin/eza --group-directories-first --git --icons";
     ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
-    lime = "haxelib run lime";
-    flixel = "haxelib run flixel-tools";
-  };
+    nvim = "$HOME/script-nvim.sh";
+};
 
   programs.fish.shellInit = ''
     set  	fish_color_normal cdd6f4

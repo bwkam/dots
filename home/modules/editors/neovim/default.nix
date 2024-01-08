@@ -25,9 +25,26 @@ in {
         cmp-buffer
         cmp-path
         nvim-lspconfig
-      ];
+        telescope-nvim
+        telescope-media-files-nvim
+        (nvim-treesitter.withPlugins (
+          plugins:
+            with plugins; [
+              haskell
+              nix
+            ]
+        ))
+        nvim-autopairs
+        comment-nvim
+        nvim-ts-context-commentstring
+        gitsigns-nvim
+        nvim-tree-lua
+        nvim-web-devicons
+        bufferline-nvim
+        alpha-nvim
+];
     };
-
+    #
     home.packages = with pkgs; [
       haskell-language-server
       ghc

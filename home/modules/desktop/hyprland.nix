@@ -12,37 +12,24 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       extraConfig = ''
-        		# This is an example Hyprland config file.
-        #
-        # Refer to the wiki for more information.
-
-        #
-        # Please note not all available settings / options are set here.
-        # For a full list, see the wiki
-        #
-
-        # See https://wiki.hyprland.org/Configuring/Monitors/
         monitor=,preferred,auto,auto
 
-
-        # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-
-        # Execute your favorite apps at launch
+        # exec our fav apps
         # exec-once = waybar & hyprpaper & firefox
 
         # Source a file (multi-file configs)
         # source = ~/.config/hypr/myColors.conf
 
-        # Set programs that you use
+        # our programs
+
         $terminal = kitty
         $fileManager = thunar
         $menu = wofi --show drun
 
-        # Some default env vars.
+        # some default env vars.
         env = XCURSOR_SIZE,24
         env = QT_QPA_PLATFORMTHEME,qt5ct # change to qt6ct if you have that
 
-        # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
         input {
             kb_layout = us
             kb_variant =
@@ -60,7 +47,6 @@ in {
         }
 
         general {
-            # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
             gaps_in = 5
             gaps_out = 20
@@ -70,13 +56,10 @@ in {
 
             layout = dwindle
 
-            # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
             allow_tearing = false
         }
 
         decoration {
-            # See https://wiki.hyprland.org/Configuring/Variables/ for more
-
             rounding = 10
 
             blur {
@@ -95,8 +78,6 @@ in {
 
         animations {
             enabled = true
-
-            # Some default animations, see https://wiki.hyprland.org/Configuring/Animations/ for more
 
             bezier = myBezier, 0.05, 0.9, 0.1, 1.05
 
@@ -129,8 +110,6 @@ in {
             force_default_wallpaper = -1 # Set to 0 to disable the anime mascot wallpapers
         }
 
-        # Example per-device config
-        # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
         device:epic-mouse-v1 {
             sensitivity = -0.5
         }

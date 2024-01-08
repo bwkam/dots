@@ -19,6 +19,8 @@
 
       window_padding_width 15
       window_padding_height 15
+      placement_strategy top-left
+      allow_remote_control yes
 
       font_family Iosevka
 
