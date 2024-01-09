@@ -72,7 +72,11 @@ in {
     gdb
 
     # cli
-    ranger
+    lazygit
+    pfetch
+    btop
+    gotop
+  ranger
 neofetch
     chafa
     links2

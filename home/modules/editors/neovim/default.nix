@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   cfg = config.modules.editors.nvim;
-  languages = (p: map (x: p.${x}) [ "haskell" "nix" ]);
+  languages = (p: map (x: p.${x}) [ "haskell" "nix" "lua" ]);
 in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
@@ -14,7 +14,7 @@ in {
       enable = true;
       plugins = with pkgs.vimPlugins; [
         markdown-preview-nvim
-                catppuccin-nvim
+        catppuccin-nvim
         nvim-cmp
         luasnip
         cmp_luasnip
@@ -36,9 +36,11 @@ in {
         dashboard-nvim
         null-ls-nvim
         impatient-nvim
+        toggleterm-nvim
+        which-key-nvim
       ];
     };
     #
-    home.packages = with pkgs; [ haskell-language-server ghc ];
+    home.packages = with pkgs; [ haskell-language-server ghc stylua lua-language-server ];
   };
 }

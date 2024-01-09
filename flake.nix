@@ -44,7 +44,6 @@
           buildInputs = [
             git
             lua-language-server
-            vscode-extensions.sumneko.lua
             lua
           ];
         };
