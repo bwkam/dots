@@ -39,6 +39,7 @@ in {
         toggleterm-nvim
         which-key-nvim
         haskell-tools-nvim
+        rustaceanvim
       ];
     };
     #
