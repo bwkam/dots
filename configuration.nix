@@ -49,7 +49,7 @@
   # X11
   services.xserver = {
     enable = true;
-    layout = "us";
+    layout = "us,ara";
     displayManager.lightdm.enable = true;
     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
     desktopManager.xterm.enable = false;
@@ -58,15 +58,10 @@
     windowManager.bspwm.enable = true;
   };
 
-  # Wayland
-  programs.hyprland = {
-    enable = true;
-  };
-
   services.xserver.displayManager.startx.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkbOptions = "eurosign:e,caps:escape";
+  services.xserver.xkbOptions = "eurosign:e,caps:escape, grp:alt_space_toggle";
   services.blueman.enable = true;
 
   services.flatpak.enable = true;

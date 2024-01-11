@@ -35,11 +35,21 @@ in {
         alpha-nvim
         dashboard-nvim
         null-ls-nvim
+        plenary-nvim
         impatient-nvim
         toggleterm-nvim
         which-key-nvim
-        haskell-tools-nvim
         rustaceanvim
+        (haskell-tools-nvim.overrideAttrs (self: super: {
+          src = pkgs.fetchFromGitHub {
+            owner = "MrcJkb";
+            repo = "haskell-tools.nvim";
+            rev = "f6a12216f33ca234586e61e9153b6b3244bfa801";
+            sha256 = "sha256-wLp24x8aKZyi3yRUZJ3uff3YCy3x7pg14KdxcFDJQc0=";
+          };
+        }))
+        lualine-nvim
+        presence-nvim
       ];
     };
     #
@@ -48,28 +58,12 @@ in {
       ghc
       stylua
       lua-language-server
+      curl
     ];
 
     xdg.configFile = {
-      "nvim/after/ftplugin/haskell.lua".text = "
-                local ht = require('haskell-tools')
-        local bufnr = vim.api.nvim_get_current_buf()
-        local opts = { noremap = true, silent = true, buffer = bufnr, }
-        -- haskell-language-server relies heavily on codeLenses,
-        -- so auto-refresh (see advanced configuration) is enabled by default
-        vim.keymap.set('n', '<space>cl', vim.lsp.codelens.run, opts)
-        -- Hoogle search for the type signature of the definition under the cursor
-        vim.keymap.set('n', '<space>hs', ht.hoogle.hoogle_signature, opts)
-        -- Evaluate all code snippets
-        vim.keymap.set('n', '<space>ea', ht.lsp.buf_eval_all, opts)
-        -- Toggle a GHCi repl for the current package
-        vim.keymap.set('n', '<leader>rr', ht.repl.toggle, opts)
-        -- Toggle a GHCi repl for the current buffer
-        vim.keymap.set('n', '<leader>rf', function()
-          ht.repl.toggle(vim.api.nvim_buf_get_name(0))
-        end, opts)
-        vim.keymap.set('n', '<leader>rq', ht.repl.quit, opts)
-      ";
+      "nvim/after/ftplugin/haskell.lua".text =
+        "\n                local ht = require('haskell-tools')\n        local bufnr = vim.api.nvim_get_current_buf()\n        local opts = { noremap = true, silent = true, buffer = bufnr, }\n        -- haskell-language-server relies heavily on codeLenses,\n        -- so auto-refresh (see advanced configuration) is enabled by default\n        vim.keymap.set('n', '<space>cl', vim.lsp.codelens.run, opts)\n        -- Hoogle search for the type signature of the definition under the cursor\n        vim.keymap.set('n', '<space>hs', ht.hoogle.hoogle_signature, opts)\n        -- Evaluate all code snippets\n        vim.keymap.set('n', '<space>ea', ht.lsp.buf_eval_all, opts)\n        -- Toggle a GHCi repl for the current package\n        vim.keymap.set('n', '<leader>rr', ht.repl.toggle, opts)\n        -- Toggle a GHCi repl for the current buffer\n        vim.keymap.set('n', '<leader>rf', function()\n          ht.repl.toggle(vim.api.nvim_buf_get_name(0))\n        end, opts)\n        vim.keymap.set('n', '<leader>rq', ht.repl.quit, opts)\n      ";
     };
   };
 }
