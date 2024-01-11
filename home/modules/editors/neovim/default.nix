@@ -50,6 +50,7 @@ in {
         }))
         lualine-nvim
         presence-nvim
+        fidget-nvim
       ];
     };
     #
