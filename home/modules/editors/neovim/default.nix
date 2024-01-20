@@ -2,6 +2,16 @@
 let
   cfg = config.modules.editors.nvim;
   languages = (p: map (x: p.${x}) [ "haskell" "nix" "lua" ]);
+  vaxe = pkgs.vimUtils.buildVimPlugin {
+    name = "haxe.vim";
+    src = pkgs.fetchFromGitHub {
+      owner = "kLabz";
+      repo = "haxe.vim";
+      rev = "5fe5ff115675ad46334b65406a386a48a8f2238e";
+      sha256 = "sha256-4qfkd4Kbq6qz6x98fD3RdUQuo28wsZmbgJkHWh2epOY=";
+    };
+  };
+
 in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
@@ -48,6 +58,7 @@ in {
             sha256 = "sha256-wLp24x8aKZyi3yRUZJ3uff3YCy3x7pg14KdxcFDJQc0=";
           };
         }))
+        vaxe
         lualine-nvim
         presence-nvim
         fidget-nvim

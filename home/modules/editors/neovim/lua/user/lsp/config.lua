@@ -2,7 +2,10 @@
 local servers = {
 	"hls",
 	"nil_ls",
+	"lua_ls",
+	"clangd",
 	"rust_analyzer",
+  "haxe_language_server",
 }
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
@@ -23,15 +26,14 @@ end
 
 add_lsp(lspconfig.bashls, {})
 add_lsp(lspconfig.clangd, {})
+add_lsp(lspconfig.haxe_language_server, {})
 add_lsp(lspconfig.nil_ls, {})
--- add_lsp(lspconfig.hls, {})
 add_lsp(lspconfig.lua_ls, {})
 add_lsp(lspconfig.tsserver, {
 	cmd = { "tsserver", "--stdio" },
 })
 
 local opts = {}
-
 
 for _, server in pairs(servers) do
 	opts = {

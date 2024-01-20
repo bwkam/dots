@@ -1,10 +1,5 @@
-{
-  config,
-  pkgs,
-  lib,
-  inputs,
-  ...
-}: let
+{ config, pkgs, lib, inputs, ... }:
+let
   # my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
   # spicetify-nix = inputs.spicetify-nix;
   # nixvim = inputs.nixvim;
@@ -27,7 +22,7 @@ in {
     ./mpd.nix
     ./firefox
     ./zathura
-    # ./emacs.nix
+    ./modules/editors/emacs.nix
 
     # ./helix
     # ./spicetify.nix
@@ -35,6 +30,7 @@ in {
 
   modules = {
     editors = {
+      emacs.enable = true;
       nvim.enable = true;
     };
     desktop = {
@@ -71,19 +67,23 @@ in {
     gcc
     gdb
 
+    # osu 
+    osu-lazer-bin
+
     # cli
     lazygit
     pfetch
     btop
     gotop
-  ranger
-neofetch
+    ranger
+    neofetch
     chafa
     links2
     gh
     zellij
     traceroute
     tcpdump
+    nixpkgs-review
     nil
     nmap
     # helix
@@ -109,7 +109,11 @@ neofetch
     cmus
     hugo
     #wine-staging
-    wineWowPackages.stable
+    bottles
+    # wineWowPackages.staging
+    # (wine.override { wineBuild = "wine64"; })
+    wineWowPackages.stagingFull
+    winetricks
     appimage-run
     unzip
     gradle
@@ -119,6 +123,7 @@ neofetch
     usbutils
 
     # languages
+    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".haxe)
     python39
     rustc
     cargo
@@ -130,7 +135,6 @@ neofetch
     clang-tools
     nil
     # flutter
-
     # gui
     gtk3
     gtk4
@@ -189,7 +193,7 @@ neofetch
     jetbrains-mono
     font-awesome_5
 
-    (nerdfonts.override {fonts = ["Iosevka" "JetBrainsMono" "Meslo"];})
+    (nerdfonts.override { fonts = [ "Iosevka" "JetBrainsMono" "Meslo" ]; })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -210,6 +214,11 @@ neofetch
   home.sessionVariables = {
     EDITOR = "nvim";
     NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
+    WINEPREFIX = "$HOME/spitfire"; # for lmms VST loading
+    WINELOADER =
+      "$HOME/.local/share/bottles/runners/soda-8.0.2/bin/wine"; # for lmms VST loading
+    WINEDLLPATH =
+      "$HOME/.local/share/bottles/runners/soda-8.0.2/lib/wine/x86_64-unix"; # for lmms VST loading
   };
 
   services = {
@@ -226,7 +235,7 @@ neofetch
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [];
+    overlays = [ inputs.nurpkgs.overlay ];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
