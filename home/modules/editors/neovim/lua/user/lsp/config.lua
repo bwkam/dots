@@ -1,6 +1,4 @@
--- credits for adding lsp servers: https://github.com/Misterio77/nix-config/blob/ec4bd4983695521e8d1016093f3d092ffbe5ca6e/home/misterio/features/nvim/lsp.nix
 local servers = {
-	"hls",
 	"nil_ls",
 	"lua_ls",
 	"clangd",

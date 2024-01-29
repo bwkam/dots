@@ -40,7 +40,14 @@ in {
         nvim-ts-context-commentstring
         gitsigns-nvim
         nvim-tree-lua
-        nvim-web-devicons
+        (nvim-web-devicons.overrideAttrs (self: super: {
+          src = pkgs.fetchFromGitHub {
+            owner = "bwkam";
+            repo = "nvim-web-devicons";
+            rev = "544aff23fe6bca0b580f09abbd635e216bc6fd86";
+            sha256 = "sha256-K8kmCjrIV92rOm+ctIieQiDj/JcM43MuoCHYmNWnccc=";
+          };
+        }))
         bufferline-nvim
         alpha-nvim
         dashboard-nvim

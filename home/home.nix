@@ -93,6 +93,8 @@ in {
     pipewire
     cmatrix
     pipes
+    lua54Packages.luacheck
+    gnumake
     nix-prefetch-github
     htop
     eza
