@@ -31,6 +31,8 @@ in {
         cmp-nvim-lsp
         cmp-buffer
         cmp-path
+        copilot-lua
+        copilot-cmp
         nvim-lspconfig
         telescope-nvim
         telescope-media-files-nvim

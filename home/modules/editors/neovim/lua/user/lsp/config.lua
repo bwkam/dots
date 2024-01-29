@@ -2,7 +2,6 @@ local servers = {
 	"nil_ls",
 	"lua_ls",
 	"clangd",
-	"rust_analyzer",
   "haxe_language_server",
 }
 
