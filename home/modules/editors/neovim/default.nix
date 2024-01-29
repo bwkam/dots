@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 let
   cfg = config.modules.editors.nvim;
-  languages = (p: map (x: p.${x}) [ "haskell" "nix" "lua" ]);
+  languages = (p: map (x: p.${x}) [ "haskell" "nix" "lua" "typescript" "javascript"]);
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
     src = pkgs.fetchFromGitHub {
@@ -80,6 +80,8 @@ in {
       stylua
       lua-language-server
       curl
+      nodePackages.typescript-language-server
+      typescript
     ];
 
     xdg.configFile = {

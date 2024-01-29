@@ -2,14 +2,14 @@ local servers = {
 	"nil_ls",
 	"lua_ls",
 	"clangd",
-  "haxe_language_server",
+	"haxe_language_server",
+	"tsserver",
 }
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")
 if not lspconfig_status_ok then
 	return
 end
-
 
 local opts = {}
 
