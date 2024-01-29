@@ -1,15 +1,8 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-{
-  config,
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+{ config, pkgs, inputs, ... }: {
+  imports = [ ./hardware-configuration.nix ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -18,8 +11,7 @@
   networking.hostName = "wolfburger"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.networkmanager.enable =
-    true;
+  networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "Africa/Cairo";
@@ -69,17 +61,17 @@
 
   xdg.portal = {
     #wlr.enable = true;
-    extraPortals = [pkgs.xdg-desktop-portal-gtk];
+    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   };
 
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
 
-  hardware.sane.extraBackends = [pkgs.hplipWithPlugin];
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.printing = {
     enable = true;
-    drivers = [pkgs.hplipWithPlugin];
+    drivers = [ pkgs.hplipWithPlugin ];
   };
 
   # Enable sound.
@@ -93,7 +85,7 @@
 
   services.postgresql = {
     enable = true;
-    ensureDatabases = ["mydatabase"];
+    ensureDatabases = [ "mydatabase" ];
     authentication = pkgs.lib.mkOverride 10 ''
       #type database  DBuser  auth-method
       local all       all     trust
@@ -106,7 +98,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bwkam = {
     isNormalUser = true;
-    extraGroups = ["wheel" "scanner" "lp"]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 
@@ -126,8 +118,9 @@
   ];
 
   nix.settings = {
-    substituters = ["https://hyprland.cachix.org"];
-    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys =
+      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
   # Some programs need SUID wrappers, can be configured further or are

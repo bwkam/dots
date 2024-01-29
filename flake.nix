@@ -8,7 +8,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";

@@ -1,9 +1,11 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, osConfig, pkgs, lib, inputs, ... }:
 let
   # my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
   # spicetify-nix = inputs.spicetify-nix;
   # nixvim = inputs.nixvim;
   # helix = inputs.helix;
+
+  sys = osConfig.modules.system;
 in {
   imports = [
     ./modules/desktop/bspwm.nix
@@ -22,7 +24,7 @@ in {
     ./mpd.nix
     ./firefox
     ./zathura
-    ./modules/editors/emacs.nix
+    ./modules/editors/doom-emacs
 
     # ./helix
     # ./spicetify.nix
@@ -30,8 +32,9 @@ in {
 
   modules = {
     editors = {
-      emacs.enable = true;
+      # emacs.enable = true;
       nvim.enable = true;
+      doom-emacs.enable = true;
     };
     desktop = {
       bspwm.enable = true;
@@ -139,6 +142,7 @@ in {
     gtk3
     gtk4
     foliate
+    gparted
     google-chrome
     gnome.gnome-music
     tracker
