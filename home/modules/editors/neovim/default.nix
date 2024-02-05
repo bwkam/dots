@@ -1,7 +1,8 @@
 { config, lib, pkgs, ... }:
 let
   cfg = config.modules.editors.nvim;
-  languages = (p: map (x: p.${x}) [ "haskell" "nix" "lua" "typescript" "javascript"]);
+  languages =
+    (p: map (x: p.${x}) [ "haskell" "nix" "lua" "typescript" "javascript" ]);
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
     src = pkgs.fetchFromGitHub {
@@ -70,7 +71,14 @@ in {
         vaxe
         lualine-nvim
         presence-nvim
-        fidget-nvim
+        (fidget-nvim.overrideAttrs (self: super: {
+          src = pkgs.fetchFromGitHub {
+            owner = "j-hui";
+            repo = "fidget.nvim";
+            rev = "1d1042d418ee8cb70d68f1e38db639844331c093";
+            sha256 = "sha256-pFXoaqYzYrOmHV3EQycEIRZMe/VA7+T4JR227AOWUNg=";
+          };
+        }))
       ];
     };
     #

@@ -141,12 +141,15 @@ in {
     nil
     # flutter
     # gui
+    minetest
+    renderdoc
     gtk3
     gtk4
     foliate
     gparted
     google-chrome
     gnome.gnome-music
+    amberol
     tracker
     mpv
     libresprite
@@ -163,6 +166,7 @@ in {
     kdenlive
     feh
     obs-studio
+    simplescreenrecorder
     neochat
     obsidian
     grapejuice
