@@ -87,6 +87,7 @@ in {
     traceroute
     tcpdump
     nixpkgs-review
+    yewtube
     nil
     nmap
     # helix
@@ -153,6 +154,7 @@ in {
     amberol
     tracker
     mpv
+    mpvScripts.mpris
     libresprite
     tracker-miners
     hplip
