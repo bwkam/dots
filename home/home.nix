@@ -141,6 +141,7 @@ in {
     nil
     # flutter
     # gui
+    poppler
     minetest
     renderdoc
     gtk3
