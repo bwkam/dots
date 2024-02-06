@@ -84,6 +84,7 @@ in {
     #
     home.packages = with pkgs; [
       haskell-language-server
+      neovide
       ghc
       stylua
       lua-language-server
