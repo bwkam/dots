@@ -2,7 +2,7 @@
 let
   cfg = config.modules.editors.nvim;
   languages =
-    (p: map (x: p.${x}) [ "haskell" "nix" "lua" "typescript" "javascript" ]);
+    (p: map (x: p.${x}) [ "haskell" "nix" "lua" "typescript" "javascript" "latex" ]);
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
     src = pkgs.fetchFromGitHub {
@@ -43,6 +43,8 @@ in {
         nvim-ts-context-commentstring
         gitsigns-nvim
         nvim-tree-lua
+        vimtex
+        texlab
         (nvim-web-devicons.overrideAttrs (self: super: {
           src = pkgs.fetchFromGitHub {
             owner = "bwkam";
