@@ -12,6 +12,8 @@
 
     spicetify-nix.url = "github:the-argus/spicetify-nix";
     nurpkgs.url = "github:nix-community/NUR";
+    nix-index-database.url = "github:Mic92/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
@@ -30,7 +32,11 @@
     homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
 
-      modules = [ ./home/home.nix ];
+      modules = [
+        ./home/home.nix
+        inputs.nix-index-database.hmModules.nix-index
+        { programs.nix-index-database.comma.enable = true; }
+      ];
       extraSpecialArgs = { inherit inputs; };
     };
 
