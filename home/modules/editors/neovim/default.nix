@@ -44,7 +44,6 @@ in {
         gitsigns-nvim
         nvim-tree-lua
         vimtex
-        texlab
         (nvim-web-devicons.overrideAttrs (self: super: {
           src = pkgs.fetchFromGitHub {
             owner = "bwkam";
@@ -86,6 +85,7 @@ in {
     #
     home.packages = with pkgs; [
       haskell-language-server
+      texlab
       neovide
       ghc
       stylua

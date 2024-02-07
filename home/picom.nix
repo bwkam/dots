@@ -4,7 +4,8 @@
 
   services.picom = {
     enable = true;
-    package = pkgs.callPackage ./ib-picom.nix { };
+    # package = pkgs.callPackage ./ib-picom.nix { };
+    package = pkgs.picom-next;
     #package = pkgs.picom-jonaburg;
     backend = "glx";
     vSync = true;
@@ -70,6 +71,13 @@
           shadow = false;
           full-shadow = false;
         };
+        popup_menu = {
+          opacity = 1.0;
+          shadow = false;
+          full-shadow = false;
+          focus = false;
+        };
+        dropdown_menu = { opacity = 1.0; };
       };
 
     };

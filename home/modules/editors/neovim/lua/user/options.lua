@@ -45,6 +45,9 @@ end
 -- neovide specific options
 -- vim.g.neovide_scale_factor = 0.7
 
+-- vimtex
+vim.g.vimtex_view_method = 'zathura'
+
 
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
 vim.opt.shortmess:append("c") -- don't give |ins-completion-menu| messages
