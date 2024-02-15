@@ -1,16 +1,11 @@
-{ config, osConfig, pkgs, lib, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 let
-  # my-fonts = pkgs.callPackage ./fonts/default.nix { inherit pkgs; };
-  # spicetify-nix = inputs.spicetify-nix;
-  # nixvim = inputs.nixvim;
-  # helix = inputs.helix;
-
-  sys = osConfig.modules.system;
 in {
   imports = [
     ./modules/desktop/bspwm.nix
     ./modules/desktop/hyprland.nix
     ./modules/editors/neovim
+    ./modules/editors/doom-emacs
     ./fish.nix
     ./kitty.nix
     ./codium.nix
@@ -24,7 +19,6 @@ in {
     ./mpd.nix
     ./firefox
     ./zathura
-    ./modules/editors/doom-emacs
 
     # ./helix
     # ./spicetify.nix
@@ -75,6 +69,7 @@ in {
 
     # cli
     lazygit
+    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".jj)
     pfetch
     btop
     gotop
@@ -151,6 +146,7 @@ in {
     gparted
     google-chrome
     gnome.gnome-music
+    rhythmbox
     amberol
     tracker
     mpv
@@ -181,7 +177,6 @@ in {
     gnome.cheese
     rofimoji
     teams-for-linux
-    #teams
 
     #calibre
 
@@ -227,7 +222,6 @@ in {
   home.sessionVariables = {
     EDITOR = "nvim";
     NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
-    WINEPREFIX = "$HOME/spitfire"; # for lmms VST loading
     WINELOADER =
       "$HOME/.local/share/bottles/runners/soda-8.0.2/bin/wine"; # for lmms VST loading
     WINEDLLPATH =
