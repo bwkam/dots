@@ -106,7 +106,7 @@ in {
         }))
       ];
     };
-    #
+    #11
     home.packages = with pkgs; [
       haskell-language-server
       texlab
