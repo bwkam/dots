@@ -1,8 +1,15 @@
 { config, lib, pkgs, ... }:
 let
   cfg = config.modules.editors.nvim;
-  languages =
-    (p: map (x: p.${x}) [ "haskell" "nix" "lua" "typescript" "javascript" "latex" ]);
+  languages = (p:
+    map (x: p.${x}) [
+      "haskell"
+      "nix"
+      "lua"
+      "typescript"
+      "javascript"
+      "latex"
+    ]);
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
     src = pkgs.fetchFromGitHub {
@@ -10,6 +17,16 @@ let
       repo = "haxe.vim";
       rev = "5fe5ff115675ad46334b65406a386a48a8f2238e";
       sha256 = "sha256-4qfkd4Kbq6qz6x98fD3RdUQuo28wsZmbgJkHWh2epOY=";
+    };
+  };
+
+  cellular-automaton = pkgs.vimUtils.buildVimPlugin {
+    name = "cellular-automaton.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "Eandrju";
+      repo = "cellular-automaton.nvim";
+      rev = "b7d056dab963b5d3f2c560d92937cb51db61cb5b";
+      sha256 = "sha256-szbd6m7hH7NFI0UzjWF83xkpSJeUWCbn9c+O8F8S/Fg=";
     };
   };
 
@@ -30,11 +47,13 @@ in {
         luasnip
         cmp_luasnip
         cmp-nvim-lsp
+        cellular-automaton
         cmp-buffer
         cmp-path
         copilot-lua
         copilot-cmp
         nvim-lspconfig
+        wilder-nvim
         telescope-nvim
         telescope-media-files-nvim
         (nvim-treesitter.withPlugins languages)
