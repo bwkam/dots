@@ -92,6 +92,7 @@ in {
         vaxe
         lualine-nvim
         presence-nvim
+        zen-mode-nvim
         (fidget-nvim.overrideAttrs (self: super: {
           src = pkgs.fetchFromGitHub {
             owner = "j-hui";
