@@ -168,6 +168,7 @@ in {
     feh
     obs-studio
     simplescreenrecorder
+    peek
     neochat
     obsidian
     grapejuice
