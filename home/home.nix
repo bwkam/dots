@@ -79,8 +79,8 @@ in {
     chafa
     links2
     gh
-    zellij
     traceroute
+    tmux
     tcpdump
     nixpkgs-review
     yewtube
