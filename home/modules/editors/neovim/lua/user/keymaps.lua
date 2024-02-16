@@ -67,7 +67,7 @@ keymap("n", "<leader>f", ":Format<CR>", opts)
 
  -- Misc --
 keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", opts)
-
+keymap("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
 
 -- LSP
 -- keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
