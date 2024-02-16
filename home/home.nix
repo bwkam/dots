@@ -138,6 +138,7 @@ in {
     nil
     # flutter
     # gui
+    networkmanagerapplet
     poppler
     minetest
     renderdoc
