@@ -5,6 +5,7 @@ local servers = {
 	"haxe_language_server",
 	"tsserver",
 	"texlab",
+  "norg",
 }
 
 local lspconfig_status_ok, lspconfig = pcall(require, "lspconfig")

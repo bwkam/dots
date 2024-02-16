@@ -6,6 +6,7 @@ let
       "haskell"
       "nix"
       "lua"
+      "norg"
       "typescript"
       "javascript"
       "latex"
@@ -56,6 +57,7 @@ in {
         wilder-nvim
         telescope-nvim
         telescope-media-files-nvim
+        neorg
         (nvim-treesitter.withPlugins languages)
         nvim-autopairs
         comment-nvim
