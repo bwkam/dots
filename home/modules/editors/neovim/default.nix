@@ -58,6 +58,7 @@ in {
         telescope-nvim
         telescope-media-files-nvim
         neorg
+        neorg-telescope
         (nvim-treesitter.withPlugins languages)
         nvim-autopairs
         comment-nvim

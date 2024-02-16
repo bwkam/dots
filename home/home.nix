@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ pkgs, lib, inputs, neorg, ... }:
 let
 in {
   imports = [
@@ -245,7 +245,7 @@ in {
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [ inputs.nurpkgs.overlay ];
+    overlays = [ inputs.nurpkgs.overlay neorg];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
