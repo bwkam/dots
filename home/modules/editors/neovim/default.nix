@@ -47,10 +47,10 @@ in {
         vimtex
         (nvim-web-devicons.overrideAttrs (self: super: {
           src = pkgs.fetchFromGitHub {
-            owner = "bwkam";
+            owner = "nvim-tree";
             repo = "nvim-web-devicons";
-            rev = "544aff23fe6bca0b580f09abbd635e216bc6fd86";
-            sha256 = "sha256-K8kmCjrIV92rOm+ctIieQiDj/JcM43MuoCHYmNWnccc=";
+            rev = "7f30f2da3c3641841ceb0e2c150281f624445e8f";
+            sha256 = "sha256-Z2uIDeXKInS6qQZxZrpmCuwpT5h0LEOt/Tc+h0LXOus=";
           };
         }))
         bufferline-nvim
