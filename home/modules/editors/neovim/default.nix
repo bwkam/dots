@@ -6,7 +6,6 @@ let
       "haskell"
       "nix"
       "lua"
-      "norg"
       "typescript"
       "javascript"
       "latex"
