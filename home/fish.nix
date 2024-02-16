@@ -12,7 +12,7 @@
     cat = "${bat}/bin/bat";
     ls = "${eza}/bin/eza --group-directories-first --git --icons";
     ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
-    # nvim = "$HOME/script-nvim.sh";
+    nvim = "$HOME/script-nvim.sh";
     haxe_language_server = "node $HOME/haxe-language-server/bin/server.js";
 
   };
