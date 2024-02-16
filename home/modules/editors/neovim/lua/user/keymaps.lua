@@ -66,10 +66,6 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>f", ":Format<CR>", opts)
 
 -- LSP
-keymap("n", "<leader>lD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-keymap("n", "<leader>ld", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "<leader>lI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 -- keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format {async = true}' ]])

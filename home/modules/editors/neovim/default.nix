@@ -43,6 +43,7 @@ in {
         nvim-ts-context-commentstring
         gitsigns-nvim
         nvim-tree-lua
+        trouble-nvim
         vimtex
         (nvim-web-devicons.overrideAttrs (self: super: {
           src = pkgs.fetchFromGitHub {
