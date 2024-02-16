@@ -13,6 +13,7 @@ require("user.bufferline")
 -- require "user.alpha"
 require("user.dashboard")
 require("user.toggleterm")
+require("user.trouble")
 require("user.which-key")
 require("user.lualine")
 require("user.presence")

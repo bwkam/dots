@@ -145,9 +145,11 @@ local mappings = {
     },
 
     K = {
-      "Hover",
       "<cmd>lua vim.lsp.buf.hover()<cr>",
+      "Hover",
     },
+
+
   },
   f = {
     name = "Find",
