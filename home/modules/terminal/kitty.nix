@@ -4,7 +4,7 @@ let cfg = config.modules.terminal.kitty;
 
 in {
 
-  options.modules.terminal.kitty = lib.mkEnableOption "Enable kitty terminal";
+  options.modules.terminal.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
 
   config = lib.mkIf cfg.enable {
     # Enable the kitty terminal

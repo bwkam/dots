@@ -3,6 +3,7 @@
 let cfg = config.modules.browsers.firefox;
 
 in {
+  options.modules.browsers.firefox.enable = lib.mkEnableOption "Firefox";
 
   config = lib.mkIf cfg.enable {
 

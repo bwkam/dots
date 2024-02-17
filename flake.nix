@@ -10,7 +10,6 @@
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
     nurpkgs.url = "github:nix-community/NUR";
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";

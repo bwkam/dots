@@ -16,6 +16,7 @@ in {
     ./modules/desktop/polybar
     ./modules/desktop/rofi
     ./modules/misc/xdg.nix
+    ./modules/misc/zathura
   ];
 
   modules = {

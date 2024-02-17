@@ -1,12 +1,11 @@
-{ config, lib, pkgs }:
+{ config, lib, pkgs, ... }:
 let cfg = config.modules.shell.fish;
 in {
   options.modules.shell.fish.enable = lib.mkEnableOption "fish shell";
 
   config = lib.mkIf cfg.enable {
     programs.fish.enable = true;
-    home.packages = with pkgs;
-      [ (with fishPlugins; [ done github-copilot-cli-fish ]) ];
+    home.packages = with pkgs.fishPlugins; [ done github-copilot-cli-fish ];
 
     programs.fish.shellAliases = with pkgs; {
 

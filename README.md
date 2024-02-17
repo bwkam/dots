@@ -5,5 +5,5 @@ Welcome to my cursed dotfiles. (still under development)
 
 ## TODO
 - [ ] Add multiple home/system configs
-- [ ] Make it more modular
+- [x] Make it more modular
 - [ ] Move to alacritty
