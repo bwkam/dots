@@ -81,6 +81,7 @@ in {
         telescope-nvim
         telescope-media-files-nvim
         neorg
+        vim-fugitive
         neorg-telescope
         (nvim-treesitter.withPlugins languages)
         nvim-autopairs
