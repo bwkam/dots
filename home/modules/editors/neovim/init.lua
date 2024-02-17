@@ -1,8 +1,9 @@
 require("user.options")
 require("user.keymaps")
+require("user.leap")
 require("user.colorscheme")
 require("user.neorg")
-require("user.pets");
+require("user.pets")
 require("user.wilder")
 require("user.cmp")
 require("user.lsp")

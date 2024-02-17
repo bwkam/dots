@@ -79,6 +79,7 @@ in {
         nui-nvim
         wilder-nvim
         telescope-nvim
+        leap-nvim
         telescope-media-files-nvim
         neorg
         vim-fugitive
