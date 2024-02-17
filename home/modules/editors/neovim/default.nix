@@ -80,6 +80,7 @@ in {
         wilder-nvim
         telescope-nvim
         leap-nvim
+        vim-repeat
         telescope-media-files-nvim
         neorg
         vim-fugitive
