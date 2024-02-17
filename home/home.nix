@@ -51,6 +51,7 @@ in {
   home.packages = with pkgs; [
     # term emulators
     kitty
+    alactritty
 
     # shells
     fish
