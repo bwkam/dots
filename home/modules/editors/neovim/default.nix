@@ -101,6 +101,7 @@ in {
         }))
         bufferline-nvim
         alpha-nvim
+        nvim-notify
         dashboard-nvim
         null-ls-nvim
         plenary-nvim
