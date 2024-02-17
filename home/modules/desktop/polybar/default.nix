@@ -16,7 +16,7 @@ in {
       polybar = {
         enable = true;
         script = ''
-          polybar -q emi-bar -c /home/bwkam/dots/home/polybar/config.ini &
+          polybar -q emi-bar -c $HOME/dots/home/modules/desktop/polybar/config.ini &
         ''; # Gets fixed in the bspwmrc file
         package = mypolybar;
         extraConfig = polybarConfig;

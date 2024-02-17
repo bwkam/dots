@@ -1,10 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 let cfg = config.modules.terminal.kitty;
 
 in {
 
-  options.modules.terminal.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
+  options.modules.terminal.kitty.enable =
+    lib.mkEnableOption "Enable kitty terminal";
 
   config = lib.mkIf cfg.enable {
     # Enable the kitty terminal
@@ -12,7 +13,7 @@ in {
       enable = true;
       settings = {
         font_family = "Iosevka";
-        font_size = "9.0";
+        font_size = "11.0";
       };
       extraConfig = ''
         # vim:ft=kitty

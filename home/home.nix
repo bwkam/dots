@@ -1,6 +1,4 @@
-{ pkgs, lib, inputs, ... }:
-let
-in {
+{ pkgs, inputs, ... }: {
   imports = [
     ./modules/desktop/bspwm.nix
     ./modules/editors/neovim
