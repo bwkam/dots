@@ -44,6 +44,7 @@
     misc = {
       neofetch.enable = true;
       picom.enable = true;
+      cava.enable = true;
       zathura.enable = true;
       xdg.enable = true;
     };
@@ -77,7 +78,6 @@
     osu-lazer-bin
 
     # cli
-    cava
     sad
     lazygit
     jless
