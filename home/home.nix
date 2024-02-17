@@ -77,6 +77,7 @@
     osu-lazer-bin
 
     # cli
+    cava
     sad
     lazygit
     jless
