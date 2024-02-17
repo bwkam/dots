@@ -224,11 +224,6 @@ in {
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    NIX_PATH = "nixpkgs=flake:nixpkgs\${NIX_PATH:+:$NIX_PATH}";
-    WINELOADER =
-      "$HOME/.local/share/bottles/runners/soda-8.0.2/bin/wine"; # for lmms VST loading
-    WINEDLLPATH =
-      "$HOME/.local/share/bottles/runners/soda-8.0.2/lib/wine/x86_64-unix"; # for lmms VST loading
   };
 
   services = {
@@ -245,7 +240,7 @@ in {
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [ inputs.nurpkgs.overlay  ];
+    overlays = [ inputs.nurpkgs.overlay inputs.neorg-overlay.overlays.default ];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
@@ -254,7 +249,6 @@ in {
   # dconf
   dconf.enable = true;
 
-  # idk why
   programs = {
     direnv = {
       enable = true;
