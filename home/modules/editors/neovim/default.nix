@@ -41,6 +41,16 @@ let
     };
   };
 
+  hologram = pkgs.vimUtils.buildVimPlugin {
+    name = "hologram.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "giusgad";
+      repo = "hologram.nvim";
+      rev = "c91aa77121162d8ff554b18a487a3f60677447f2";
+      sha256 = "sha256-rNffTS63oSTuBEjN86SijQTrbloQZySfFYy7N0Oyw/8=";
+    };
+  };
+
 in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
@@ -65,6 +75,8 @@ in {
         copilot-cmp
         nvim-lspconfig
         pets
+        hologram
+        nui-nvim
         wilder-nvim
         telescope-nvim
         telescope-media-files-nvim
