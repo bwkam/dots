@@ -11,6 +11,7 @@
     ./modules/editors/code.nix
     ./modules/browsers/firefox
     ./modules/misc/picom.nix
+    ./modules/misc/cava.nix
     ./modules/desktop/gtk.nix
     ./modules/desktop/polybar
     ./modules/desktop/rofi
