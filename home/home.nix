@@ -245,7 +245,7 @@ in {
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [ inputs.nurpkgs.overlay inputs.neorg-overlay.overlays.default ];
+    overlays = [ inputs.nurpkgs.overlay  ];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
