@@ -51,7 +51,7 @@ in {
   home.packages = with pkgs; [
     # term emulators
     kitty
-    alactritty
+    alacritty
 
     # shells
     fish
@@ -69,6 +69,7 @@ in {
     osu-lazer-bin
 
     # cli
+    sad
     lazygit
     jless
     (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".jj)
