@@ -3,37 +3,49 @@ let
 in {
   imports = [
     ./modules/desktop/bspwm.nix
-    ./modules/desktop/hyprland.nix
     ./modules/editors/neovim
     ./modules/editors/doom-emacs
-    ./fish.nix
-    ./kitty.nix
-    ./codium.nix
-    ./gtk.nix
-    ./polybar
-    ./xdg.nix
-    ./picom.nix
-    ./rofi
-    ./neofetch
-    ./ncmpcpp.nix
-    ./mpd.nix
-    ./firefox
-    ./zathura
-
-    # ./helix
-    # ./spicetify.nix
+    ./modules/shell/fish.nix
+    ./modules/dev/lazygit
+    ./modules/misc/neofetch
+    ./modules/terminal/kitty.nix
+    ./modules/editors/code.nix
+    ./modules/browsers/firefox
+    ./modules/misc/picom.nix
+    ./modules/desktop/gtk.nix
+    ./modules/desktop/polybar
+    ./modules/desktop/rofi
+    ./modules/misc/xdg.nix
   ];
 
   modules = {
     editors = {
-      # emacs.enable = true;
       nvim.enable = true;
-      doom-emacs.enable = true;
+      doom-emacs.enable = false;
+      code.enable = true;
     };
+
     desktop = {
       bspwm.enable = true;
-      hyprland.enable = true;
+      gtk.enable = true;
+      rofi.enable = true;
+      polybar.enable = true;
     };
+
+    browsers = { firefox.enable = true; };
+
+    dev = { lazygit.enable = true; };
+
+    terminal = { kitty.enable = true; };
+
+    misc = {
+      neofetch.enable = true;
+      picom.enable = true;
+      zathura.enable = true;
+      xdg.enable = true;
+    };
+
+    shell = { fish.enable = true; };
   };
 
   home.username = "bwkam";
@@ -50,11 +62,8 @@ in {
 
   home.packages = with pkgs; [
     # term emulators
-    kitty
     alacritty
 
-    # shells
-    fish
 
     # format
     nixfmt
@@ -77,7 +86,6 @@ in {
     btop
     gotop
     ranger
-    neofetch
     chafa
     links2
     gh
@@ -149,9 +157,7 @@ in {
     foliate
     gparted
     google-chrome
-    gnome.gnome-music
     rhythmbox
-    amberol
     tracker
     mpv
     mpvScripts.mpris
@@ -171,13 +177,10 @@ in {
     obs-studio
     simplescreenrecorder
     peek
-    neochat
     obsidian
-    grapejuice
     zoom-us
     lmms
     audacity
-    jetbrains.rust-rover
     gnome.simple-scan
     gnome.cheese
     rofimoji
@@ -224,9 +227,7 @@ in {
     # ''; 11
   };
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   services = {
     playerctld.enable = true;

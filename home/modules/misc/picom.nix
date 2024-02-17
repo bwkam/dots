@@ -1,7 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
-{
+let cfg = config.modules.misc.picom;
 
+in {
+
+  options.modules.misc.picom.enable = lib.mkEnableOption "Enable picom";
+  config = lib.mkIf cfg.enable { };
   services.picom = {
     enable = true;
     # package = pkgs.callPackage ./ib-picom.nix { };
