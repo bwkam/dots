@@ -31,6 +31,16 @@ let
     };
   };
 
+  pets = pkgs.vimUtils.buildVimPlugin {
+    name = "pets.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "giusgad";
+      repo = "pets.nvim";
+      rev = "747eb5e54fe8b10f4c7ce2881637d1c17b04f229";
+      sha256 = "sha256-77+mDpI51L8jjyOGURzruDdXwkc855tc/Mv+CfnX2io=";
+    };
+  };
+
 in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
@@ -54,6 +64,7 @@ in {
         copilot-lua
         copilot-cmp
         nvim-lspconfig
+        pets
         wilder-nvim
         telescope-nvim
         telescope-media-files-nvim
