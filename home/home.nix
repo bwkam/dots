@@ -9,6 +9,7 @@ in {
     ./modules/dev/lazygit
     ./modules/misc/neofetch
     ./modules/terminal/kitty.nix
+    ./modules/terminal/alacritty
     ./modules/editors/code.nix
     ./modules/browsers/firefox
     ./modules/misc/picom.nix
@@ -37,7 +38,10 @@ in {
 
     dev = { lazygit.enable = true; };
 
-    terminal = { kitty.enable = true; };
+    terminal = {
+      kitty.enable = true;
+      alacritty.enable = true;
+    };
 
     misc = {
       neofetch.enable = true;
@@ -62,10 +66,6 @@ in {
   home.stateVersion = "23.05"; # Please read the comment before changing.
 
   home.packages = with pkgs; [
-    # term emulators
-    alacritty
-
-
     # format
     nixfmt
     alejandra

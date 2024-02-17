@@ -49,6 +49,28 @@ end
 -- vimtex
 vim.g.vimtex_view_method = "zathura"
 
+function Sad(line_nr, from, to, fname)
+  vim.cmd(string.format("silent !sed -i '%ss/%s/%s/' %s", line_nr, from, to, fname))
+end
+
+function IncreasePadding()
+  Sad("07", 0, 20, "$HOME/.config/alacritty/alacritty.yml")
+  Sad("08", 0, 20, "$HOME/.config/alacritty/alacritty.yml")
+end
+
+function DecreasePadding()
+  Sad("07", 20, 0, "~/dotfiles/alacritty/alacritty.windows.yml")
+  Sad("08", 20, 0, "~/dotfiles/alacritty/alacritty.windows.yml")
+end
+
+vim.cmd([[
+  augroup ChangeAlacrittyPadding
+   au!
+   au VimEnter * lua DecreasePadding()
+   au VimLeavePre * lua IncreasePadding()
+  augroup END
+]])
+
 -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
 vim.opt.shortmess:append("c")                   -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-")                   -- hyphenated words recognized by searches
