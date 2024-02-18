@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 let
   cfg = config.modules.editors.nvim;
   languages = (p:
@@ -12,6 +12,8 @@ let
       "latex"
       "markdown"
     ]);
+  catppuccin-nvim =
+    inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".vimPlugins.catppuccin-nvim;
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
     src = pkgs.fetchFromGitHub {
@@ -64,7 +66,11 @@ in {
       enable = true;
       plugins = with pkgs.vimPlugins; [
         markdown-preview-nvim
-        catppuccin-nvim
+        (catppuccin-nvim.overrideAttrs (self: super: {
+          postPatch = ''
+            substituteInPlace ./lua/catppuccin/groups/integrations/treesitter.lua --replace '["@markup.underline"] = { link = "Underline" }' '["@markup.underline"] = { link = "Underlined" }'
+          '';
+        }))
         nvim-cmp
         luasnip
         cmp_luasnip
