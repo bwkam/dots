@@ -86,6 +86,7 @@ in {
         copilot-cmp
         nvim-lspconfig
         pets
+        bufdelete-nvim
         hologram
         nui-nvim
         wilder-nvim

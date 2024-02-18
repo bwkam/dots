@@ -11,6 +11,16 @@ in {
       mime.enable = true;
       userDirs.enable = true;
       userDirs.createDirectories = true;
+
+      # Allow files to be opened with appropriate programs
+      mimeApps = {
+        enable = true;
+        defaultApplications = {
+          "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
+        };
+
+      };
+
     };
 
   };

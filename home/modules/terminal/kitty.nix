@@ -25,16 +25,23 @@ in {
                 placement_strategy top-left
                 allow_remote_control yes
 
-                font_family Iosevka
+                font_family Iosevka Medium
                 bold_font Iosevka Bold 
                 italic_font Iosevka Light italic
                 bold_italic_font Iosevka Bold Italic
+
+                # window_padding_width 15
+                # windw_padding_height 15
 
         # The basic colors
                 foreground              #CDD6F4
                 background              #1E1E2E
                 selection_foreground    #1E1E2E
                 selection_background    #F5E0DC
+
+        # Cursor shape
+        cursor_shape block
+        shell_integration no-cursor
 
         # Cursor colors
                 cursor                  #F5E0DC
