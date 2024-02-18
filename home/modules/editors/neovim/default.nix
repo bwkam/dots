@@ -12,6 +12,10 @@ let
       "latex"
       "markdown"
     ]);
+
+  vimPluginsLatest =
+    inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".vimPlugins;
+
   catppuccin-nvim =
     inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".vimPlugins.catppuccin-nvim;
   vaxe = pkgs.vimUtils.buildVimPlugin {
@@ -64,7 +68,7 @@ in {
     };
     programs.neovim = {
       enable = true;
-      plugins = with pkgs.vimPlugins; [
+      plugins = with vimPluginsLatest; [
         markdown-preview-nvim
         (catppuccin-nvim.overrideAttrs (self: super: {
           postPatch = ''
@@ -93,7 +97,6 @@ in {
             rev = "52f7ce4fcc1764caac77cf4d43c2c4f5fb42d517";
             sha256 = "sha256-I0T+qRgQtiofWjBv55tvf1CmB7QdqvA2YNUcXO+R77Y=";
           };
-
         }))
         vim-repeat
         telescope-media-files-nvim
@@ -108,14 +111,7 @@ in {
         nvim-tree-lua
         trouble-nvim
         vimtex
-        (nvim-web-devicons.overrideAttrs (self: super: {
-          src = pkgs.fetchFromGitHub {
-            owner = "nvim-tree";
-            repo = "nvim-web-devicons";
-            rev = "7f30f2da3c3641841ceb0e2c150281f624445e8f";
-            sha256 = "sha256-Z2uIDeXKInS6qQZxZrpmCuwpT5h0LEOt/Tc+h0LXOus=";
-          };
-        }))
+        nvim-web-devicons
         bufferline-nvim
         alpha-nvim
         nvim-notify
@@ -126,26 +122,12 @@ in {
         toggleterm-nvim
         which-key-nvim
         rustaceanvim
-        (haskell-tools-nvim.overrideAttrs (self: super: {
-          src = pkgs.fetchFromGitHub {
-            owner = "MrcJkb";
-            repo = "haskell-tools.nvim";
-            rev = "f6a12216f33ca234586e61e9153b6b3244bfa801";
-            sha256 = "sha256-wLp24x8aKZyi3yRUZJ3uff3YCy3x7pg14KdxcFDJQc0=";
-          };
-        }))
+        haskell-tools-nvim
         vaxe
         lualine-nvim
         presence-nvim
         zen-mode-nvim
-        (fidget-nvim.overrideAttrs (self: super: {
-          src = pkgs.fetchFromGitHub {
-            owner = "j-hui";
-            repo = "fidget.nvim";
-            rev = "1d1042d418ee8cb70d68f1e38db639844331c093";
-            sha256 = "sha256-pFXoaqYzYrOmHV3EQycEIRZMe/VA7+T4JR227AOWUNg=";
-          };
-        }))
+        fidget-nvim
       ];
     };
     #11
@@ -157,6 +139,8 @@ in {
       stylua
       lua-language-server
       curl
+      ueberzugpp
+      imagemagick
       nodePackages.typescript-language-server
       typescript
     ];
