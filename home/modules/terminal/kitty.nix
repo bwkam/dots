@@ -11,10 +11,7 @@ in {
     # Enable the kitty terminal
     programs.kitty = {
       enable = true;
-      settings = {
-        font_family = "Iosevka";
-        font_size = "11.0";
-      };
+      settings = { font_size = "11.0"; };
       extraConfig = ''
         # vim:ft=kitty
 
@@ -29,6 +26,9 @@ in {
                 allow_remote_control yes
 
                 font_family Iosevka
+                bold_font Iosevka Bold 
+                italic_font Iosevka Light italic
+                bold_italic_font Iosevka Bold Italic
 
         # The basic colors
                 foreground              #CDD6F4

@@ -10,6 +10,7 @@ let
       "typescript"
       "javascript"
       "latex"
+      "markdown"
     ]);
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
