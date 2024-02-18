@@ -119,6 +119,7 @@
     glxinfo
     codeblocks
     pciutils
+    cachix
     cmus
     hugo
     #wine-staging
@@ -244,7 +245,11 @@
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [ inputs.nurpkgs.overlay inputs.neorg-overlay.overlays.default ];
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+      inputs.nurpkgs.overlay
+      inputs.neorg-overlay.overlays.default
+    ];
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
