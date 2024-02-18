@@ -1,10 +1,10 @@
 local wilder = require("wilder")
 wilder.setup({
 	modes = { ":", "/", "?" },
-	next_key = "<C-J>",
+	-- next_key = "<C-J>",
 	previous_key = "<C-K>",
-	accept_key = "<Tab>",
-	reject_key = "<C-BS>",
+	-- accept_key = "<Tab>",
+	-- reject_key = "<C-BS>",
 })
 
 wilder.set_option(
