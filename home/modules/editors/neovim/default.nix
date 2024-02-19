@@ -127,6 +127,7 @@ in {
         haskell-tools-nvim
         vaxe
         lualine-nvim
+        feline-nvim
         presence-nvim
         zen-mode-nvim
         fidget-nvim
