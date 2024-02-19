@@ -80,14 +80,17 @@ in {
         cmp_luasnip
         cmp-nvim-lsp
         cellular-automaton
+        dropbar-nvim
         cmp-buffer
         cmp-path
         copilot-lua
         copilot-cmp
         nvim-lspconfig
         pets
+        dropbar-nvim
         firenvim
         bufdelete-nvim
+        noice-nvim
         hologram
         nui-nvim
         wilder-nvim
