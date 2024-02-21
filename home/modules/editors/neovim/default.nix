@@ -90,7 +90,7 @@ in {
         dropbar-nvim
         firenvim
         bufdelete-nvim
-        noice-nvim
+        # noice-nvim
         hologram
         nui-nvim
         wilder-nvim

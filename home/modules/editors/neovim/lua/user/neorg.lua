@@ -4,11 +4,8 @@ require("neorg").setup({
 		["core.dirman"] = {
 			config = {
 				workspaces = {
-					work = "~/notes/work",
-					refile = "~/notes/refile",
-					semester_2 = "~/notes/semester-2",
-					life = "~/notes/life",
 					projects = "~/notes/projects",
+					school = "~/notes/school",
 				},
 			},
 		},
