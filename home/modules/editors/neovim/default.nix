@@ -95,14 +95,15 @@ in {
         nui-nvim
         wilder-nvim
         telescope-nvim
-        (leap-nvim.overrideAttrs (self: super: {
-          src = pkgs.fetchFromGitHub {
-            owner = "ggandor";
-            repo = "leap.nvim";
-            rev = "52f7ce4fcc1764caac77cf4d43c2c4f5fb42d517";
-            sha256 = "sha256-I0T+qRgQtiofWjBv55tvf1CmB7QdqvA2YNUcXO+R77Y=";
-          };
-        }))
+        # (leap-nvim.overrideAttrs (self: super: {
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "ggandor";
+        #     repo = "leap.nvim";
+        #     rev = "52f7ce4fcc1764caac77cf4d43c2c4f5fb42d517";
+        #     sha256 = "sha256-I0T+qRgQtiofWjBv55tvf1CmB7QdqvA2YNUcXO+R77Y=";
+        #   };
+        # }))
+        flash-nvim
         vim-repeat
         telescope-media-files-nvim
         neorg
