@@ -1,6 +1,7 @@
 require("user.options")
 require("user.keymaps")
-require("user.leap")
+-- require("user.leap")
+require("user.flash")
 require("user.catppuccin")
 require("user.colorscheme")
 require("user.neorg")

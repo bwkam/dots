@@ -15,7 +15,7 @@ in {
       ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
       # nvim = "$HOME/script-nvim.sh";
       haxe_language_server = "node $HOME/haxe-language-server/bin/server.js";
-
+      v = "nvim";
     };
 
     programs.fish.shellInit = ''

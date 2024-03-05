@@ -12,5 +12,6 @@ require("neorg").setup({
 		["core.concealer"] = {},
 		["core.integrations.image"] = {},
 		["core.latex.renderer"] = {},
+		["core.export"] = {},
 	},
 })

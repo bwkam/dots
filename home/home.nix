@@ -79,7 +79,9 @@
     osu-lazer-bin
 
     # cli
+    pandoc
     sad
+    pdflatex
     lazygit
     jless
     (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".jj)
@@ -87,6 +89,7 @@
     btop
     gotop
     ranger
+    cloc
     chafa
     links2
     gh
@@ -151,6 +154,7 @@
     # flutter
     # gui
     networkmanagerapplet
+    # xonotic
     poppler
     minetest
     renderdoc
@@ -182,6 +186,7 @@
     obsidian
     zoom-us
     lmms
+    ardour
     audacity
     gnome.simple-scan
     gnome.cheese
@@ -261,7 +266,7 @@
   programs = {
     direnv = {
       enable = true;
-      #enableFishIntegration = true; # see note on other shells below
+      # enableFishIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
     };
 
