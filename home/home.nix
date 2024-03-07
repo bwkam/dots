@@ -93,7 +93,6 @@
     chafa
     links2
     gh
-    traceroute
     tmux
     tcpdump
     nixpkgs-review
