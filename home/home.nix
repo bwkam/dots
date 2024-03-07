@@ -79,6 +79,7 @@
     osu-lazer-bin
 
     # cli
+    inetutils
     pandoc
     sad
     lazygit
