@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.keymap.set
+local keymap = keymap
 
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
@@ -70,17 +70,21 @@ keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", opts)
 keymap("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
 
 -- hover
-vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
-vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-vim.keymap.set("n", "<C-p>", function()
+keymap("n", "K", require("hover").hover, { desc = "hover.nvim" })
+keymap("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+keymap("n", "<C-p>", function()
 	require("hover").hover_switch("previous")
 end, { desc = "hover.nvim (previous source)" })
-vim.keymap.set("n", "<C-n>", function()
+keymap("n", "<C-n>", function()
 	require("hover").hover_switch("next")
 end, { desc = "hover.nvim (next source)" })
 
 -- Mouse support
-vim.keymap.set("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
+keymap("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
 vim.o.mousemoveevent = true
+
+-- nvim-ufo
+keymap("n", "zR", require("ufo").openAllFolds)
+keymap("n", "zM", require("ufo").closeAllFolds)
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format {async = true}' ]])
