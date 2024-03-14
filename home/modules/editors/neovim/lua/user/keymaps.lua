@@ -65,12 +65,22 @@ keymap("x", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>f", ":Format<CR>", opts)
 
- -- Misc --
+-- Misc --
 keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", opts)
 keymap("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
 
--- LSP
--- keymap("n", "<leader>ll", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+-- hover
+vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+vim.keymap.set("n", "<C-p>", function()
+	require("hover").hover_switch("previous")
+end, { desc = "hover.nvim (previous source)" })
+vim.keymap.set("n", "<C-n>", function()
+	require("hover").hover_switch("next")
+end, { desc = "hover.nvim (next source)" })
+
+-- Mouse support
+vim.keymap.set("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
+vim.o.mousemoveevent = true
 
 vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format {async = true}' ]])
-

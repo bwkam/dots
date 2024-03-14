@@ -147,11 +147,6 @@ local mappings = {
 			"<cmd>lua vim.lsp.buf.signature_help()<cr>",
 			"Signature Help",
 		},
-
-		K = {
-			"<cmd>lua vim.lsp.buf.hover()<cr>",
-			"Hover",
-		},
 	},
 	f = {
 		name = "Find",
