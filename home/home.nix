@@ -68,6 +68,7 @@
   home.packages = with pkgs; [
     # format
     nixfmt
+    nodePackages.prettier
     alejandra
     rustfmt
 
@@ -81,6 +82,7 @@
     # cli
     inetutils
     pandoc
+    hollywood
     sad
     lazygit
     jless
@@ -94,6 +96,7 @@
     links2
     gh
     tmux
+    zellij
     tcpdump
     nixpkgs-review
     yewtube

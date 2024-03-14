@@ -80,6 +80,7 @@ in {
         cmp_luasnip
         cmp-nvim-lsp
         cellular-automaton
+        vim-prettier
         dropbar-nvim
         cmp-buffer
         cmp-path
