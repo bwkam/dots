@@ -85,6 +85,7 @@ in {
         cmp-buffer
         cmp-path
         copilot-lua
+        hover-nvim
         copilot-cmp
         nvim-lspconfig
         pets
