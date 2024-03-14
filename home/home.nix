@@ -88,6 +88,7 @@
     jless
     (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".jj)
     pfetch
+    pywal
     btop
     gotop
     ranger
