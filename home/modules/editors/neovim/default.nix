@@ -11,6 +11,7 @@ let
       "javascript"
       "latex"
       "markdown"
+      "asm"
     ]);
 
   vimPluginsLatest =
@@ -149,6 +150,7 @@ in {
       ghc
       stylua
       lua-language-server
+      asm-lsp
       curl
       ueberzugpp
       imagemagick
