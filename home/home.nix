@@ -68,7 +68,7 @@
   home.packages = with pkgs; [
     # format
     nixfmt
-    tailwindcss
+    tailwindcss-language-server
     nodePackages.prettier
     alejandra
     rustfmt
@@ -158,7 +158,7 @@
     # flutter
     # gui
     networkmanagerapplet
-    # xonotic
+    xonotic
     poppler
     minetest
     renderdoc
