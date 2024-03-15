@@ -68,6 +68,7 @@
   home.packages = with pkgs; [
     # format
     nixfmt
+    tailwindcss
     nodePackages.prettier
     alejandra
     rustfmt
