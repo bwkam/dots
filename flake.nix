@@ -28,6 +28,8 @@
           ./configuration.nix
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
+
+          (import ./overlays)
         ];
       };
     };

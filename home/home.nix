@@ -9,6 +9,7 @@
     ./modules/terminal/kitty.nix
     ./modules/terminal/alacritty
     ./modules/editors/code.nix
+    ./modules/misc/pywal
     ./modules/browsers/firefox
     ./modules/misc/picom.nix
     ./modules/misc/cava.nix
@@ -44,6 +45,7 @@
 
     misc = {
       neofetch.enable = true;
+      pywal.enable = true;
       picom.enable = true;
       cava.enable = true;
       zathura.enable = true;
@@ -89,7 +91,6 @@
     jless
     (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".jj)
     pfetch
-    pywal
     btop
     gotop
     ranger
@@ -268,6 +269,7 @@
   dconf.enable = true;
 
   programs = {
+    pywal.enable = true;
     direnv = {
       enable = true;
       # enableFishIntegration = true; # see note on other shells below

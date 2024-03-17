@@ -15,13 +15,6 @@ in {
       extraConfig = ''
         # vim:ft=kitty
 
-        ## name:     Catppuccin Kitty Mocha
-        ## author:   Catppuccin Org
-        ## license:  MIT
-        ## upstream: https://github.com/catppuccin/kitty/blob/main/themes/mocha.conf
-        ## blurb:    Soothing pastel theme for the high-spirited!
-
-
                 placement_strategy top-left
                 allow_remote_control yes
 
