@@ -2,11 +2,26 @@
 with lib;
 let
   cfg = config.modules.desktop.bspwm;
-  wallust = (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".wallust);
+  wallust = pkgs.wallust.overrideAttrs (final: prev: {
+    version = "3.0.0-beta";
+    cargoDeps = prev.cargoDeps.overrideAttrs (final: prev: {
+      src = pkgs.fetchFromGitea {
+        domain = "codeberg.org";
+        owner = "explosion-mental";
+        repo = "wallust";
+        rev = "104d99fcb4ada743d45de76caa48cd899b021601";
+        hash = "";
+      };
+
+      # cargoBuildFlags = [ "-j1" ];
+      # cargoHash = "";
+    });
+  });
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
     wall=$(find ~/dots/home/wallpapers -type f | shuf -n 1)
     ${pkgs.feh}/bin/feh --bg-scale $wall
-    sleep 0.01 && ${wallust}/bin/wallust run $wall --threshold 20 --backend resized
+    sleep 0.01 && ${wallust}/bin/wallust run $wall --backend resized
+    polybar-msg cmd restart
   '';
 in {
   options.modules.desktop.bspwm.enable = lib.mkEnableOption "bspwm";
@@ -66,8 +81,7 @@ in {
           bspc config focus_follows_pointer true
 
           systemctl --user restart polybar.service
-          feh --bg-scale /etc/nixos/home-manager/wallpapers/dark-cat-rosewater.png &
-
+          ${shuffleWal}/bin/shuffleWal &
         '';
       };
     };

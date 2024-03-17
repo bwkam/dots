@@ -68,6 +68,9 @@ in {
       template = "templates/tty.sh"
       target = "~/.cache/wal/tty.sh"
 
+      [[entry]]
+      template = "templates/colors.ini"
+      target = "~/.cache/wal/colors.ini"
     '';
 
     programs.fish.shellInit = ''
@@ -78,6 +81,10 @@ in {
 
     programs.kitty.extraConfig = ''
       include ~/.cache/wal/kitty.conf
+    '';
+
+    services.polybar.extraConfig = ''
+      include-file = ~/.cache/wal/colors.ini
     '';
 
   };
