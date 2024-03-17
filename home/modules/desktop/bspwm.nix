@@ -1,5 +1,4 @@
 { config, pkgs, lib, inputs, ... }:
-with lib;
 let
   cfg = config.modules.desktop.bspwm;
   wallust = pkgs.wallust.overrideAttrs (final: prev: {
@@ -13,8 +12,7 @@ let
         hash = "";
       };
 
-      # cargoBuildFlags = [ "-j1" ];
-      # cargoHash = "";
+      cargoHash = "";
     });
   });
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
