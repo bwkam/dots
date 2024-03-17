@@ -19,7 +19,7 @@ in {
     };
 
     programs.fish.shellInit = ''
-      set  	fish_color_normal cdd6f4
+      set fish_color_normal cdd6f4
       set fish_color_command 89b4fa
       set fish_color_param f2cdcd
       set fish_color_keyword f38ba8

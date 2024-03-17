@@ -10,6 +10,7 @@
     ./modules/terminal/alacritty
     ./modules/editors/code.nix
     ./modules/misc/pywal
+    ./modules/misc/wallust
     ./modules/browsers/firefox
     ./modules/misc/picom.nix
     ./modules/misc/cava.nix
@@ -45,7 +46,8 @@
 
     misc = {
       neofetch.enable = true;
-      pywal.enable = true;
+      pywal.enable = false;
+      wallust.enable = true;
       picom.enable = true;
       cava.enable = true;
       zathura.enable = true;
@@ -151,7 +153,7 @@
     cargo
     rust-analyzer
     nodejs_20
-    #    jdk11
+    #    jdk111
     python311Packages.pip
     zip
     clang-tools
@@ -259,7 +261,7 @@
       inputs.neovim-nightly-overlay.overlay
       inputs.nurpkgs.overlay
       inputs.neorg-overlay.overlays.default
-    ];
+    ] ++ (import ../overlays { inherit pkgs; });
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
@@ -269,7 +271,6 @@
   dconf.enable = true;
 
   programs = {
-    pywal.enable = true;
     direnv = {
       enable = true;
       # enableFishIntegration = true; # see note on other shells below

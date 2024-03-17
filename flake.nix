@@ -29,7 +29,6 @@
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 
-          (import ./overlays)
         ];
       };
     };

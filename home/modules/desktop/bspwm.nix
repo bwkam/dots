@@ -1,11 +1,13 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-with lib; let
+{ config, pkgs, lib, inputs, ... }:
+with lib;
+let
   cfg = config.modules.desktop.bspwm;
+  wallust = (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".wallust);
+  shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
+    wall=$(find ~/dots/home/wallpapers -type f | shuf -n 1)
+    ${pkgs.feh}/bin/feh --bg-scale $wall
+    sleep 0.01 && ${wallust}/bin/wallust run $wall --threshold 20 --backend resized
+  '';
 in {
   options.modules.desktop.bspwm.enable = lib.mkEnableOption "bspwm";
 
@@ -24,11 +26,13 @@ in {
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
         "super + g" = "bspc node -s biggest.window";
         "super + l" = "betterlockscreen -l dim";
-        "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
-        "super + {_,shift + }{h,j,k,l}" = "bspc node -{f,s} {west,south,north,east}";
+        "super + {t,shift + t,s,f}" =
+          "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
+        "super + {_,shift + }{h,j,k,l}" =
+          "bspc node -{f,s} {west,south,north,east}";
         "super + {_,shift + }{1-5,0}" = "bspc {desktop -f,node -d} '^{1-5}'";
         "super + {Left,Down,Up,Right}" = "bspc node -v {-20 0,0 20,0 -20,20 0}";
-        "super + z" = "feh --bg-scale --randomize /etc/nixos/home-manager/wallpapers";
+        "super + z" = "${shuffleWal}/bin/shuffleWal";
         "Print" = "flameshot gui";
         "XF86AudioNext" = "playerctl next";
         "XF86AudioPause" = "playerctl play-pause";
