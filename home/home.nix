@@ -261,7 +261,9 @@
       inputs.neovim-nightly-overlay.overlay
       inputs.nurpkgs.overlay
       inputs.neorg-overlay.overlays.default
-    ] ++ (import ../overlays { inherit pkgs; });
+      (import ../overlays { inherit pkgs; })
+    ];
+    # ] ++ (import ../overlays { inherit pkgs; });
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";

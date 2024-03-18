@@ -17,7 +17,8 @@ let
     wall=$(find ~/dots/home/wallpapers -type f | shuf -n 1)
     ${wallust}/bin/wallust $wall --backend full
     ${pkgs.feh}/bin/feh --bg-scale $wall
-    polybar-msg cmd restart
+    pkill -USR1 polybar
+    # polybar-msg cmd restart
   '';
 in {
   options.modules.desktop.bspwm.enable = lib.mkEnableOption "bspwm";

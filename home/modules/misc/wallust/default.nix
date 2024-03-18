@@ -6,8 +6,7 @@ in {
   options.modules.misc.wallust.enable = lib.mkEnableOption "enable wallust";
 
   config = lib.mkIf cfg.enable {
-    home.packages =
-      [ (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".wallust) ];
+    home.packages = [ pkgs.wallust ];
 
     home.file.".config/wallust/templates" = {
       source = ./templates;
