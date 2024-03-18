@@ -9,14 +9,14 @@ let
         owner = "explosion-mental";
         repo = "wallust";
         rev = "104d99fcb4ada743d45de76caa48cd899b021601";
-        hash = "";
+        hash = "sha256-gGyxRdv2I/3TQWrTbUjlJGsaRv4SaNE+4Zo9LMWmxk8=";
       };
     });
   });
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
     wall=$(find ~/dots/home/wallpapers -type f | shuf -n 1)
+    ${wallust}/bin/wallust $wall --backend full
     ${pkgs.feh}/bin/feh --bg-scale $wall
-    sleep 0.01 && ${wallust}/bin/wallust run $wall --backend resized
     polybar-msg cmd restart
   '';
 in {
