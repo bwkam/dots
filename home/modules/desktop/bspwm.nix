@@ -11,8 +11,6 @@ let
         rev = "104d99fcb4ada743d45de76caa48cd899b021601";
         hash = "";
       };
-
-      cargoHash = "";
     });
   });
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
