@@ -3,10 +3,9 @@ let
   cfg = config.modules.desktop.bspwm;
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
     wall=$(find ~/dots/home/wallpapers -type f | shuf -n 1)
-    ${pkgs.wallust}/bin/wallust $wall --backend full
+    ${pkgs.wallust}/bin/wallust run $wall 
     ${pkgs.feh}/bin/feh --bg-scale $wall
     pkill -USR1 polybar
-    # polybar-msg cmd restart
   '';
 in {
   options.modules.desktop.bspwm.enable = lib.mkEnableOption "bspwm";

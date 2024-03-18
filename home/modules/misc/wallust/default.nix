@@ -14,62 +14,14 @@ in {
     };
 
     home.file.".config/wallust/wallust.toml".text = ''
-      backend = "fastresize"
-      color_space = "labfast"
-      threshold = 20
-      filter = "dark16"
+      backend = "full"
+      color_space = "labmixed"
+      pallete = "dark16"
 
-      [[entry]]
-      template = "templates/colors"
-      target = "~/.cache/wal/colors"
-
-      [[entry]]
-      template = "templates/colors.css"
-      target = "~/.cache/wal/colors.css"
-
-      [[entry]]
-      template = "templates/colors.json"
-      target = "~/.cache/wal/colors.json"
-
-      [[entry]]
-      template = "templates/colors.lua"
-      target = "~/.cache/wal/colors.lua"
-
-      [[entry]]
-      template = "templates/colors.ron"
-      target = "~/.cache/wal/colors.ron"
-
-      [[entry]]
-      template = "templates/colors.scss"
-      target = "~/.cache/wal/colors.scss"
-
-      [[entry]]
-      template = "templates/colors.fish"
-      target = "~/.cache/wal/colors.fish"
-
-      [[entry]]
-      template = "templates/colors.toml"
-      target = "~/.cache/wal/colors.toml"
-
-      [[entry]]
-      template = "templates/colors.yaml"
-      target = "~/.cache/wal/colors.yaml"
-
-      [[entry]]
-      template = "templates/gtk.css"
-      target = "~/.cache/wal/gtk.css"
-
-      [[entry]]
-      template = "templates/kitty.conf"
-      target = "~/.cache/wal/kitty.conf"
-
-      [[entry]]
-      template = "templates/tty.sh"
-      target = "~/.cache/wal/tty.sh"
-
-      [[entry]]
-      template = "templates/colors.ini"
-      target = "~/.cache/wal/colors.ini"
+      [templates]
+      dir.template = "templates/"
+      dir.target = "~/.cache/wal/"
+      dir.pywal = true
     '';
 
     programs.fish.shellInit = ''

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, inputs, ... }:
 
 (final: prev: {
   pywal = prev.python310Packages.buildPythonPackage {
@@ -16,16 +16,29 @@
     };
     doCheck = false;
   };
-  wallust = prev.wallust.overrideAttrs (final: prev: {
-    version = "3.0.0-beta";
-    cargoDeps = prev.cargoDeps.overrideAttrs (final: prev: {
-      src = pkgs.fetchFromGitea {
-        domain = "codeberg.org";
-        owner = "explosion-mental";
-        repo = "wallust";
-        rev = "104d99fcb4ada743d45de76caa48cd899b021601";
-        hash = "sha256-gGyxRdv2I/3TQWrTbUjlJGsaRv4SaNE+4Zo9LMWmxk8=";
+
+  wallust = with (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux");
+    let
+      rustPlatform = makeRustPlatform {
+        rustc = rustc;
+        cargo = cargo;
       };
-    });
-  });
+    in (prev.wallust.override { inherit rustPlatform; }).overrideAttrs
+    (final: prev:
+      let
+        src = pkgs.fetchFromGitea {
+          domain = "codeberg.org";
+          owner = "explosion-mental";
+          repo = "wallust";
+          rev = "3.0.0-beta";
+          hash = "sha256-gGyxRdv2I/3TQWrTbUjlJGsaRv4SaNE+4Zo9LMWmxk8=";
+        };
+      in {
+        version = "v3.0.0-beta";
+        inherit src;
+        cargoDeps = prev.cargoDeps.overrideAttrs (final: prev: {
+          inherit src;
+          outputHash = "sha256-99rCet2XV/L0e/wAoIMoJTvNfU456MdbEFpuKnX0ABI=";
+        });
+      });
 })
