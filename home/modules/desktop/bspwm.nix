@@ -1,21 +1,9 @@
 { config, pkgs, lib, inputs, ... }:
 let
   cfg = config.modules.desktop.bspwm;
-  wallust = pkgs.wallust.overrideAttrs (final: prev: {
-    version = "3.0.0-beta";
-    cargoDeps = prev.cargoDeps.overrideAttrs (final: prev: {
-      src = pkgs.fetchFromGitea {
-        domain = "codeberg.org";
-        owner = "explosion-mental";
-        repo = "wallust";
-        rev = "104d99fcb4ada743d45de76caa48cd899b021601";
-        hash = "sha256-gGyxRdv2I/3TQWrTbUjlJGsaRv4SaNE+4Zo9LMWmxk8=";
-      };
-    });
-  });
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
     wall=$(find ~/dots/home/wallpapers -type f | shuf -n 1)
-    ${wallust}/bin/wallust $wall --backend full
+    ${pkgs.wallust}/bin/wallust $wall --backend full
     ${pkgs.feh}/bin/feh --bg-scale $wall
     pkill -USR1 polybar
     # polybar-msg cmd restart
