@@ -1,6 +1,7 @@
 { pkgs, inputs, lib, ... }: {
   imports = [
     ./modules/desktop/bspwm.nix
+    ./modules/desktop/hyprland.nix
     ./modules/editors/neovim
     ./modules/editors/doom-emacs
     ./modules/shell/fish.nix
@@ -30,6 +31,7 @@
 
     desktop = {
       bspwm.enable = true;
+      hyprland.enable = true;
       gtk.enable = true;
       rofi.enable = true;
       polybar.enable = true;
@@ -86,6 +88,7 @@
 
     # cli
     inetutils
+    ffmpeg
     pandoc
     hollywood
     sad

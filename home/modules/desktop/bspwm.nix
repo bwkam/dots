@@ -48,7 +48,7 @@ in {
       windowManager.bspwm = {
         enable = true;
         extraConfig = ''
-                #! /bin/sh
+          #! /bin/sh
 
           bspc monitor -d 1 2 3 4 5
 

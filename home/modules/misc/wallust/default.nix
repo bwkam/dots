@@ -15,7 +15,7 @@ in {
 
     home.file.".config/wallust/wallust.toml".text = ''
       backend = "full"
-      color_space = "labmixed"
+      color_space = "lab"
       pallete = "dark16"
 
       [templates]
