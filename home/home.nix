@@ -88,6 +88,7 @@
 
     # cli
     inetutils
+    wpgtk
     ffmpeg
     pandoc
     hollywood
@@ -163,6 +164,8 @@
     nil
     # flutter
     # gui
+    newsflash
+    tor-browser
     networkmanagerapplet
     xonotic
     poppler
