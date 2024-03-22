@@ -80,7 +80,7 @@ in {
         (pywal-nvim.overrideAttrs (self: super: {
           pname = "pywal16.nvim";
           version = "latest";
-          src = pkgsfetchFromGitHub {
+          src = pkgs.fetchFromGitHub {
             owner = "uZer";
             repo = "pywal16.nvim";
             rev = "4ba75b1c2daa1812146a844e78e6dd7ca04e7fef";

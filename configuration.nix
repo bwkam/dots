@@ -126,7 +126,7 @@
   };
 
   # CPU scaling
-  programs.auto-cpufreq.enable = true;
+  # programs.auto-cpufreq.enable = true;
   # programs.auto-cpufreq.settings = {
   #   charger = {
   #     governor = "performance";

@@ -8,10 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # auto-cpufreq = {
+    #   url = "github:AdnanHodzic/auto-cpufreq";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
@@ -44,7 +44,7 @@
       modules = [
         ./home/home.nix
         inputs.nix-index-database.hmModules.nix-index
-        inputs.auto-cpufreq.nixosModules.default
+        # inputs.auto-cpufreq.nixosModules.default
         { programs.nix-index-database.comma.enable = true; }
       ];
       extraSpecialArgs = { inherit inputs; };
