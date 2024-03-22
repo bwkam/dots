@@ -76,6 +76,17 @@ in {
             substituteInPlace ./lua/catppuccin/groups/integrations/treesitter.lua --replace '["@markup.underline"] = { link = "Underline" }' '["@markup.underline"] = { link = "Underlined" }'
           '';
         }))
+        # use some other guy's fork
+        (pywal-nvim.overrideAttrs (self: super: {
+          pname = "pywal16.nvim";
+          version = "latest";
+          src = pkgsfetchFromGitHub {
+            owner = "uZer";
+            repo = "pywal16.nvim";
+            rev = "4ba75b1c2daa1812146a844e78e6dd7ca04e7fef";
+            hash = "sha256-LfTFQP50gKuxKg2ThkGh94wkMKqTfkaKoKVNLrxhRM0=";
+          };
+        }))
         nvim-cmp
         luasnip
         cmp_luasnip
@@ -99,14 +110,6 @@ in {
         nui-nvim
         wilder-nvim
         telescope-nvim
-        # (leap-nvim.overrideAttrs (self: super: {
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "ggandor";
-        #     repo = "leap.nvim";
-        #     rev = "52f7ce4fcc1764caac77cf4d43c2c4f5fb42d517";
-        #     sha256 = "sha256-I0T+qRgQtiofWjBv55tvf1CmB7QdqvA2YNUcXO+R77Y=";
-        #   };
-        # }))
         flash-nvim
         vim-repeat
         telescope-media-files-nvim
