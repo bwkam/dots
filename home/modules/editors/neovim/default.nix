@@ -102,6 +102,7 @@ in {
         copilot-cmp
         nvim-lspconfig
         pets
+        nvim-colorizer-lua
         dropbar-nvim
         firenvim
         bufdelete-nvim

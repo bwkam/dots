@@ -26,8 +26,11 @@ require("user.toggleterm")
 require("user.trouble")
 require("user.which-key")
 require("user.nvim-ufo")
--- require("user.lualine")
-require("user.feline")
+require("user.lualine")
+-- require("user.feline")
 require("user.presence")
 require("user.fidget")
 -- require("user.copilot")
+
+-- ALWAYS KEEP THIS AT THE BOTTOM
+require("colorizer").setup()
