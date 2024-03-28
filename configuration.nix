@@ -97,6 +97,8 @@
 
   # auto-cpufreq 
   programs.auto-cpufreq.enable = true;
+  # thermald
+  services.thermald.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bwkam = {
