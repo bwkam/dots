@@ -1,4 +1,6 @@
-{ pkgs, inputs, lib, ... }: {
+{ pkgs, inputs, lib, ... }:
+
+{
   imports = [
     ./modules/desktop/bspwm.nix
     ./modules/desktop/hyprland.nix
