@@ -31,6 +31,7 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
+          inputs.auto-cpufreq.nixosModules.default
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 

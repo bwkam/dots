@@ -95,6 +95,9 @@
   programs.fish.enable = true;
   programs.dconf.enable = true;
 
+  # auto-cpufreq 
+  programs.auto-cpufreq.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bwkam = {
     isNormalUser = true;
