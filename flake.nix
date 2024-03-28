@@ -8,10 +8,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # auto-cpufreq = {
-    #   url = "github:AdnanHodzic/auto-cpufreq";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
+    auto-cpufreq = {
+      url = "github:AdnanHodzic/auto-cpufreq";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
