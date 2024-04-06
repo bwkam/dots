@@ -125,6 +125,9 @@ cmp.setup({
 		documentation = {
 			border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
 		},
+		completion = {
+			highlight = "CmpNormal",
+		},
 	},
 	experimental = {
 		ghost_text = false,

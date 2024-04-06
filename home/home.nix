@@ -2,26 +2,13 @@
 
 {
   imports = [
-    ./modules/desktop/bspwm.nix
-    ./modules/desktop/hyprland.nix
-    ./modules/editors/neovim
-    ./modules/editors/doom-emacs
-    ./modules/shell/fish.nix
-    ./modules/dev/lazygit
-    ./modules/misc/neofetch
-    ./modules/terminal/kitty.nix
-    ./modules/terminal/alacritty
-    ./modules/editors/code.nix
-    ./modules/misc/pywal
-    ./modules/misc/wallust
-    ./modules/browsers/firefox
-    ./modules/misc/picom.nix
-    ./modules/misc/cava.nix
-    ./modules/desktop/gtk.nix
-    ./modules/desktop/polybar
-    ./modules/desktop/rofi
-    ./modules/misc/xdg.nix
-    ./modules/misc/zathura
+    ./modules/desktop
+    ./modules/editors
+    ./modules/shell
+    ./modules/dev
+    ./modules/misc
+    ./modules/terminal
+    ./modules/browsers
   ];
 
   modules = {
