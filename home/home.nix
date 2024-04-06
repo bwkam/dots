@@ -14,7 +14,7 @@
   modules = {
     editors = {
       nvim.enable = true;
-      doom-emacs.enable = false;
+      # doom-emacs.enable = false;
       code.enable = true;
     };
 
