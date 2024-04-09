@@ -103,7 +103,6 @@ in {
         nvim-lspconfig
         pets
         nvim-colorizer-lua
-        dropbar-nvim
         firenvim
         bufdelete-nvim
         # noice-nvim
