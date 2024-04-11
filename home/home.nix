@@ -72,19 +72,13 @@
     gcc
     gdb
 
-    # osu 
-    osu-lazer-bin
-
     # cli
     inetutils
-    wpgtk
     ffmpeg
     pandoc
-    hollywood
     sad
     lazygit
     jless
-    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".jj)
     pfetch
     btop
     gotop
@@ -93,14 +87,11 @@
     chafa
     links2
     gh
-    tmux
     zellij
     tcpdump
     nixpkgs-review
-    yewtube
     nil
     nmap
-    # helix
     pipewire
     cmatrix
     pipes
@@ -120,7 +111,6 @@
     steam-run
     yt-dlp
     glxinfo
-    codeblocks
     pciutils
     cachix
     cmus
@@ -133,8 +123,6 @@
     winetricks
     appimage-run
     unzip
-    gradle
-    cargo-watch
     gping
     openssl
     usbutils
@@ -146,23 +134,18 @@
     cargo
     rust-analyzer
     nodejs_20
-    #    jdk111
     python311Packages.pip
     zip
     clang-tools
     nil
-    # flutter
-    # gui
     newsflash
     tor-browser
     networkmanagerapplet
     xonotic
-    poppler
     minetest
     renderdoc
     gtk3
     gtk4
-    foliate
     gparted
     google-chrome
     rhythmbox
@@ -175,10 +158,6 @@
     dmenu
     pavucontrol
     flameshot
-    (discord.override {
-      withOpenASAR = true;
-      withVencord = true;
-    })
     gimp
     kdenlive
     feh
@@ -188,16 +167,10 @@
     obsidian
     zoom-us
     lmms
-    ardour
     audacity
     gnome.simple-scan
     gnome.cheese
     rofimoji
-    teams-for-linux
-
-    #calibre
-
-    # fonts
     material-icons
     material-design-icons
     roboto
