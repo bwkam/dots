@@ -104,9 +104,8 @@ in {
         nvim-colorizer-lua
         firenvim
         bufdelete-nvim
-        # noice-nvim
-        hologram
-        nui-nvim
+        # hologram
+        # nui-nvim
         wilder-nvim
         telescope-nvim
         flash-nvim
