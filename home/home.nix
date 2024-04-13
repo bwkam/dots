@@ -43,6 +43,7 @@
       cava.enable = true;
       zathura.enable = true;
       xdg.enable = true;
+      starship.enable = true;
     };
 
     shell = { fish.enable = true; };
