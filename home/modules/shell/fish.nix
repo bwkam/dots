@@ -9,7 +9,7 @@ in {
 
     programs.fish = {
 
-      promptInit = "";
+      interactiveShellInit = "";
 
       shellAliases = with pkgs; {
         ".." = "cd ..";
