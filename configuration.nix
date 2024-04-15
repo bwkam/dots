@@ -92,7 +92,6 @@
     '';
   };
 
-  programs.fish.enable = true;
   programs.dconf.enable = true;
 
   # auto-cpufreq 
@@ -102,7 +101,7 @@
   users.users.bwkam = {
     isNormalUser = true;
     extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
   };
 
   nixpkgs.config.allowUnfree = true;

@@ -32,26 +32,23 @@
         modules = [
           ./configuration.nix
           inputs.auto-cpufreq.nixosModules.default
+
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
-	  home-manager.nixosModules.home-manager 
-	  {
-		home-manager.useGlobalPkgs = false;
-		home-manager.useUserPackages = true;
-		home-manager.users.bwkam = import ./home/home.nix;
-		home-manager.extraSpecialArgs = {inherit inputs;};
+          home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = false;
+            home-manager.useUserPackages = true;
+            home-manager.users.bwkam = import ./home/home.nix;
+            home-manager.extraSpecialArgs = { inherit inputs; };
 
-	#	 inputs.nix-index-database.hmModules.nix-index
-	#	 inputs.auto-cpufreq.nixosModules.default
-	#	{ programs.nix-index-database.comma.enable = true; }
-
-	  }
-	];
-	};
+          }
+        ];
       };
+    };
 
     devShells.x86_64-linux = {
       default = with nixpkgs.legacyPackages.x86_64-linux;
-        mkShell { buildInputs = [ git lua-language-server lua npm2nix ]; };
+        mkShell { buildInputs = [ git lua-language-server lua ]; };
     };
   };
 }

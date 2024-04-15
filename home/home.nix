@@ -45,7 +45,7 @@
       starship.enable = true;
     };
 
-    shell = { fish.enable = true; };
+    shell = { nushell.enable = true; };
   };
 
   home.username = "bwkam";
@@ -78,6 +78,7 @@
     pandoc
     go
     sad
+    fish
     lazygit
     jless
     pfetch
@@ -244,11 +245,8 @@
   programs = {
     direnv = {
       enable = true;
-      # enableFishIntegration = true; # see note on other shells below
       nix-direnv.enable = true;
     };
-
-    fish.enable = true;
   };
 
   programs.git = {

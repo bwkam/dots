@@ -1,16 +1,12 @@
 { config, lib, pkgs, ... }:
-let cfg = config.modules.shell.fish;
+let cfg = config.modules.shell.nushell;
 in {
-  options.modules.shell.fish.enable = lib.mkEnableOption "fish shell";
+  options.modules.shell.nushell.enable = lib.mkEnableOption "fish shell";
 
   config = lib.mkIf cfg.enable {
-    programs.fish = {
+    programs.nushell = {
 
       enable = true;
-
-      interactiveShellInit = ''
-        set fish_greeting # Disable greeting
-      '';
 
       shellAliases = with pkgs; {
         ".." = "cd ..";
