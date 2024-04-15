@@ -91,7 +91,7 @@ in {
         nvim-ufo
         copilot-cmp
         nvim-lspconfig
-        pets
+        # pets
         nvim-colorizer-lua
         firenvim
         bufdelete-nvim
