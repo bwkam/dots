@@ -26,30 +26,28 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      alpha-wolf = nixpkgs.lib.nixosSystem {
+      wolfburger = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
           ./configuration.nix
           inputs.auto-cpufreq.nixosModules.default
-
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
+	  home-manager.nixosModules.home-manager 
+	  {
+		home-manager.useGlobalPkgs = true;
+		home-manager.useUserPackages = true;
+		home-manager.users.bwkam = import ./home.nix;
+		home-manager.extraSpecialArgs = {inherit inputs;};
 
-        ];
+	#	 inputs.nix-index-database.hmModules.nix-index
+	#	 inputs.auto-cpufreq.nixosModules.default
+	#	{ programs.nix-index-database.comma.enable = true; }
+
+	  }
+	];
+	};
       };
-    };
-
-    homeConfigurations."bwkam" = home-manager.lib.homeManagerConfiguration {
-      pkgs = nixpkgs.legacyPackages.x86_64-linux;
-
-      modules = [
-        ./home/home.nix
-        inputs.nix-index-database.hmModules.nix-index
-        # inputs.auto-cpufreq.nixosModules.default
-        { programs.nix-index-database.comma.enable = true; }
-      ];
-      extraSpecialArgs = { inherit inputs; };
-    };
 
     devShells.x86_64-linux = {
       default = with nixpkgs.legacyPackages.x86_64-linux;

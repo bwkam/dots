@@ -76,6 +76,7 @@
     inetutils
     ffmpeg
     pandoc
+    go
     sad
     lazygit
     jless
