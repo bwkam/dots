@@ -26,7 +26,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      wolfburger = nixpkgs.lib.nixosSystem {
+      alphaWolf = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
@@ -35,9 +35,9 @@
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 	  home-manager.nixosModules.home-manager 
 	  {
-		home-manager.useGlobalPkgs = true;
+		home-manager.useGlobalPkgs = false;
 		home-manager.useUserPackages = true;
-		home-manager.users.bwkam = import ./home.nix;
+		home-manager.users.bwkam = import ./home/home.nix;
 		home-manager.extraSpecialArgs = {inherit inputs;};
 
 	#	 inputs.nix-index-database.hmModules.nix-index
