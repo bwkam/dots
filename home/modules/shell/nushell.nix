@@ -9,16 +9,21 @@ in {
       enable = true;
 
       extraConfig = ''
+        use ~/.cache/wal/colors.nu
+
         $env.config = {
           show_banner: false,
-           algorithm: "fuzzy"
+          color_config: $base16_theme 
+          completions: {
+            algorithm: "fuzzy"
+          }
         }
       '';
 
       shellAliases = with pkgs; {
         ".." = "cd ..";
         cat = "${bat}/bin/bat";
-        ls = "${eza}/bin/eza --group-directories-first --git --icons";
+        # ls = "${eza}/bin/eza --group-directories-first --git --icons";
         ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
         v = "nvim";
       };

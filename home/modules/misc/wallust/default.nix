@@ -24,12 +24,6 @@ in {
       dir.pywal = true
     '';
 
-    programs.fish.shellInit = ''
-      if test -e ~/.cache/wal/colors.fish
-          source ~/.cache/wal/colors.fish
-      end
-    '';
-
     programs.kitty.extraConfig = ''
       include ~/.cache/wal/kitty.conf
     '';

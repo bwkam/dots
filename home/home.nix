@@ -42,7 +42,7 @@
       cava.enable = true;
       zathura.enable = true;
       xdg.enable = true;
-      starship.enable = true;
+      # starship.enable = true;
     };
 
     shell = { nushell.enable = true; };
@@ -78,7 +78,6 @@
     pandoc
     go
     sad
-    fish
     lazygit
     jless
     pfetch
