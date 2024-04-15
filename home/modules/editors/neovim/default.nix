@@ -39,13 +39,23 @@ let
     };
   };
 
-  vim-256noir = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-257noir";
+  pets = pkgs.vimUtils.buildVimPlugin {
+    name = "pets.nvim";
     src = pkgs.fetchFromGitHub {
-      owner = "srijan-paul";
-      repo = "vim-257noir";
-      rev = "837cc910eba8c0a7abfc712d57f334399c7ce71b";
-      hash = "sha256-mu6ajqtNOFemv+6YCZIaTZiHJDQoHScefzRVmskaSuc=";
+      owner = "giusgad";
+      repo = "pets.nvim";
+      rev = "747eb5e54fe8b10f4c7ce2881637d1c17b04f229";
+      sha256 = "sha256-77+mDpI51L8jjyOGURzruDdXwkc855tc/Mv+CfnX2io=";
+    };
+  };
+
+  hologram = pkgs.vimUtils.buildVimPlugin {
+    name = "hologram.nvim";
+    src = pkgs.fetchFromGitHub {
+      owner = "giusgad";
+      repo = "hologram.nvim";
+      rev = "c91aa77121162d8ff554b18a487a3f60677447f2";
+      sha256 = "sha256-rNffTS63oSTuBEjN86SijQTrbloQZySfFYy7N0Oyw/8=";
     };
   };
 
@@ -79,7 +89,6 @@ in {
         }))
         nvim-cmp
         luasnip
-        vim-256noir
         cmp_luasnip
         cmp-nvim-lsp
         cellular-automaton
