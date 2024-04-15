@@ -1,4 +1,4 @@
-{ pkgs, lib, config, inputs, ... }:
+{ pkgs, lib, config, ... }:
 
 let cfg = config.modules.misc.wallust;
 
@@ -16,7 +16,7 @@ in {
     home.file.".config/wallust/wallust.toml".text = ''
       backend = "full"
       color_space = "lab"
-      pallete = "harddark16"
+      palette = "harddark16"
 
       [templates]
       dir.template = "templates/"
