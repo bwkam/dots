@@ -9,9 +9,7 @@ in {
 
     programs.fish = {
 
-      interactiveShellInit = ''
-        set fish_greeting # Disable greeting
-      '';
+      interactiveShellInit = "";
 
       shellAliases = with pkgs; {
         ".." = "cd ..";
