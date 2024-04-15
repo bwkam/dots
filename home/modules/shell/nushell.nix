@@ -9,7 +9,7 @@ in {
       enable = true;
 
       extraConfig = ''
-        use ~/.cache/wal/colors.nu
+        source ~/.cache/wal/colors.nu
 
         $env.config = {
           show_banner: false,
