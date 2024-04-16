@@ -9,8 +9,6 @@ in {
       enable = true;
 
       extraConfig = ''
-        source ~/.cache/wal/colors.nu
-
         $env.config = {
           show_banner: false,
           color_config: $base16_theme 
@@ -23,7 +21,6 @@ in {
       shellAliases = with pkgs; {
         ".." = "cd ..";
         cat = "${bat}/bin/bat";
-        # ls = "${eza}/bin/eza --group-directories-first --git --icons";
         ytmp3 = "yt-dlp --extract-audio --audio-format mp3";
         v = "nvim";
       };

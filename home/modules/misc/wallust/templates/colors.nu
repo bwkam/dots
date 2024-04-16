@@ -36,19 +36,44 @@ separator: $base03
              hints: dark_gray
              shape_garbage: { fg: "#FFFFFF" bg: "#FF0000" attr: b}
 shape_bool: $base0d
-              shape_int: { fg: $base0e attr: b}
-shape_float: { fg: $base0e attr: b}
-shape_range: { fg: $base0a attr: b}
-shape_internalcall: { fg: $base0c attr: b}
+              shape_int: { fg: "{foreground}" attr: b}
+shape_float: { fg: "{foreground}" attr: b}
+shape_range: { fg: "{foreground}" attr: b}
+shape_internalcall: { fg: "{foreground}" attr: b}
 shape_external: $base0c
-                  shape_externalarg: { fg: $base0b attr: b}
+                  shape_externalarg: { fg: "{foreground}" attr: b}
 shape_literal: $base0d
                  shape_operator: $base0a
-                 shape_signature: { fg: $base0b attr: b}
+                 shape_signature: { fg: "{foreground}" attr: b}
 shape_string: $base0b
                 shape_filepath: $base0d
-                shape_globpattern: { fg: $base0d attr: b}
+                shape_globpattern: { fg: "{foreground}" attr: b}
 shape_variable: $base0e
-                  shape_flag: { fg: $base0d attr: b}
+                  shape_flag: { fg: "{foreground}" attr: b}
 shape_custom: {attr: b}
+
+}
+
+
+
+            
+$env.config = {
+  menus: [
+    {
+      name: completion_menu
+      only_buffer_difference: false # Search is done on the text written after activating the menu
+      marker: "| "                  # Indicator that appears with the menu is active
+      type: {
+          layout: columnar          # Type of menu
+          columns: 4                # Number of columns where the options are displayed
+          col_width: 20             # Optional value. If missing all the screen width is used to calculate column width
+          col_padding: 2            # Padding between columns
+      }
+      style: {
+          text: green                   # Text style
+          selected_text: green_reverse  # Text style for selected option
+          description_text: yellow      # Text style for description
+      }
     }
+  ]
+}

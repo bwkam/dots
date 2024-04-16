@@ -101,7 +101,7 @@
   users.users.bwkam = {
     isNormalUser = true;
     extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
-    shell = pkgs.nushell;
+    shell = pkgs.fish;
   };
 
   nixpkgs.config.allowUnfree = true;

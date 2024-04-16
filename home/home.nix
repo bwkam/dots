@@ -45,7 +45,7 @@
       # starship.enable = true;
     };
 
-    shell = { nushell.enable = true; };
+    shell = { fish.enable = true; };
   };
 
   home.username = "bwkam";

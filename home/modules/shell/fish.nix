@@ -5,7 +5,6 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.fish = {
-
       enable = true;
 
       interactiveShellInit = ''
