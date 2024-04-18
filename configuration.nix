@@ -93,6 +93,7 @@
   };
 
   programs.dconf.enable = true;
+  programs.fish.enable = true;
 
   # auto-cpufreq 
   programs.auto-cpufreq.enable = true;

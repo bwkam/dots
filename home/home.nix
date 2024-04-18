@@ -45,7 +45,7 @@
       # starship.enable = true;
     };
 
-    shell = { fish.enable = true; };
+    shell = { fish.enable = false; };
   };
 
   home.username = "bwkam";
@@ -91,6 +91,11 @@
     zellij
     tcpdump
     nixpkgs-review
+    (weechat.override {
+      configure = { ... }: {
+        scripts = with pkgs.weechatScripts; [ weechat-matrix ];
+      };
+    })
     nil
     nmap
     pipewire
