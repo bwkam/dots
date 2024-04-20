@@ -1,7 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, lib, ... }: {
   imports = [ ./hardware-configuration.nix ./cachix.nix ];
 
   # Use the GRUB 2 boot loader.
@@ -105,7 +105,20 @@
     shell = pkgs.fish;
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (pkg: true);
+      firefox.speechSynthesisSupport = true;
+    };
+
+    overlays = [
+      inputs.neovim-nightly-overlay.overlay
+      inputs.nurpkgs.overlay
+      inputs.neorg-overlay.overlays.default
+      (import ../overlays { inherit pkgs lib inputs; })
+    ];
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

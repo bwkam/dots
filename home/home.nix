@@ -228,19 +228,19 @@
     gnome-keyring.enable = true;
   };
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      firefox.speechSynthesisSupport = true;
-    };
-
-    overlays = [
-      inputs.neovim-nightly-overlay.overlay
-      inputs.nurpkgs.overlay
-      inputs.neorg-overlay.overlays.default
-      (import ../overlays { inherit pkgs lib inputs; })
-    ];
-  };
+  # nixpkgs = {
+  #   config = {
+  #     allowUnfree = true;
+  #     firefox.speechSynthesisSupport = true;
+  #   };
+  #
+  #   overlays = [
+  #     inputs.neovim-nightly-overlay.overlay
+  #     inputs.nurpkgs.overlay
+  #     inputs.neorg-overlay.overlays.default
+  #     (import ../overlays { inherit pkgs lib inputs; })
+  #   ];
+  # };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
   #nix.package = pkgs.nix;

@@ -30,13 +30,13 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./home/configuration.nix
           inputs.auto-cpufreq.nixosModules.default
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
           home-manager.nixosModules.home-manager
           {
-
+            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.bwkam = import ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };
