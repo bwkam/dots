@@ -1,6 +1,12 @@
 { pkgs, inputs, lib, ... }:
 
-{
+let
+  nixpkgs-unstable-latest = import inputs.nixpkgs-unstable {
+    inherit (pkgs) system;
+    config.allowUnfree = true;
+  };
+
+in {
   imports = [
     ./modules/desktop
     ./modules/editors
@@ -81,6 +87,7 @@
     go
     sad
     lazygit
+    nurl
     jless
     pfetch
     btop
@@ -168,8 +175,8 @@
     flameshot
     gimp
     kdenlive
-    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".avogadro2)
-    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".marvin)
+    nixpkgs-unstable-latest.avogadro2
+    nixpkgs-unstable-latest.marvin
     feh
     obs-studio
     simplescreenrecorder
