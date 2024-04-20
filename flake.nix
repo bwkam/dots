@@ -36,7 +36,7 @@
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = false;
+
             home-manager.useUserPackages = true;
             home-manager.users.bwkam = import ./home/home.nix;
             home-manager.extraSpecialArgs = { inherit inputs; };

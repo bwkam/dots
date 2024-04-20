@@ -45,7 +45,7 @@
       # starship.enable = true;
     };
 
-    shell = { fish.enable = false; };
+    # shell = { fish.enable = false; };
   };
 
   home.username = "bwkam";
@@ -58,7 +58,9 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.05"; # Please read the comment before changing.
+  home.stateVersion = "23.05"; # Please read the comment before changingr
+
+  # programs.fish.enable = true;
 
   home.packages = with pkgs; [
     # format
@@ -166,6 +168,8 @@
     flameshot
     gimp
     kdenlive
+    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".avogadro2)
+    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".marvin)
     feh
     obs-studio
     simplescreenrecorder
@@ -227,7 +231,6 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = pkg: true;
       firefox.speechSynthesisSupport = true;
     };
 
@@ -237,7 +240,6 @@
       inputs.neorg-overlay.overlays.default
       (import ../overlays { inherit pkgs lib inputs; })
     ];
-    # ] ++ (import ../overlays { inherit pkgs; });
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
