@@ -1,4 +1,4 @@
-{ pkgs, lib, inputs, ... }:
+{ lib, inputs, ... }:
 
 (final: prev: {
   pywal = prev.python310Packages.buildPythonPackage {
@@ -26,7 +26,7 @@
     in (prev.wallust.override { inherit rustPlatform; }).overrideAttrs
     (final: prev:
       let
-        src = pkgs.fetchFromGitea {
+        src = fetchFromGitea {
           domain = "codeberg.org";
           owner = "explosion-mental";
           repo = "wallust";

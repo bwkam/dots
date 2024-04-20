@@ -116,7 +116,7 @@
       inputs.neovim-nightly-overlay.overlay
       inputs.nurpkgs.overlay
       inputs.neorg-overlay.overlays.default
-      (import ../overlays { inherit pkgs lib inputs; })
+      (import ../overlays { inherit lib inputs; })
     ];
   };
 
