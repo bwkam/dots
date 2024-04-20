@@ -49,6 +49,13 @@ let
     };
   };
 
+  coal = pkgs.fetchFromGitHub {
+    owner = "cranberry-clockworks";
+    repo = "coal.nvim";
+    rev = "2a1aaad91fbe795a913fc4b402c82b961cf5aa31";
+    hash = "sha256-Mcdf0sx0hBDdTimwWJiLU6lMcqPOmODuCCelhwwAgso=";
+  };
+
 in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
@@ -79,7 +86,7 @@ in {
         }))
         nvim-cmp
         luasnip
-        vim-256noir
+        coal
         cmp_luasnip
         cmp-nvim-lsp
         cellular-automaton
