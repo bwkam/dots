@@ -39,16 +39,6 @@ let
     };
   };
 
-  vim-256noir = pkgs.vimUtils.buildVimPlugin {
-    name = "vim-257noir";
-    src = pkgs.fetchFromGitHub {
-      owner = "srijan-paul";
-      repo = "vim-257noir";
-      rev = "837cc910eba8c0a7abfc712d57f334399c7ce71b";
-      hash = "sha256-mu6ajqtNOFemv+6YCZIaTZiHJDQoHScefzRVmskaSuc=";
-    };
-  };
-
   coal = pkgs.fetchFromGitHub {
     owner = "cranberry-clockworks";
     repo = "coal.nvim";
@@ -74,16 +64,16 @@ in {
           '';
         }))
         # use some other guy's fork
-        (pywal-nvim.overrideAttrs (self: super: {
-          pname = "pywal16.nvim";
-          version = "latest";
-          src = pkgs.fetchFromGitHub {
-            owner = "uZer";
-            repo = "pywal16.nvim";
-            rev = "4ba75b1c2daa1812146a844e78e6dd7ca04e7fef";
-            hash = "sha256-LfTFQP50gKuxKg2ThkGh94wkMKqTfkaKoKVNLrxhRM0=";
-          };
-        }))
+        # (pywal-nvim.overrideAttrs (self: super: {
+        #   pname = "pywal16.nvim";
+        #   version = "latest";
+        #   src = pkgs.fetchFromGitHub {
+        #     owner = "uZer";
+        #     repo = "pywal16.nvim";
+        #     rev = "4ba75b1c2daa1812146a844e78e6dd7ca04e7fef";
+        #     hash = "sha256-LfTFQP50gKuxKg2ThkGh94wkMKqTfkaKoKVNLrxhRM0=";
+        #   };
+        # }))
         nvim-cmp
         luasnip
         coal

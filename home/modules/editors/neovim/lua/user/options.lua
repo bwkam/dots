@@ -21,7 +21,7 @@ local options = {
   updatetime = 300,                       -- faster completion (4000ms default)
   writebackup = false,                    -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
   expandtab = true,                       -- convert tabs to spaces
-  foldcolumn = "0",       
+  foldcolumn = "0",
   foldlevel = 99,
   foldlevelstart = 99,
   foldenable = true,
@@ -60,21 +60,10 @@ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
   command = "set conceallevel=3",
 })
 
--- firenvim
-vim.g.firenvim_config =
-    {
-      globalSettings = { alt = "all" },
-      localSettings = {
-        [".*"] = {
-          cmdline = "firenvim",
-          content = "text",
-          priority = 0,
-          selector = 'textarea:not([readonly]):not([class="handsontableInput"]), div[role="textbox"]',
-          takeover = "never",
-        },
-      },
-    },
-    -- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
-    vim.opt.shortmess:append("c")               -- don't give |ins-completion-menu| messages
+-- which key
+vim.api.nvim_set_hl(0, "WhichKeyFloat", { ctermbg = "NONE", ctermfg = "NONE" })
+
+-- vim.opt.shortmess = "ilmnrx"                        -- flags to shorten vim messages, see :help 'shortmess'
+vim.opt.shortmess:append("c")                   -- don't give |ins-completion-menu| messages
 vim.opt.iskeyword:append("-")                   -- hyphenated words recognized by searches
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- don't insert the current comment leader automatically for auto-wrapping comments using 'textwidth', hitting <Enter> in insert mode, or hitting 'o' or 'O' in normal mode.

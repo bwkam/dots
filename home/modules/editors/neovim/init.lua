@@ -1,7 +1,7 @@
 require("user.options")
 require("user.keymaps")
 require("user.flash")
-require("pywal16")
+-- require("pywal16")
 require("user.colorscheme")
 require("user.neorg")
 -- require("user.wilder")
