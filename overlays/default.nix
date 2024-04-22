@@ -20,8 +20,8 @@
   wallust = with (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux");
     let
       rustPlatform = makeRustPlatform {
-        rustc = rustc;
-        cargo = cargo;
+        inherit rustc;
+        inherit cargo;
       };
     in (prev.wallust.override { inherit rustPlatform; }).overrideAttrs
     (final: prev:
