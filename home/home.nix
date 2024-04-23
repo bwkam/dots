@@ -102,7 +102,10 @@ in {
     nixpkgs-review
     (weechat.override {
       configure = { ... }: {
-        scripts = with pkgs.weechatScripts; [ weechat-matrix ];
+        scripts = with pkgs.weechatScripts; [
+          weechat-matrix
+          weechat-notify-send
+        ];
       };
     })
     nil
@@ -231,6 +234,7 @@ in {
   services = {
     playerctld.enable = true;
     betterlockscreen.enable = true;
+    # dunst.enable = true;
 
     gnome-keyring.enable = true;
   };
