@@ -100,7 +100,6 @@ in {
         vim-repeat
         telescope-media-files-nvim
         neorg
-        image-nvim
         vim-fugitive
         neorg-telescope
         (nvim-treesitter.withPlugins languages)
