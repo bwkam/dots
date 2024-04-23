@@ -10,7 +10,6 @@ require("neorg").setup({
       },
     },
     ["core.concealer"] = {},
-    ["core.latex.renderer"] = {},
     ["core.export"] = {},
   },
 })
