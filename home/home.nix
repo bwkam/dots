@@ -81,6 +81,7 @@ in {
     gdb
 
     # cli
+    nnn
     inetutils
     ffmpeg
     pandoc

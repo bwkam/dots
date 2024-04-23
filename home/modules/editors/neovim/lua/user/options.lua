@@ -49,7 +49,7 @@ for k, v in pairs(options) do
 end
 
 -- neovide specific options
--- vim.g.neovide_scale_factor = 0.7
+vim.g.neovide_scale_factor = 0.7
 
 -- vimtex
 vim.g.vimtex_view_method = "zathura"
