@@ -56,9 +56,9 @@ in {
     };
     programs.neovim = {
       enable = true;
-      extraLuaConfig = ''
-        vim.g.nix_plugins_dir = "${pkgs.vimUtils.packDirconfig.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
-      '';
+      # extraLuaConfig = ''
+      #   vim.g.nix_plugins_dir = "${pkgs.vimUtils.packDirconfig.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      # '';
       plugins = with vimPluginsLatest; [
         markdown-preview-nvim
         nvim-cmp
