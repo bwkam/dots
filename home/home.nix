@@ -110,6 +110,7 @@ in {
       };
     })
     nil
+    http-server
     nmap
     pipewire
     cmatrix
