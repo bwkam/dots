@@ -56,25 +56,13 @@ in {
     };
     programs.neovim = {
       enable = true;
+      extraLuaConfig = ''
+        vim.g.nix_plugins_dir = "${pkgs.vimUtils.packDirconfig.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      '';
       plugins = with vimPluginsLatest; [
         markdown-preview-nvim
-        (catppuccin-nvim.overrideAttrs (self: super: {
-          postPatch = ''
-            substituteInPlace ./lua/catppuccin/groups/integrations/treesitter.lua --replace '["@markup.underline"] = { link = "Underline" }' '["@markup.underline"] = { link = "Underlined" }'
-          '';
-        }))
-        # use some other guy's fork
-        # (pywal-nvim.overrideAttrs (self: super: {
-        #   pname = "pywal16.nvim";
-        #   version = "latest";
-        #   src = pkgs.fetchFromGitHub {
-        #     owner = "uZer";
-        #     repo = "pywal16.nvim";
-        #     rev = "4ba75b1c2daa1812146a844e78e6dd7ca04e7fef";
-        #     hash = "sha256-LfTFQP50gKuxKg2ThkGh94wkMKqTfkaKoKVNLrxhRM0=";
-        #   };
-        # }))
         nvim-cmp
+        # lazy-nvim
         luasnip
         coal
         cmp_luasnip
@@ -88,12 +76,9 @@ in {
         nvim-ufo
         copilot-cmp
         nvim-lspconfig
-        # pets
         nvim-colorizer-lua
         firenvim
         bufdelete-nvim
-        # hologram
-        # nui-nvim
         wilder-nvim
         telescope-nvim
         flash-nvim
