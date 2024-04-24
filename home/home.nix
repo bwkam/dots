@@ -140,6 +140,7 @@ in {
     # (wine.override { wineBuild = "wine64"; })
     wineWowPackages.stagingFull
     winetricks
+    mumble
     appimage-run
     unzip
     gping
