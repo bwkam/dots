@@ -77,9 +77,7 @@ in {
         copilot-cmp
         nvim-lspconfig
         nvim-colorizer-lua
-        firenvim
         bufdelete-nvim
-        wilder-nvim
         telescope-nvim
         flash-nvim
         vim-repeat
@@ -97,8 +95,6 @@ in {
         vimtex
         nvim-web-devicons
         bufferline-nvim
-        alpha-nvim
-        nvim-notify
         dashboard-nvim
         null-ls-nvim
         plenary-nvim
@@ -109,7 +105,6 @@ in {
         haskell-tools-nvim
         vaxe
         lualine-nvim
-        feline-nvim
         presence-nvim
         zen-mode-nvim
         fidget-nvim
@@ -125,8 +120,6 @@ in {
       lua-language-server
       asm-lsp
       curl
-      ueberzugpp
-      imagemagick
       nodePackages.typescript-language-server
       typescript
     ];

@@ -20,12 +20,12 @@ in {
   modules = {
     editors = {
       nvim.enable = true;
-      code.enable = true;
+      code.enable = false;
     };
 
     desktop = {
       bspwm.enable = true;
-      hyprland.enable = true;
+      hyprland.enable = false;
       gtk.enable = true;
       rofi.enable = true;
       polybar.enable = true;
@@ -110,7 +110,7 @@ in {
       };
     })
     nil
-    http-server
+    nixpkgs-unstable-latest.http-server
     nmap
     pipewire
     cmatrix
@@ -142,6 +142,7 @@ in {
     wineWowPackages.stagingFull
     winetricks
     mumble
+    murmur
     appimage-run
     unzip
     gping
