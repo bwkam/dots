@@ -106,6 +106,7 @@ in {
         scripts = with pkgs.weechatScripts; [
           weechat-matrix
           colorize_nicks
+          weechat-grep
           weechat-notify-send
         ];
       };
