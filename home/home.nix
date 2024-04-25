@@ -103,12 +103,14 @@ in {
     nixpkgs-review
     (weechat.override {
       configure = { ... }: {
-        scripts = with pkgs.weechatScripts; [
-          weechat-matrix
-          colorize_nicks
-          weechat-grep
-          weechat-notify-send
-        ];
+        scripts = with pkgs.weechatScripts;
+          [
+            (weechat-matrix.overrideAttrs (final: prev: {
+              postFixup = prev.postFixup + ''
+                substituteInPlace $out/lib/python3.11/site-packages/matrix/uploads.py --replace \"matrix_upload\" \"$out/bin/matrix_upload\"
+              '';
+            }))
+          ];
       };
     })
     nil
@@ -153,12 +155,24 @@ in {
 
     # languages
     (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".haxe)
-    python39
+    (pkgs.python311.withPackages (ppkgs:
+      with ppkgs; [
+        pip
+        webcolors
+        pyopenssl
+        atomicwrites
+        attrs
+        logbook
+        pygments
+        matrix-nio
+        aiohttp
+        python-magic
+        requests
+      ]))
     rustc
     cargo
     rust-analyzer
     nodejs_20
-    python311Packages.pip
     zip
     clang-tools
     nil
