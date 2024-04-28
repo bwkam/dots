@@ -25,11 +25,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1714309658,
-        "narHash": "sha256-l12knAS3Hkiq60nS4EuSQs4UoqYIB8PbGRcV98QcCNU=",
+        "lastModified": 1714314347,
+        "narHash": "sha256-AR5jGKTKZLq5SSLEaSSAtfI3pWe8oFnh19J4UyluGng=",
         "owner": "bwkam",
         "repo": "dwm",
-        "rev": "8140d1fc017cc43a22d2f4ece0f21384d8cbcb9f",
+        "rev": "41559cb142e6a766506565948bdf594d32088597",
         "type": "github"
       },
       "original": {

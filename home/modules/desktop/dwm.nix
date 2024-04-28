@@ -15,7 +15,7 @@ in {
         "super + space" = "dmenu_run";
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
-        "super + l" = "betterlockscreen -l dim";
+        "space + l" = "betterlockscreen -l dim";
         # "super + z" = "${shuffleWal}/bin/shuffleWal";
         "Print" = "flameshot gui";
         "XF86AudioNext" = "playerctl next";
@@ -30,7 +30,8 @@ in {
 
     xsession = {
       enable = true;
-      windowManager.command = "dwm";
+      windowManager.command =
+        "${lib.getExe inputs.dwm.packages.x86_64-linux.default}";
       numlock.enable = true;
     };
   };
