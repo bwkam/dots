@@ -24,10 +24,11 @@ in {
     };
 
     desktop = {
-      bspwm.enable = true;
+      bspwm.enable = false;
+      dwm.enable = true;
       hyprland.enable = false;
       gtk.enable = true;
-      rofi.enable = true;
+      rofi.enable = false;
       polybar.enable = true;
     };
 

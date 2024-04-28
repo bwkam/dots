@@ -17,29 +17,11 @@ in {
 
       };
 
-      sessionVariables = {
-        GTK_USE_PORTAL = "1";
-        GTK_THEME = "Catppuccin-Mocha-Compact-Pink-Dark";
-      };
+      sessionVariables = { GTK_USE_PORTAL = "1"; };
     };
 
     gtk = {
       enable = true;
-
-      iconTheme = {
-        name = "Papirus-Dark";
-        package = pkgs.catppuccin-papirus-folders;
-      };
-
-      theme = {
-        name = "Catppuccin-Mocha-Compact-Pink-Dark";
-        package = pkgs.catppuccin-gtk.override {
-          accents = [ "pink" ];
-          size = "compact";
-          tweaks = [ "rimless" ];
-          variant = "mocha";
-        };
-      };
 
       gtk3.extraConfig = {
         gtk-xft-antialias = 1;

@@ -20,6 +20,8 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
+    dwm.url = "github:bwkam/dwm";
+
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
   };

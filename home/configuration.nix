@@ -45,9 +45,10 @@
     displayManager.lightdm.enable = true;
     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
     desktopManager.xterm.enable = false;
-    # BSPWM
-    displayManager.defaultSession = "none+bspwm";
-    windowManager.bspwm.enable = true;
+
+    # displayManager.defaultSession = "none+bspwm";
+    windowManager.bspwm.enable = false;
+    windowManager.dwm.enable = true;
   };
 
   services.xserver.displayManager.startx.enable = true;
