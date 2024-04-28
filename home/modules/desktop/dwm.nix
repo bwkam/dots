@@ -1,11 +1,11 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, inputs, ... }:
 let cfg = config.modules.desktop.dwm;
 in {
   options.modules.desktop.dwm.enable = lib.mkEnableOption "dwm";
 
   # dwm
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [ dwm st dmenu xclip ];
+    home.packages = with pkgs; [ (inputs.dwm) st dmenu xclip ];
     services.polybar.enable = lib.mkForce false;
     services.picom.enable = lib.mkForce false;
     services.sxhkd = {
