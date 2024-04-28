@@ -15,7 +15,7 @@ in {
         "super + space" = "dmenu_run";
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
-        "space + l" = "betterlockscreen -l dim";
+        "alt + l" = "betterlockscreen -l dim";
         # "super + z" = "${shuffleWal}/bin/shuffleWal";
         "Print" = "flameshot gui";
         "XF86AudioNext" = "playerctl next";
