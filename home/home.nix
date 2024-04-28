@@ -94,6 +94,7 @@ in {
     pfetch
     btop
     gotop
+    # (inputs.ghostty.packages.x86_64-linux.default)
     ranger
     cloc
     chafa
@@ -151,6 +152,7 @@ in {
     appimage-run
     unzip
     gping
+    # (inputs.ghostty.packages.x86_64-linux.default)
     openssl
     usbutils
 

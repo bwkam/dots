@@ -14,6 +14,7 @@
     };
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    agenix.url = "github:ryantm/agenix";
 
     nurpkgs.url = "github:nix-community/NUR";
     nix-index-database.url = "github:Mic92/nix-index-database";
@@ -23,6 +24,8 @@
     dwm.url = "github:bwkam/dwm";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+
+    # ghostty = { url = "git+ssh://git@github.com/mitchellh/ghostty"; };
 
   };
 
@@ -34,8 +37,14 @@
         modules = [
           ./home/configuration.nix
           inputs.auto-cpufreq.nixosModules.default
+          inputs.agenix.nixosModules.default
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
+
+          {
+            environment.systemPackages =
+              [ inputs.agenix.packages."x86_64-linux".default ];
+          }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;
@@ -53,4 +62,5 @@
         mkShell { buildInputs = [ git lua-language-server lua ]; };
     };
   };
+
 }
