@@ -21,14 +21,18 @@
 
   security.polkit.enable = true;
 
-  age.secrets.github.file = ../secrets/github.age;
-  # age.identityPaths = [ "~/.ssh/id_ed25519" ];
+  # sops
+  sops.defaultSopsFile = ../secrets/secrets.yaml;
+  sops.defaultSopsFormat = "yaml";
+
+  sops.age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
+  sops.secrets.github = { };
 
   nix.settings = {
     substituters = [ "https://ghostty.cachix.org" ];
     trusted-public-keys =
       [ "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" ];
-    access-tokens = [ "github.com=${config.age.secrets.github.path}" ];
+    # access-tokens = [ "github.com=${config.age.secrets.github.path}" ];
   };
 
   services.avahi = {

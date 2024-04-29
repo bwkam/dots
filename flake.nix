@@ -14,7 +14,11 @@
     };
 
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    agenix.url = "github:ryantm/agenix";
+
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
 
     nurpkgs.url = "github:nix-community/NUR";
     nix-index-database.url = "github:Mic92/nix-index-database";
@@ -37,14 +41,10 @@
         modules = [
           ./home/configuration.nix
           inputs.auto-cpufreq.nixosModules.default
-          inputs.agenix.nixosModules.default
+          inputs.sops-nix.nixosModules.sops
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 
-          {
-            environment.systemPackages =
-              [ inputs.agenix.packages."x86_64-linux".default ];
-          }
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

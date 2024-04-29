@@ -83,6 +83,7 @@ in {
 
     # cli
     nnn
+    sops
     inetutils
     ffmpeg
     pandoc
