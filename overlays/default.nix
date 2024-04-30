@@ -17,28 +17,28 @@
     doCheck = false;
   };
 
-  wallust = with (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux");
-    let
-      rustPlatform = makeRustPlatform {
-        inherit rustc;
-        inherit cargo;
-      };
-    in (prev.wallust.override { inherit rustPlatform; }).overrideAttrs
-    (final: prev:
-      let
-        src = fetchFromGitea {
-          domain = "codeberg.org";
-          owner = "explosion-mental";
-          repo = "wallust";
-          rev = "3.0.0-beta";
-          hash = "sha256-gGyxRdv2I/3TQWrTbUjlJGsaRv4SaNE+4Zo9LMWmxk8=";
-        };
-      in {
-        version = "v3.0.0-beta";
-        inherit src;
-        cargoDeps = prev.cargoDeps.overrideAttrs (final: prev: {
-          inherit src;
-          outputHash = "sha256-99rCet2XV/L0e/wAoIMoJTvNfU456MdbEFpuKnX0ABI=";
-        });
-      });
+  # wallust = with (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux");
+  #   let
+  #     rustPlatform = makeRustPlatform {
+  #       inherit rustc;
+  #       inherit cargo;
+  #     };
+  #   in (prev.wallust.override { inherit rustPlatform; }).overrideAttrs
+  #   (final: prev:
+  #     let
+  #       src = fetchFromGitea {
+  #         domain = "codeberg.org";
+  #         owner = "explosion-mental";
+  #         repo = "wallust";
+  #         rev = "3.0.0-beta";
+  #         hash = "sha256-gGyxRdv2I/3TQWrTbUjlJGsaRv4SaNE+4Zo9LMWmxk8=";
+  #       };
+  #     in {
+  #       version = "v3.0.0-beta";
+  #       inherit src;
+  #       cargoDeps = prev.cargoDeps.overrideAttrs (final: prev: {
+  #         inherit src;
+  #         outputHash = "sha256-99rCet2XV/L0e/wAoIMoJTvNfU456MdbEFpuKnX0ABI=";
+  #       });
+  #     });
 })

@@ -22,11 +22,11 @@
   security.polkit.enable = true;
 
   # sops
-  sops.defaultSopsFile = ../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-
-  sops.age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
-  sops.secrets.github = { };
+  # sops.defaultSopsFile = ../secrets/secrets.yaml;
+  # sops.defaultSopsFormat = "yaml";
+  #
+  # sops.age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
+  # sops.secrets.github = { };
 
   nix.settings = {
     substituters = [ "https://ghostty.cachix.org" ];

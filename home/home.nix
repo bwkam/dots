@@ -157,24 +157,6 @@ in {
     openssl
     usbutils
 
-    # languages
-    (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".haxe)
-    (pkgs.python311.withPackages (ppkgs:
-      with ppkgs; [
-        pip
-        webcolors
-        pyopenssl
-        atomicwrites
-        attrs
-        logbook
-        pygments
-        matrix-nio
-        aiohttp
-        python-magic
-        requests
-      ]))
-    rustc
-    cargo
     rust-analyzer
     nodejs_20
     zip
