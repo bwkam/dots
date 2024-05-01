@@ -60,7 +60,6 @@ in {
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changingr
 
-
   home.packages = with pkgs; [
     # cli
     sops

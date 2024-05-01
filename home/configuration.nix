@@ -68,6 +68,11 @@
 
   };
 
+  programs.wayfire = {
+    enable = true;
+    plugins = with pkgs.wayfirePlugins; [ wcm wf-shell wayfire-plugins-extra ];
+  };
+
   services.xserver.displayManager.startx.enable = true;
 
   # Configure keymap in X11
