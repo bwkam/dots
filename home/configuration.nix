@@ -8,6 +8,8 @@
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
 
+  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_1;
+
   networking.hostName = "wolfburger"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -63,6 +65,7 @@
     # displayManager.defaultSession = "none+bspwm";
     windowManager.bspwm.enable = false;
     windowManager.dwm.enable = true;
+
   };
 
   services.xserver.displayManager.startx.enable = true;
@@ -82,11 +85,11 @@
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
 
-  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  # hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.printing = {
     enable = true;
-    drivers = [ pkgs.hplipWithPlugin ];
+    # drivers = [ pkgs.hplipWithPlugin ];
   };
 
   # Enable sound.
@@ -155,20 +158,6 @@
     enable = true;
     enableSSHSupport = true;
   };
-
-  # CPU scaling
-  # programs.auto-cpufreq.enable = true;
-  # programs.auto-cpufreq.settings = {
-  #   charger = {
-  #     governor = "performance";
-  #     turbo = "auto";
-  #   };
-  #
-  #   battery = {
-  #     governor = "powersave";
-  #     turbo = "auto";
-  #   };
-  # };
 
   fonts.fontDir.enable = true;
 

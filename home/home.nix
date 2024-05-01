@@ -34,25 +34,18 @@ in {
 
     browsers = { firefox.enable = true; };
 
-    dev = { lazygit.enable = true; };
+    # dev = { lazygit.enable = true; };
 
-    terminal = {
-      kitty.enable = true;
-      alacritty.enable = true;
-    };
+    terminal = { kitty.enable = true; };
 
     misc = {
       neofetch.enable = true;
-      pywal.enable = false;
-      wallust.enable = true;
-      picom.enable = true;
-      cava.enable = true;
       zathura.enable = true;
       xdg.enable = true;
       # starship.enable = true;
     };
 
-    # shell = { fish.enable = false; };
+    shell = { fish.enable = true; };
   };
 
   home.username = "bwkam";
@@ -67,43 +60,15 @@ in {
   # release notes.
   home.stateVersion = "23.05"; # Please read the comment before changingr
 
-  # programs.fish.enable = true;
 
   home.packages = with pkgs; [
-    # format
-    nixfmt
-    tailwindcss-language-server
-    nodePackages.prettier
-    alejandra
-    rustfmt
-
-    # gnu
-    gcc
-    gdb
-
     # cli
-    nnn
     sops
-    inetutils
-    ffmpeg
     pandoc
-    go
     sad
-    lazygit
     nurl
-    jless
-    pfetch
-    btop
-    gotop
-    # (inputs.ghostty.packages.x86_64-linux.default)
     ranger
-    cloc
-    chafa
-    links2
-    gh
     zellij
-    tcpdump
-    nixpkgs-review
     (weechat.override {
       configure = { ... }: {
         scripts = with pkgs.weechatScripts;
@@ -116,87 +81,41 @@ in {
           ];
       };
     })
-    nil
-    nixpkgs-unstable-latest.http-server
-    nmap
-    pipewire
     cmatrix
-    pipes
-    lua54Packages.luacheck
-    gnumake
-    nix-prefetch-github
     htop
     eza
     gnumeric
     ripgrep
     xorg.xkill
-    xclip
     xsel
     xdotool
-    git
     playerctl
-    steam-run
+    # steam-run
     yt-dlp
-    glxinfo
-    pciutils
     cachix
-    cmus
-    hugo
-    #wine-staging
-    bottles
-    # wineWowPackages.staging
-    # (wine.override { wineBuild = "wine64"; })
-    wineWowPackages.stagingFull
-    winetricks
-    mumble
-    murmur
-    appimage-run
+    wine
     unzip
-    gping
-    # (inputs.ghostty.packages.x86_64-linux.default)
-    openssl
-    usbutils
-
-    rust-analyzer
-    nodejs_20
     zip
-    clang-tools
-    nil
-    newsflash
-    tor-browser
+    openssl
+
     networkmanagerapplet
-    xonotic
-    minetest
-    renderdoc
-    gtk3
-    gtk4
     gparted
     google-chrome
     rhythmbox
     tracker
     mpv
-    mpvScripts.mpris
-    libresprite
     tracker-miners
-    hplip
-    dmenu
+    # hplip
     pavucontrol
     flameshot
-    gimp
-    kdenlive
-    nixpkgs-unstable-latest.avogadro2
-    nixpkgs-unstable-latest.marvin
     feh
     obs-studio
     simplescreenrecorder
     peek
-    obsidian
-    zoom-us
-    lmms
     audacity
     gnome.simple-scan
     gnome.cheese
-    rofimoji
+
     material-icons
     material-design-icons
     roboto
@@ -244,20 +163,6 @@ in {
 
     gnome-keyring.enable = true;
   };
-
-  # nixpkgs = {
-  #   config = {
-  #     allowUnfree = true;
-  #     firefox.speechSynthesisSupport = true;
-  #   };
-  #
-  #   overlays = [
-  #     inputs.neovim-nightly-overlay.overlay
-  #     inputs.nurpkgs.overlay
-  #     inputs.neorg-overlay.overlays.default
-  #     (import ../overlays { inherit pkgs lib inputs; })
-  #   ];
-  # };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
   #nix.package = pkgs.nix;

@@ -114,7 +114,7 @@ in {
     home.packages = with pkgs; [
       haskell-language-server
       texlab
-      neovide
+      # neovide
       ghc
       stylua
       lua-language-server
