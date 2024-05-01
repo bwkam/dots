@@ -14,11 +14,6 @@ let
       "asm"
     ]);
 
-  vimPluginsLatest =
-    inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".vimPlugins;
-
-  catppuccin-nvim =
-    inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".vimPlugins.catppuccin-nvim;
   vaxe = pkgs.vimUtils.buildVimPlugin {
     name = "haxe.vim";
     src = pkgs.fetchFromGitHub {
@@ -26,16 +21,6 @@ let
       repo = "haxe.vim";
       rev = "5fe5ff115675ad46334b65406a386a48a8f2238e";
       sha256 = "sha256-4qfkd4Kbq6qz6x98fD3RdUQuo28wsZmbgJkHWh2epOY=";
-    };
-  };
-
-  cellular-automaton = pkgs.vimUtils.buildVimPlugin {
-    name = "cellular-automaton.nvim";
-    src = pkgs.fetchFromGitHub {
-      owner = "Eandrju";
-      repo = "cellular-automaton.nvim";
-      rev = "b7d056dab963b5d3f2c560d92937cb51db61cb5b";
-      sha256 = "sha256-szbd6m7hH7NFI0UzjWF83xkpSJeUWCbn9c+O8F8S/Fg=";
     };
   };
 
@@ -59,7 +44,7 @@ in {
       # extraLuaConfig = ''
       #   vim.g.nix_plugins_dir = "${pkgs.vimUtils.packDirconfig.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
       # '';
-      plugins = with vimPluginsLatest; [
+      plugins = with pkgs.vimPlugins; [
         markdown-preview-nvim
         nvim-cmp
         # lazy-nvim
@@ -67,7 +52,7 @@ in {
         coal
         cmp_luasnip
         cmp-nvim-lsp
-        cellular-automaton
+        # cellular-automaton
         vim-prettier
         cmp-buffer
         cmp-path
@@ -94,7 +79,14 @@ in {
         trouble-nvim
         vimtex
         nvim-web-devicons
-        bufferline-nvim
+        (bufferline-nvim.overrideAttrs (final: prev: {
+          src = pkgs.fetchFromGitHub {
+            owner = "akinsho";
+            repo = "bufferline.nvim";
+            rev = "73540cb95f8d95aa1af3ed57713c6720c78af915";
+            hash = "sha256-bHlmaNXfZTlTm/8v48FwCde9ljZFLv25efYF5355bnw=";
+          };
+        }))
         dashboard-nvim
         null-ls-nvim
         plenary-nvim
@@ -113,8 +105,9 @@ in {
     #11
     home.packages = with pkgs; [
       haskell-language-server
+      nil
+      nixfmt
       texlab
-      # neovide
       ghc
       stylua
       lua-language-server
