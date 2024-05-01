@@ -84,6 +84,7 @@ in {
     cmatrix
     htop
     eza
+    (inputs.ghostty.packages.x86_64-linux.default)
     gnumeric
     ripgrep
     xorg.xkill

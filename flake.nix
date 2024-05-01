@@ -29,7 +29,7 @@
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    # ghostty = { url = "git+ssh://git@github.com/mitchellh/ghostty"; };
+    ghostty = { url = "git+ssh://git@github.com/mitchellh/ghostty"; };
 
   };
 

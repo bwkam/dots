@@ -34,7 +34,7 @@
     substituters = [ "https://ghostty.cachix.org" ];
     trusted-public-keys =
       [ "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" ];
-    # access-tokens = [ "github.com=${config.age.secrets.github.path}" ];
+    access-tokens = [ "github.com=${config.sops.secrets.github.path}" ];
   };
 
   services.avahi = {
