@@ -7,6 +7,6 @@ Welcome to my cursed dotfiles. (still under development)
 - [ ] Add multiple home/system configs
 - [ ] Change tmux mappings (Alt)
 - [x] Make it more modular
-- [ ] Move to i3
+- [x] Move to dwm
 - [ ] Integrate lazy-nvim (see ghpzin's comments in the HM matrix server)
 
