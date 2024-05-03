@@ -23,9 +23,6 @@ in {
         italic_font Iosevka Light italic
         bold_italic_font Iosevka Bold Italic
 
-        # window_padding_width 15
-        # windw_padding_height 15
-
 
         # Cursor shape
         cursor_shape block

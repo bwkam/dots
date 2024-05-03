@@ -25,7 +25,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
-    dwm.url = "github:bwkam/dwm";
+    suckless.url = "github:bwkam/suckless";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
@@ -42,6 +42,8 @@
           ./home/configuration.nix
           inputs.auto-cpufreq.nixosModules.default
           inputs.sops-nix.nixosModules.sops
+          # inputs.nix-index-database.hmModules.nix-index
+          # { programs.nix-index-database.comma.enable = true; }
 
           { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 

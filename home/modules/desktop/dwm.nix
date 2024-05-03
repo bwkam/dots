@@ -5,7 +5,10 @@ in {
 
   # dwm
   config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [ (inputs.dwm) st dmenu xclip ];
+    home.packages = builtins.attrValues {
+      inherit (inputs.suckless.packages.x86_64-linux) dwm;
+      inherit (pkgs) xclip dmenu;
+    };
     services.polybar.enable = lib.mkForce false;
     services.picom.enable = lib.mkForce false;
     services.sxhkd = {
@@ -16,7 +19,6 @@ in {
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
         "alt + l" = "betterlockscreen -l dim";
-        # "super + z" = "${shuffleWal}/bin/shuffleWal";
         "Print" = "flameshot gui";
         "XF86AudioNext" = "playerctl next";
         "XF86AudioPause" = "playerctl play-pause";
@@ -31,7 +33,7 @@ in {
     xsession = {
       enable = true;
       windowManager.command =
-        "${lib.getExe inputs.dwm.packages.x86_64-linux.default}";
+        "${lib.getExe inputs.suckless.packages.x86_64-linux.dwm}";
       numlock.enable = true;
     };
   };
