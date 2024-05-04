@@ -6,7 +6,7 @@ in {
   # dwm
   config = lib.mkIf cfg.enable {
     home.packages = builtins.attrValues {
-      inherit (inputs.suckless.packages.x86_64-linux) dwm;
+      inherit (inputs.suckless.packages.x86_64-linux) dwm dwmblocks;
       inherit (pkgs) xclip dmenu;
     };
     services.polybar.enable = lib.mkForce false;

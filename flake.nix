@@ -25,7 +25,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
-    suckless.url = "github:bwkam/suckless";
+    suckless.url = "github:bwkam/suckless/dev";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
