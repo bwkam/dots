@@ -12,6 +12,7 @@ let
       "latex"
       "markdown"
       "asm"
+      "bash"
     ]);
 
   vaxe = pkgs.vimUtils.buildVimPlugin {
@@ -67,9 +68,9 @@ in {
         flash-nvim
         vim-repeat
         telescope-media-files-nvim
-        neorg
+        # neorg
         vim-fugitive
-        neorg-telescope
+        # neorg-telescope
         (nvim-treesitter.withPlugins languages)
         nvim-autopairs
         comment-nvim
@@ -106,7 +107,7 @@ in {
     home.packages = with pkgs; [
       haskell-language-server
       nil
-      nixfmt
+      nixfmt-rfc-style
       texlab
       ghc
       stylua
@@ -114,6 +115,7 @@ in {
       asm-lsp
       curl
       nodePackages.typescript-language-server
+      nodePackages.bash-language-server
       typescript
     ];
 
