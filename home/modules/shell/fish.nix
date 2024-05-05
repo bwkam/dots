@@ -1,6 +1,13 @@
-{ config, lib, pkgs, ... }:
-let cfg = config.modules.shell.fish;
-in {
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+let
+  cfg = config.modules.shell.fish;
+in
+{
   options.modules.shell.fish.enable = lib.mkEnableOption "fish shell";
 
   config = lib.mkIf cfg.enable {
@@ -11,6 +18,13 @@ in {
         set fish_greeting # Disable greeting
       '';
 
+      plugins = [
+        {
+          name = "fzf.fish";
+          src = pkgs.fishPlugins.fzf-fish;
+        }
+      ];
+
       shellAliases = with pkgs; {
         ".." = "cd ..";
         cat = "${bat}/bin/bat";
@@ -19,8 +33,6 @@ in {
         haxe_language_server = "node $HOME/haxe-language-server/bin/server.js";
         v = "nvim";
       };
-
     };
   };
-
 }

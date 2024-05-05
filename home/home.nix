@@ -5,8 +5,8 @@ let
     inherit (pkgs) system;
     config.allowUnfree = true;
   };
-
-in {
+in
+{
   imports = [
     ./modules/desktop
     ./modules/editors
@@ -32,11 +32,15 @@ in {
       polybar.enable = true;
     };
 
-    browsers = { firefox.enable = true; };
+    browsers = {
+      firefox.enable = true;
+    };
 
     # dev = { lazygit.enable = true; };
 
-    terminal = { kitty.enable = true; };
+    terminal = {
+      kitty.enable = true;
+    };
 
     misc = {
       neofetch.enable = true;
@@ -45,7 +49,9 @@ in {
       # starship.enable = true;
     };
 
-    shell = { fish.enable = true; };
+    shell = {
+      fish.enable = true;
+    };
   };
 
   home.username = "bwkam";
@@ -70,19 +76,26 @@ in {
     ranger
     zellij
     (weechat.override {
-      configure = { ... }: {
-        scripts = with pkgs.weechatScripts;
-          [
-            (weechat-matrix.overrideAttrs (final: prev: {
-              postFixup = prev.postFixup + ''
-                substituteInPlace $out/lib/python3.11/site-packages/matrix/uploads.py --replace \"matrix_upload\" \"$out/bin/matrix_upload\"
-              '';
-            }))
+      configure =
+        { ... }:
+        {
+          scripts = with pkgs.weechatScripts; [
+            (weechat-matrix.overrideAttrs (
+              final: prev: {
+                postFixup =
+                  prev.postFixup
+                  + ''
+                    substituteInPlace $out/lib/python3.11/site-packages/matrix/uploads.py --replace \"matrix_upload\" \"$out/bin/matrix_upload\"
+                  '';
+              }
+            ))
           ];
-      };
+        };
     })
     translate-shell
+    fzf
     cmatrix
+    mlterm
     htop
     eza
     (inputs.ghostty.packages.x86_64-linux.default)
@@ -138,7 +151,13 @@ in {
     jetbrains-mono
     font-awesome_5
 
-    (nerdfonts.override { fonts = [ "Iosevka" "JetBrainsMono" "Meslo" ]; })
+    (nerdfonts.override {
+      fonts = [
+        "Iosevka"
+        "JetBrainsMono"
+        "Meslo"
+      ];
+    })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -156,7 +175,9 @@ in {
     # ''; 11
   };
 
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
   services = {
     playerctld.enable = true;
