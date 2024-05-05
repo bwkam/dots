@@ -81,6 +81,7 @@ in {
           ];
       };
     })
+    translate-shell
     cmatrix
     htop
     eza
