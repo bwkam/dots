@@ -98,6 +98,7 @@ in
     mlterm
     htop
     eza
+    gh
     (inputs.ghostty.packages.x86_64-linux.default)
     gnumeric
     ripgrep
@@ -120,7 +121,7 @@ in
     tracker
     mpv
     tracker-miners
-    # hplip
+    hplip
     pavucontrol
     flameshot
     feh

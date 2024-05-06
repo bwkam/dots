@@ -11,6 +11,7 @@ in
   options.modules.shell.fish.enable = lib.mkEnableOption "fish shell";
 
   config = lib.mkIf cfg.enable {
+    # programs.fzf.enableFishIntegration = false;
     programs.fish = {
       enable = true;
 
@@ -18,12 +19,11 @@ in
         set fish_greeting # Disable greeting
       '';
 
-      plugins = [
-        {
-          name = "fzf.fish";
-          src = pkgs.fishPlugins.fzf-fish;
-        }
-      ];
+      # plugins = with pkgs.fishPlugins; [
+      #   fzf-fish
+      #   autopair
+      #   colored-man-pages
+      # ];
 
       shellAliases = with pkgs; {
         ".." = "cd ..";

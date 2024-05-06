@@ -1,8 +1,18 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
-{ config, pkgs, inputs, lib, ... }: {
-  imports = [ ./hardware-configuration.nix ./cachix.nix ];
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ./cachix.nix
+  ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
@@ -32,8 +42,7 @@
 
   nix.settings = {
     substituters = [ "https://ghostty.cachix.org" ];
-    trusted-public-keys =
-      [ "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" ];
+    trusted-public-keys = [ "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" ];
     # access-tokens = [ "github.com=${config.sops.secrets.github.path}" ];
   };
 
@@ -65,12 +74,15 @@
     # displayManager.defaultSession = "none+bspwm";
     windowManager.bspwm.enable = false;
     windowManager.dwm.enable = true;
-
   };
 
   programs.wayfire = {
     enable = true;
-    plugins = with pkgs.wayfirePlugins; [ wcm wf-shell wayfire-plugins-extra ];
+    plugins = with pkgs.wayfirePlugins; [
+      wcm
+      wf-shell
+      wayfire-plugins-extra
+    ];
   };
 
   services.xserver.displayManager.startx.enable = true;
@@ -90,11 +102,11 @@
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
 
-  # hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
 
   services.printing = {
     enable = true;
-    # drivers = [ pkgs.hplipWithPlugin ];
+    drivers = [ pkgs.hplipWithPlugin ];
   };
 
   # Enable sound.
@@ -124,7 +136,11 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bwkam = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "scanner" "lp" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [
+      "wheel"
+      "scanner"
+      "lp"
+    ]; # Enable ‘sudo’ for the user.
     shell = pkgs.fish;
   };
 
