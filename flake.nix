@@ -25,44 +25,61 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
-    suckless.url = "github:bwkam/suckless/dev";
+    suckless.url = "github:bwkam/suckless/statuscmd_patch";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
-    ghostty = { url = "git+ssh://git@github.com/mitchellh/ghostty"; };
-
+    ghostty = {
+      url = "git+ssh://git@github.com/mitchellh/ghostty";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
-    nixosConfigurations = {
-      alphaWolf = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./home/configuration.nix
-          inputs.auto-cpufreq.nixosModules.default
-          inputs.sops-nix.nixosModules.sops
-          # inputs.nix-index-database.hmModules.nix-index
-          # { programs.nix-index-database.comma.enable = true; }
+  outputs =
+    {
+      self,
+      nixpkgs,
+      home-manager,
+      ...
+    }@inputs:
+    {
+      nixosConfigurations = {
+        alphaWolf = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./home/configuration.nix
+            inputs.auto-cpufreq.nixosModules.default
+            inputs.sops-nix.nixosModules.sops
+            # inputs.nix-index-database.hmModules.nix-index
+            # { programs.nix-index-database.comma.enable = true; }
 
-          { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
+            { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.bwkam = import ./home/home.nix;
-            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.bwkam = import ./home/home.nix;
+              home-manager.extraSpecialArgs = {
+                inherit inputs;
+              };
+            }
+          ];
+        };
+      };
 
-          }
-        ];
+      devShells.x86_64-linux = {
+        default =
+          with nixpkgs.legacyPackages.x86_64-linux;
+          mkShell {
+            buildInputs = [
+              git
+              lua-language-server
+              lua
+            ];
+          };
       };
     };
-
-    devShells.x86_64-linux = {
-      default = with nixpkgs.legacyPackages.x86_64-linux;
-        mkShell { buildInputs = [ git lua-language-server lua ]; };
-    };
-  };
-
 }
