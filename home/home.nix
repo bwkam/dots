@@ -93,6 +93,7 @@ in
         };
     })
     translate-shell
+    youtube-tui
     fzf
     cmatrix
     mlterm
