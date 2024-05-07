@@ -50,6 +50,7 @@
           };
           modules = [
             ./home/configuration.nix
+
             inputs.auto-cpufreq.nixosModules.default
             inputs.sops-nix.nixosModules.sops
             # inputs.nix-index-database.hmModules.nix-index
@@ -70,7 +71,7 @@
         };
       };
 
-      devShells.x86_64-linux = {
+      devShells.x84_64-linux = {
         default =
           with nixpkgs.legacyPackages.x86_64-linux;
           mkShell {

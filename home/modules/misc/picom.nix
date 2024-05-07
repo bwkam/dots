@@ -1,17 +1,21 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
-let cfg = config.modules.misc.picom;
-
-in {
+let
+  cfg = config.modules.misc.picom;
+in
+{
 
   options.modules.misc.picom.enable = lib.mkEnableOption "Enable picom";
   config = lib.mkIf cfg.enable {
 
     services.picom = {
       enable = true;
-      # package = pkgs.callPackage ./ib-picom.nix { };
       package = pkgs.picom-next;
-      #package = pkgs.picom-jonaburg;
       backend = "glx";
       vSync = true;
 
@@ -32,7 +36,10 @@ in {
         active-opacity = 1.0;
         inactive-opacity-override = false;
 
-        focus-exclude = [ "class_g = 'Cairo-clock'" "class_g = 'slop'" ];
+        focus-exclude = [
+          "class_g = 'Cairo-clock'"
+          "class_g = 'slop'"
+        ];
 
         opacity-rule = [
           "100:class_g = 'Alacritty'"
@@ -82,11 +89,11 @@ in {
             full-shadow = false;
             focus = false;
           };
-          dropdown_menu = { opacity = 1.0; };
+          dropdown_menu = {
+            opacity = 1.0;
+          };
         };
-
       };
     };
-
   };
 }

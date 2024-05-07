@@ -26,6 +26,7 @@ in
       # ];
 
       shellAliases = with pkgs; {
+        "sw" = "sudo nixos-rebuild switch --flake";
         ".." = "cd ..";
         cat = "${bat}/bin/bat";
         ls = "${eza}/bin/eza --group-directories-first --git --icons";
