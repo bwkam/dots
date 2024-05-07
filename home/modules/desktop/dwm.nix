@@ -1,6 +1,14 @@
-{ config, pkgs, lib, inputs, ... }:
-let cfg = config.modules.desktop.dwm;
-in {
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
+let
+  cfg = config.modules.desktop.dwm;
+in
+{
   options.modules.desktop.dwm.enable = lib.mkEnableOption "dwm";
 
   # dwm
@@ -9,6 +17,22 @@ in {
       inherit (inputs.suckless.packages.x86_64-linux) dwm dwmblocks;
       inherit (pkgs) xclip dmenu;
     };
+
+    systemd.user.services.dwmblocks = {
+      Unit = {
+        Description = "Status feed generator for dwm";
+      };
+
+      Install = {
+        WantedBy = [ "graphical-session.target" ];
+      };
+
+      Service = {
+        Restart = "always";
+        ExecStart = lib.getExe inputs.suckless.packages.${pkgs.system}.dwmblocks;
+      };
+    };
+
     services.polybar.enable = lib.mkForce false;
     services.picom.enable = lib.mkForce false;
     services.sxhkd = {
@@ -32,8 +56,7 @@ in {
 
     xsession = {
       enable = true;
-      windowManager.command =
-        "${lib.getExe inputs.suckless.packages.x86_64-linux.dwm}";
+      windowManager.command = "${lib.getExe inputs.suckless.packages.x86_64-linux.dwm}";
       numlock.enable = true;
     };
   };

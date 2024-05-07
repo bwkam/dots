@@ -25,7 +25,7 @@
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
-    suckless.url = "github:bwkam/suckless/statuscmd_patch";
+    suckless.url = "github:bwkam/suckless/dev";
 
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
@@ -53,8 +53,8 @@
             inputs.auto-cpufreq.nixosModules.default
             inputs.sops-nix.nixosModules.sops
             # inputs.nix-index-database.hmModules.nix-index
-            # { programs.nix-index-database.comma.enable = true; }
 
+            # { programs.nix-index-database.comma.enable = true; }
             { nix.nixPath = [ "nixpkgs=flake:nixpkgs" ]; }
 
             home-manager.nixosModules.home-manager
