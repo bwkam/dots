@@ -1,4 +1,10 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 let
   cfg = config.modules.desktop.bspwm;
   shuffleWal = pkgs.writeShellScriptBin "shuffleWal" ''
@@ -7,7 +13,8 @@ let
     ${pkgs.feh}/bin/feh --bg-scale $wall
     pkill -USR1 polybar
   '';
-in {
+in
+{
   options.modules.desktop.bspwm.enable = lib.mkEnableOption "bspwm";
 
   # bspwm
@@ -25,10 +32,8 @@ in {
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
         "super + g" = "bspc node -s biggest.window";
         "super + l" = "betterlockscreen -l dim";
-        "super + {t,shift + t,s,f}" =
-          "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
-        "super + {_,shift + }{h,j,k,l}" =
-          "bspc node -{f,s} {west,south,north,east}";
+        "super + {t,shift + t,s,f}" = "bspc node -t {tiled,pseudo_tiled,floating,fullscreen}";
+        "super + {_,shift + }{h,j,k,l}" = "bspc node -{f,s} {west,south,north,east}";
         "super + {_,shift + }{1-5,0}" = "bspc {desktop -f,node -d} '^{1-5}'";
         "super + {Left,Down,Up,Right}" = "bspc node -v {-20 0,0 20,0 -20,20 0}";
         "super + z" = "${shuffleWal}/bin/shuffleWal";

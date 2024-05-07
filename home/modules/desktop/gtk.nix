@@ -1,8 +1,14 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
-let cfg = config.modules.desktop.gtk;
-
-in {
+let
+  cfg = config.modules.desktop.gtk;
+in
+{
   options.modules.desktop.gtk.enable = lib.mkEnableOption "Enable gtk";
   config = lib.mkIf cfg.enable {
 
@@ -14,10 +20,11 @@ in {
         size = 24;
         gtk.enable = true;
         x11.enable = true;
-
       };
 
-      sessionVariables = { GTK_USE_PORTAL = "1"; };
+      sessionVariables = {
+        GTK_USE_PORTAL = "1";
+      };
     };
 
     gtk = {

@@ -1,17 +1,19 @@
 { config, lib, ... }:
 
-let cfg = config.modules.terminal.kitty;
+let
+  cfg = config.modules.terminal.kitty;
+in
+{
 
-in {
-
-  options.modules.terminal.kitty.enable =
-    lib.mkEnableOption "Enable kitty terminal";
+  options.modules.terminal.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
 
   config = lib.mkIf cfg.enable {
     # Enable the kitty terminal
     programs.kitty = {
       enable = true;
-      settings = { font_size = "11.0"; };
+      settings = {
+        font_size = "11.0";
+      };
       extraConfig = ''
         # vim:ft=kitty
 
@@ -30,7 +32,5 @@ in {
 
       '';
     };
-
   };
-
 }

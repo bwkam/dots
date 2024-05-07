@@ -1,8 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-let cfg = config.modules.misc.xdg;
-
-in {
+let
+  cfg = config.modules.misc.xdg;
+in
+{
   options.modules.misc.xdg.enable = lib.mkEnableOption "xdg";
   config = lib.mkIf cfg.enable {
 
@@ -23,11 +29,7 @@ in {
           "x-scheme-handler/about" = "firefox.desktop";
           "x-scheme-handler/unknown" = "firefox.desktop";
         };
-
       };
-
     };
-
   };
-
 }

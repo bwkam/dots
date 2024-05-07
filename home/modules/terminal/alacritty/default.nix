@@ -1,17 +1,22 @@
-{ config, lib, pkgs, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  inputs,
+  ...
+}:
 let
   cfg = config.modules.terminal.alacritty;
   colors = builtins.fromTOML (builtins.readFile ./catppuccin-mocha.toml);
-in {
+in
+{
 
-  options.modules.terminal.alacritty.enable =
-    lib.mkEnableOption "Enable Alacritty";
+  options.modules.terminal.alacritty.enable = lib.mkEnableOption "Enable Alacritty";
 
   config = lib.mkIf cfg.enable {
     programs.alacritty = {
       enable = true;
-      package =
-        (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".alacritty);
+      package = (inputs.nixpkgs-unstable.legacyPackages."x86_64-linux".alacritty);
       settings = {
         bell = {
           animation = "EaseOutExpo";
@@ -34,12 +39,14 @@ in {
             style = "Light Italic";
           };
         };
-        keyboard.bindings = [{
-          key = 53;
-          mods = "Shift";
-          mode = "Vi";
-          action = "SearchBackward";
-        }];
+        keyboard.bindings = [
+          {
+            key = 53;
+            mods = "Shift";
+            mode = "Vi";
+            action = "SearchBackward";
+          }
+        ];
         selection.save_to_clipboard = true;
         shell.program = "${pkgs.fish}/bin/fish";
         window = {

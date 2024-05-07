@@ -1,7 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-let cfg = config.modules.editors.doom-emacs;
-in {
+let
+  cfg = config.modules.editors.doom-emacs;
+in
+{
   options.modules.editors.doom-emacs.enable = lib.mkEnableOption "doom-emacs";
 
   config = lib.mkIf cfg.enable {
@@ -9,8 +16,7 @@ in {
     home.packages = with pkgs; [
       binutils # native-comp needs 'as', provided by this
       # 28.2 + native-comp
-      ((emacsPackagesFor emacsNativeComp).emacsWithPackages
-        (epkgs: [ epkgs.vterm ]))
+      ((emacsPackagesFor emacsNativeComp).emacsWithPackages (epkgs: [ epkgs.vterm ]))
 
       ## Doom dependencies
       git
@@ -25,7 +31,13 @@ in {
 
       ## Module dependencies
       # :checkers spell
-      (aspellWithDicts (ds: with ds; [ en en-computers en-science ]))
+      (aspellWithDicts (
+        ds: with ds; [
+          en
+          en-computers
+          en-science
+        ]
+      ))
       # :tools editorconfig
       editorconfig-core-c # per-project style confiig
       # :tools lookup & :lang org +roam
@@ -40,16 +52,14 @@ in {
     home.sessionPath = [ "$XDG_CONFIG_HOME/emacs/bin" ];
 
     home.activation.installDoomEmacs = ''
-        if [ ! -d "$XDG_CONFIG_HOME/emacs" ]; then
-           ${pkgs.git}/bin/git clone --depth=1 --single-branch https://github.com/doomemacs/doomemacs "$XDG_CONFIG_HOME/emacs"
-           ${pkgs.git}/bin/git clone https://github.com/doomemacs/doomemacs  "$XDG_CONFIG_HOME/doom"
-        fi
-      '';
+      if [ ! -d "$XDG_CONFIG_HOME/emacs" ]; then
+         ${pkgs.git}/bin/git clone --depth=1 --single-branch https://github.com/doomemacs/doomemacs "$XDG_CONFIG_HOME/emacs"
+         ${pkgs.git}/bin/git clone https://github.com/doomemacs/doomemacs  "$XDG_CONFIG_HOME/doom"
+      fi
+    '';
 
     # moddules.eshell.zsh.rcFiles = [ "${configDir}/emacs/aliases.zsh" ];
 
     # fonts = [ pkgs.emacs-all-the-icons-fonts ];
-
   };
-
 }

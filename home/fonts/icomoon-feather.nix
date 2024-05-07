@@ -3,10 +3,10 @@
 let
   pname = "icomoon-feather";
   version = "5c94ed951cf5342678bd9bd9a5a564e5b5c64822";
-in fetchurl {
+in
+fetchurl {
   name = "${pname}-${version}";
-  url =
-    "https://raw.githubusercontent.com/adi1090x/polybar-themes/5c94ed951cf5342678bd9bd9a5a564e5b5c64822/polybar-5/fonts/${pname}.ttf";
+  url = "https://raw.githubusercontent.com/adi1090x/polybar-themes/5c94ed951cf5342678bd9bd9a5a564e5b5c64822/polybar-5/fonts/${pname}.ttf";
 
   downloadToTemp = true;
   recursiveHash = true;

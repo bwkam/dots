@@ -1,8 +1,14 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
-let cfg = config.modules.misc.wallust;
-
-in {
+let
+  cfg = config.modules.misc.wallust;
+in
+{
   options.modules.misc.wallust.enable = lib.mkEnableOption "enable wallust";
 
   config = lib.mkIf cfg.enable {
@@ -41,7 +47,5 @@ in {
     services.polybar.extraConfig = ''
       include-file = ~/.cache/wal/colors.ini
     '';
-
   };
-
 }

@@ -1,7 +1,14 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 
-let cfg = config.modules.misc.cava;
-in {
+let
+  cfg = config.modules.misc.cava;
+in
+{
   options.modules.misc.cava.enable = lib.mkEnableOption "cava";
   config = lib.mkIf cfg.enable {
     home.packages = [ pkgs.cava ];
@@ -20,6 +27,5 @@ in {
       gradient_color_7 = '#eba0ac'
       gradient_color_8 = '#f38ba8'
     '';
-
   };
 }

@@ -1,1 +1,6 @@
-{ imports = [ ./fish.nix ./nushell.nix ]; }
+{
+  imports = [
+    ./fish.nix
+    ./nushell.nix
+  ];
+}

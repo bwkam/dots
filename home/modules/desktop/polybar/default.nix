@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   cfg = config.modules.desktop.polybar;
 
@@ -8,8 +13,8 @@ let
   };
 
   polybarConfig = builtins.readFile ./config.ini;
-
-in {
+in
+{
   options.modules.desktop.polybar.enable = lib.mkEnableOption "Polybar";
   config = lib.mkIf cfg.enable {
     services = {
@@ -23,5 +28,4 @@ in {
       };
     };
   };
-
 }

@@ -1,1 +1,6 @@
-{ imports = [ ./neovim ./code.nix ]; }
+{
+  imports = [
+    ./neovim
+    ./code.nix
+  ];
+}

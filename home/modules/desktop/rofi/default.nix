@@ -1,7 +1,14 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
-let cfg = config.modules.desktop.rofi;
-in {
+let
+  cfg = config.modules.desktop.rofi;
+in
+{
 
   options.modules.desktop.rofi.enable = lib.mkEnableOption "Enable rofi";
   config = lib.mkIf cfg.enable {
@@ -18,5 +25,4 @@ in {
       recursive = true;
     };
   };
-
 }
