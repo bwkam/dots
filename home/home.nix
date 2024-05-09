@@ -69,7 +69,6 @@ in
   home.packages = with pkgs; [
     # cli
     sops
-    nodePackages.prettier
     pandoc
     sad
     nurl
