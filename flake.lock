@@ -732,16 +732,16 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1715032219,
-        "narHash": "sha256-vvTOXI8MJpIO7cTfd8iqs7dpvXUD87DZpoy3pFcD7ME=",
+        "lastModified": 1715335853,
+        "narHash": "sha256-8yKEwwY9gt8WaRMGvLnYMxR/sLzMV26/GyhXyxahcVc=",
         "owner": "bwkam",
         "repo": "suckless",
-        "rev": "f6573742cc062917fc3457c39bfe727d7725fe6e",
+        "rev": "84ed4c5ee2a1a364d51dff4c427f718b7d08a68f",
         "type": "github"
       },
       "original": {
         "owner": "bwkam",
-        "ref": "dev",
+        "ref": "status2d",
         "repo": "suckless",
         "type": "github"
       }
