@@ -189,7 +189,7 @@ in
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
-  #nix.package = pkgs.nix;
+  # nix.package = pkgs.nix;
 
   # dconf
   dconf.enable = true;
