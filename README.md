@@ -8,4 +8,4 @@ Welcome to my cursed dotfiles. (still under development)
 - [x] Make it more modular
 - [x] Move to dwm
 - [ ] Neovim flake
-
+- [ ] Cleanup
