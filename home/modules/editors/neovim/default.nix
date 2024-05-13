@@ -51,41 +51,32 @@ in
     programs.neovim = {
       enable = true;
       # extraLuaConfig = ''
-      #   vim.g.nix_plugins_dir = "${pkgs.vimUtils.packDirconfig.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
+      #   vim.g.nix_plugins_dir = "${pkgs.vimUtils.packDir config.programs.neovim.finalPackage.passthru.packpathDirs}/pack/myNeovimPackages/start"
       # '';
       plugins = with pkgs.vimPlugins; [
-        markdown-preview-nvim
         nvim-cmp
-        # lazy-nvim
         luasnip
         coal
         cmp_luasnip
         cmp-nvim-lsp
-        # cellular-automaton
-        vim-prettier
         cmp-buffer
         cmp-path
-        copilot-lua
-        hover-nvim
+        # hover-nvim
         nvim-ufo
-        copilot-cmp
         nvim-lspconfig
         nvim-colorizer-lua
         bufdelete-nvim
         telescope-nvim
         flash-nvim
-        vim-repeat
-        telescope-media-files-nvim
-        neorg
+        # neorg
+        # neorg-telescope
         vim-fugitive
-        neorg-telescope
         (nvim-treesitter.withPlugins languages)
         nvim-autopairs
         comment-nvim
         nvim-ts-context-commentstring
         gitsigns-nvim
         nvim-tree-lua
-        trouble-nvim
         vimtex
         nvim-web-devicons
         (bufferline-nvim.overrideAttrs (
@@ -100,17 +91,9 @@ in
         ))
         dashboard-nvim
         null-ls-nvim
-        plenary-nvim
-        impatient-nvim
-        toggleterm-nvim
         which-key-nvim
-        rustaceanvim
-        haskell-tools-nvim
         vaxe
         lualine-nvim
-        presence-nvim
-        zen-mode-nvim
-        fidget-nvim
       ];
     };
     #11

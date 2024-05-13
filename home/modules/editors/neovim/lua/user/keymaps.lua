@@ -70,17 +70,17 @@ keymap("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>", opts)
 keymap("n", "<leader>z", "<cmd>ZenMode<CR>", opts)
 
 -- hover
-keymap("n", "K", require("hover").hover, { desc = "hover.nvim" })
-keymap("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-keymap("n", "<C-p>", function()
-	require("hover").hover_switch("previous")
-end, { desc = "hover.nvim (previous source)" })
-keymap("n", "<C-n>", function()
-	require("hover").hover_switch("next")
-end, { desc = "hover.nvim (next source)" })
+-- keymap("n", "K", require("hover").hover, { desc = "hover.nvim" })
+-- keymap("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+-- keymap("n", "<C-p>", function()
+-- 	require("hover").hover_switch("previous")
+-- end, { desc = "hover.nvim (previous source)" })
+-- keymap("n", "<C-n>", function()
+-- 	require("hover").hover_switch("next")
+-- end, { desc = "hover.nvim (next source)" })
 
 -- Mouse support
-keymap("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
+-- keymap("n", "<MouseMove>", require("hover").hover_mouse, { desc = "hover.nvim (mouse)" })
 vim.o.mousemoveevent = true
 
 -- nvim-ufo
