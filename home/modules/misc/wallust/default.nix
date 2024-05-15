@@ -3,16 +3,13 @@
   lib,
   config,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.wallust;
-in
-{
+in {
   options.modules.misc.wallust.enable = lib.mkEnableOption "enable wallust";
 
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.wallust ];
+    home.packages = [pkgs.wallust];
 
     home.file.".config/wallust/templates" = {
       source = ./templates;

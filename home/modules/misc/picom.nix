@@ -3,16 +3,11 @@
   lib,
   config,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.picom;
-in
-{
-
+in {
   options.modules.misc.picom.enable = lib.mkEnableOption "Enable picom";
   config = lib.mkIf cfg.enable {
-
     services.picom = {
       enable = true;
       package = pkgs.picom-next;

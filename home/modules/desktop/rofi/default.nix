@@ -3,16 +3,11 @@
   pkgs,
   lib,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.desktop.rofi;
-in
-{
-
+in {
   options.modules.desktop.rofi.enable = lib.mkEnableOption "Enable rofi";
   config = lib.mkIf cfg.enable {
-
     programs.rofi = {
       enable = true;
       terminal = "${pkgs.kitty}/bin/kitty";

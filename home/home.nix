@@ -1,12 +1,13 @@
-{ pkgs, inputs, ... }:
-
-let
+{
+  pkgs,
+  inputs,
+  ...
+}: let
   nixpkgs-unstable-latest = import inputs.nixpkgs-unstable {
     inherit (pkgs) system;
     config.allowUnfree = true;
   };
-in
-{
+in {
   imports = [
     ./modules/desktop
     ./modules/editors
@@ -75,21 +76,19 @@ in
     ranger
     zellij
     (weechat.override {
-      configure =
-        { ... }:
-        {
-          scripts = with pkgs.weechatScripts; [
-            (weechat-matrix.overrideAttrs (
-              final: prev: {
-                postFixup =
-                  prev.postFixup
-                  + ''
-                    substituteInPlace $out/lib/python3.11/site-packages/matrix/uploads.py --replace \"matrix_upload\" \"$out/bin/matrix_upload\"
-                  '';
-              }
-            ))
-          ];
-        };
+      configure = {...}: {
+        scripts = with pkgs.weechatScripts; [
+          (weechat-matrix.overrideAttrs (
+            final: prev: {
+              postFixup =
+                prev.postFixup
+                + ''
+                  substituteInPlace $out/lib/python3.11/site-packages/matrix/uploads.py --replace \"matrix_upload\" \"$out/bin/matrix_upload\"
+                '';
+            }
+          ))
+        ];
+      };
     })
     translate-shell
     youtube-tui

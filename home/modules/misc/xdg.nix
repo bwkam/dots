@@ -3,15 +3,11 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.xdg;
-in
-{
+in {
   options.modules.misc.xdg.enable = lib.mkEnableOption "xdg";
   config = lib.mkIf cfg.enable {
-
     xdg = {
       enable = true;
       mime.enable = true;
@@ -22,7 +18,7 @@ in
       mimeApps = {
         enable = true;
         defaultApplications = {
-          "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
+          "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
           "text/html" = "firefox.desktop";
           "x-scheme-handler/http" = "firefox.desktop";
           "x-scheme-handler/https" = "firefox.desktop";

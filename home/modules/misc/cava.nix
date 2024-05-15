@@ -3,15 +3,12 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.cava;
-in
-{
+in {
   options.modules.misc.cava.enable = lib.mkEnableOption "cava";
   config = lib.mkIf cfg.enable {
-    home.packages = [ pkgs.cava ];
+    home.packages = [pkgs.cava];
     xdg.configFile."cava/config".text = ''
       # cava config
       [color]

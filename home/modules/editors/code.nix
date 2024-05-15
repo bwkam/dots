@@ -3,16 +3,12 @@
   pkgs,
   lib,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.editors.code;
-in
-{
+in {
   options.modules.editors.code.enable = lib.mkEnableOption "vscode";
 
   config = lib.mkIf cfg.enable {
-
     programs.vscode = {
       enable = true;
       mutableExtensionsDir = true;

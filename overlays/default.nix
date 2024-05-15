@@ -1,6 +1,8 @@
-{ lib, inputs, ... }:
-
-(final: prev: {
+{
+  lib,
+  inputs,
+  ...
+}: (final: prev: {
   pywal = prev.python310Packages.buildPythonPackage {
     pname = "pywal";
     version = "3.5.0";

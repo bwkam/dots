@@ -3,19 +3,15 @@
   lib,
   pkgs,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.starship;
-in
-{
+in {
   options.modules.misc.starship.enable = lib.mkEnableOption "starship";
   config = lib.mkIf cfg.enable {
     programs.starship = {
       enable = true;
 
       settings = {
-
       };
     };
   };

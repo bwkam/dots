@@ -4,29 +4,25 @@
   pkgs,
   inputs,
   ...
-}:
-let
+}: let
   cfg = config.modules.editors.nvim;
-in
-{
+in {
   options.modules.editors.nvim.enable = lib.mkEnableOption "nvim";
 
   config = lib.mkIf cfg.enable {
-
     home.packages = with pkgs; [
       inputs.neovim.packages.${pkgs.system}.neovim
-      haskell-language-server
-      nil
+      # haskell-language-server
       nixfmt-rfc-style
-      texlab
-      ghc
-      stylua
-      lua-language-server
-      asm-lsp
-      curl
-      nodePackages.typescript-language-server
-      nodePackages.bash-language-server
-      typescript
+      # texlab
+      # ghc
+      # stylua
+      # lua-language-server
+      # asm-lsp
+      # curl
+      # nodePackages.typescript-language-server
+      # nodePackages.bash-language-server
+      # typescript
     ];
 
     # xdg.configFile = {

@@ -4,11 +4,9 @@
   lib,
   inputs,
   ...
-}:
-let
+}: let
   cfg = config.modules.desktop.dwm;
-in
-{
+in {
   options.modules.desktop.dwm.enable = lib.mkEnableOption "dwm";
 
   # dwm
@@ -24,7 +22,7 @@ in
       };
 
       Install = {
-        WantedBy = [ "graphical-session.target" ];
+        WantedBy = ["graphical-session.target"];
       };
 
       Service = {

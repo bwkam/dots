@@ -1,1 +1,1 @@
-{ imports = [ ./lazygit ]; }
+{imports = [./lazygit];}

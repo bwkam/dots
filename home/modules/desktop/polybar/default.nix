@@ -3,8 +3,7 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   cfg = config.modules.desktop.polybar;
 
   mypolybar = pkgs.polybar.override {
@@ -13,8 +12,7 @@ let
   };
 
   polybarConfig = builtins.readFile ./config.ini;
-in
-{
+in {
   options.modules.desktop.polybar.enable = lib.mkEnableOption "Polybar";
   config = lib.mkIf cfg.enable {
     services = {

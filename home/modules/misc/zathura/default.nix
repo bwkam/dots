@@ -3,17 +3,12 @@
   config,
   lib,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.zathura;
-in
-{
-
+in {
   options.modules.misc.zathura.enable = lib.mkEnableOption "Enable zathura";
 
   config = lib.mkIf cfg.enable {
-
     programs.zathura = {
       enable = true;
     };

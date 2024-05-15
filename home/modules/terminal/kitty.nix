@@ -1,10 +1,10 @@
-{ config, lib, ... }:
-
-let
-  cfg = config.modules.terminal.kitty;
-in
 {
-
+  config,
+  lib,
+  ...
+}: let
+  cfg = config.modules.terminal.kitty;
+in {
   options.modules.terminal.kitty.enable = lib.mkEnableOption "Enable kitty terminal";
 
   config = lib.mkIf cfg.enable {
@@ -21,7 +21,7 @@ in
         allow_remote_control yes
 
         font_family Iosevka Medium
-        bold_font Iosevka Bold 
+        bold_font Iosevka Bold
         italic_font Iosevka Light italic
         bold_italic_font Iosevka Bold Italic
 

@@ -3,17 +3,12 @@
   config,
   lib,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.desktop.gtk;
-in
-{
+in {
   options.modules.desktop.gtk.enable = lib.mkEnableOption "Enable gtk";
   config = lib.mkIf cfg.enable {
-
     home = {
-
       pointerCursor = {
         package = pkgs.bibata-cursors;
         name = "Bibata-Modern-Classic";

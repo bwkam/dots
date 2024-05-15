@@ -6,8 +6,7 @@
   inputs,
   lib,
   ...
-}:
-{
+}: {
   imports = [
     ./hardware-configuration.nix
     ./cachix.nix
@@ -37,11 +36,11 @@
   sops.defaultSopsFormat = "yaml";
 
   sops.age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
-  sops.secrets.github = { };
+  sops.secrets.github = {};
 
   nix.settings = {
-    substituters = [ "https://ghostty.cachix.org" ];
-    trusted-public-keys = [ "ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" ];
+    substituters = ["https://ghostty.cachix.org"];
+    trusted-public-keys = ["ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="];
     # access-tokens = [ "github.com=${config.sops.secrets.github.path}" ];
   };
 
@@ -95,17 +94,17 @@
 
   xdg.portal = {
     #wlr.enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   hardware.sane.enable = true;
   hardware.bluetooth.enable = true;
 
-  hardware.sane.extraBackends = [ pkgs.hplipWithPlugin ];
+  hardware.sane.extraBackends = [pkgs.hplipWithPlugin];
 
   services.printing = {
     enable = true;
-    drivers = [ pkgs.hplipWithPlugin ];
+    drivers = [pkgs.hplipWithPlugin];
   };
 
   # Enable sound.
@@ -119,7 +118,7 @@
 
   services.postgresql = {
     enable = true;
-    ensureDatabases = [ "mydatabase" ];
+    ensureDatabases = ["mydatabase"];
     authentication = pkgs.lib.mkOverride 10 ''
       #type database  DBuser  auth-method
       local all       all     trust
@@ -129,7 +128,7 @@
   programs.dconf.enable = true;
   programs.fish.enable = true;
 
-  # auto-cpufreq 
+  # auto-cpufreq
   programs.auto-cpufreq.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -146,7 +145,7 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (pkg: true);
+      allowUnfreePredicate = pkg: true;
       firefox.speechSynthesisSupport = true;
     };
 
@@ -154,7 +153,7 @@
       inputs.neovim-nightly-overlay.overlay
       inputs.nurpkgs.overlay
       inputs.neorg-overlay.overlays.default
-      (import ../overlays { inherit lib inputs; })
+      (import ../overlays {inherit lib inputs;})
     ];
   };
 

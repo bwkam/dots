@@ -3,11 +3,9 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   cfg = config.modules.shell.fish;
-in
-{
+in {
   options.modules.shell.fish.enable = lib.mkEnableOption "fish shell";
 
   config = lib.mkIf cfg.enable {

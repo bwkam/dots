@@ -3,16 +3,12 @@
   lib,
   config,
   ...
-}:
-
-let
+}: let
   cfg = config.modules.misc.pywal;
-in
-{
+in {
   options.modules.misc.pywal.enable = lib.mkEnableOption "enable pywal";
 
   config = lib.mkIf cfg.enable {
-
     programs.pywal = {
       enable = true;
     };
