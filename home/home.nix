@@ -2,12 +2,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  nixpkgs-unstable-latest = import inputs.nixpkgs-unstable {
-    inherit (pkgs) system;
-    config.allowUnfree = true;
-  };
-in {
+}: {
   imports = [
     ./modules/desktop
     ./modules/editors

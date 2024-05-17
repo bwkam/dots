@@ -13,8 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -28,8 +26,6 @@
     # my flakes
     suckless.url = "github:bwkam/suckless/dev";
     neovim.url = "github:bwkam/nvim/master";
-
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
 
     ghostty = {
       url = "git+ssh://git@github.com/mitchellh/ghostty";
@@ -78,6 +74,7 @@
             git
             lua-language-server
             lua
+            vim
           ];
         };
     };
