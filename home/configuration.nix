@@ -38,11 +38,11 @@
   sops.age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
   sops.secrets.github = {};
 
-  nix.settings = {
-    substituters = ["https://ghostty.cachix.org"];
-    trusted-public-keys = ["ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="];
-    # access-tokens = [ "github.com=${config.sops.secrets.github.path}" ];
-  };
+  # nix.settings = {
+  #   substituters = ["https://ghostty.cachix.org"];
+  #   trusted-public-keys = ["ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns="];
+  #   # access-tokens = [ "github.com=${config.sops.secrets.github.path}" ];
+  # };
 
   services.avahi = {
     enable = true;
@@ -150,9 +150,6 @@
     };
 
     overlays = [
-      inputs.neovim-nightly-overlay.overlay
-      inputs.nurpkgs.overlay
-      inputs.neorg-overlay.overlays.default
       (import ../overlays {inherit lib inputs;})
     ];
   };
