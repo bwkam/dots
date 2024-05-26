@@ -42,7 +42,7 @@
       neofetch.enable = true;
       zathura.enable = true;
       xdg.enable = true;
-      # starship.enable = true;
+      starship.enable = true;
     };
 
     shell = {
@@ -66,6 +66,7 @@
     # cli
     sops
     pandoc
+    haxe
     sad
     nurl
     ranger
