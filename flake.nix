@@ -72,8 +72,6 @@
         mkShell {
           buildInputs = [
             git
-            lua-language-server
-            lua
             vim
           ];
         };
