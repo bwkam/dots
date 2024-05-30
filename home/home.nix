@@ -87,6 +87,7 @@
       };
     })
     translate-shell
+    steam-run
     youtube-tui
     fzf
     cmatrix
