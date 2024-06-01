@@ -7,5 +7,5 @@ Welcome to my cursed dotfiles. (still under development)
 - [ ] Add multiple home/system configs
 - [x] Make it more modular
 - [x] Move to dwm
-- [ ] Neovim flake
+- [x] Neovim flake
 - [ ] Cleanup
