@@ -89,6 +89,7 @@
     translate-shell
     steam-run
     typst
+    typst-preview
     youtube-tui
     fzf
     cmatrix
