@@ -88,6 +88,7 @@
     })
     translate-shell
     steam-run
+    typst
     youtube-tui
     fzf
     cmatrix
