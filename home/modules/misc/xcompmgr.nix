@@ -21,7 +21,7 @@ in {
 
       Service = {
         Restart = "always";
-        ExecStart = "${lib.getExe pkgs.xcompmgr} -c -n -C -F -f";
+        ExecStart = "${lib.getExe pkgs.xcompmgr} -c -n";
       };
     };
   };
