@@ -5,7 +5,7 @@
     ./wallust
     ./zathura
     ./cava.nix
-    ./picom.nix
+    ./xcompmgr.nix
     ./xdg.nix
     ./starship.nix
   ];

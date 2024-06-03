@@ -43,7 +43,7 @@
       zathura.enable = true;
       xdg.enable = true;
       starship.enable = true;
-      picom.enable = false;
+      xcompmgr.enable = true;
     };
 
     shell = {
@@ -72,14 +72,15 @@
     nurl
     ranger
     zellij
-    (xcompmgr.overrideAttrs (final: prev: {
-      src = fetchFromGitHub {
-        owner = "tycho-kirchner";
-        repo = "fastcompmgr";
-        rev = "1b158ec2bab7298b7225526fbbd558650e0e3741";
-        hash = "sha256-AqTacBmFK4KnQmbGq94E3SNZlxKkC6o3szF+Fpa5dgk=";
-      };
-    }))
+    # (xcompmgr.overrideAttrs (final: prev: {
+    #   src = fetchFromGitHub {
+    #     owner = "tycho-kirchner";
+    #     repo = "fastcompmgr";
+    #     rev = "1b158ec2bab7298b7225526fbbd558650e0e3741";
+    #     hash = "sha256-AqTacBmFK4KnQmbGq94E3SNZlxKkC6o3szF+Fpa5dgk=";
+    #   };
+    # }))
+    xcompmgr
     (weechat.override {
       configure = {...}: {
         scripts = with pkgs.weechatScripts; [

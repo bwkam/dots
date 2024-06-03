@@ -23,7 +23,7 @@
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     # my flakes
-    suckless.url = "github:bwkam/suckless/no_title";
+    suckless.url = "github:bwkam/suckless/master";
     neovim.url = "github:bwkam/nvim/master";
     haxe-overlay.url = "github:haxenix/haxe-overlay";
 
