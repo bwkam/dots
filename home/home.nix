@@ -133,6 +133,7 @@
     pavucontrol
     flameshot
     feh
+    nitrogen
     obs-studio
     simplescreenrecorder
     peek
