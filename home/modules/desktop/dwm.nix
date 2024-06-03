@@ -32,7 +32,8 @@ in {
     };
 
     services.polybar.enable = lib.mkForce false;
-    services.picom.enable = lib.mkForce false;
+    # services.picom.enable = lib.mkForce false;
+
     services.sxhkd = {
       enable = true;
       keybindings = {

@@ -24,26 +24,29 @@ in {
         detect-rounded-corners = true;
         detect-client-opacity = true;
         detect-transient = true;
-        glx-no-stencil = true;
+
+        glx-no-stencil = false;
         use-damage = true;
 
-        inactive-opacity = 1.0;
-        active-opacity = 1.0;
-        inactive-opacity-override = false;
+        active-opacity = 0.6;
+
+        inactive-opacity-override = true;
 
         focus-exclude = [
           "class_g = 'Cairo-clock'"
+          "class_g = 'firefox'"
           "class_g = 'slop'"
         ];
 
         opacity-rule = [
           "100:class_g = 'Alacritty'"
           "100:class_g = 'FloaTerm'"
+          "100:class_g = 'firefox'"
           "95:class_g = 'Updating'"
           "90:class_g = 'scratch'"
         ];
 
-        corner-radius = 6;
+        corner-radius = 0;
 
         rounded-corners-exclude = [
           "window_type = 'dropdown_menu'"
@@ -61,6 +64,7 @@ in {
         shadow-exclude = [
           "name = 'Notification'"
           "class_g = 'Conky'"
+          "class_g = 'firefox'"
           "class_g ?= 'Notify-osd'"
           "class_g = 'Cairo-clock'"
           "class_g = 'slop'"
@@ -74,8 +78,8 @@ in {
 
         wintypes = {
           dock = {
-            fade = false;
             shadow = false;
+            fade = false;
             full-shadow = false;
           };
           popup_menu = {
