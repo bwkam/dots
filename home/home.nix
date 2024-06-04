@@ -43,7 +43,7 @@
       zathura.enable = true;
       xdg.enable = true;
       starship.enable = true;
-      xcompmgr.enable = true;
+      xcompmgr.enable = false;
     };
 
     shell = {
@@ -166,6 +166,7 @@
 
   services = {
     playerctld.enable = true;
+    picom.enable = true;
     betterlockscreen.enable = true;
     # dunst.enable = true;
 

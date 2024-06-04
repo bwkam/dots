@@ -33,6 +33,9 @@ in {
 
         # don't name windows automatically
                 set-option -g allow-rename off
+
+        # no delay when esc pls
+                set -sg escape-time 0
       '';
     };
   };
