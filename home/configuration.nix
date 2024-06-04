@@ -42,7 +42,6 @@
   nix.settings = {
     substituters = ["https://ghostty.cachix.org" "https://cache.garnix.io"];
     trusted-public-keys = ["ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="];
-    access-tokens = ["github.com=${config.sops.secrets.github.path}"];
   };
 
   services.avahi = {
