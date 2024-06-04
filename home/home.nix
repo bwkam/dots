@@ -61,18 +61,15 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "23.05"; # Please read the comment before changingr
+  home.stateVersion = "23.05"; # Please read the comment before changing
 
   home.packages = with pkgs; [
     # cli
     sops
     pandoc
-    haxe
     sad
     nurl
     ranger
-    zellij
-    xcompmgr
     (weechat.override {
       configure = {...}: {
         scripts = with pkgs.weechatScripts; [
@@ -106,7 +103,6 @@
     xsel
     xdotool
     playerctl
-    # steam-run
     yt-dlp
     cachix
     wine
@@ -114,25 +110,27 @@
     zip
     openssl
 
-    networkmanagerapplet
-    gparted
-    google-chrome
-    rhythmbox
     tracker
-    mpv
     tracker-miners
     hplip
-    pavucontrol
-    flameshot
     feh
+
+    # gui
+    flameshot
+    networkmanagerapplet
+    rhythmbox
+    mpv
+    pavucontrol
+    gnome.simple-scan
+    gparted
+    google-chrome
+    audacity
     nitrogen
     obs-studio
     simplescreenrecorder
     peek
-    audacity
-    gnome.simple-scan
-    gnome.cheese
 
+    # fonts
     material-icons
     material-design-icons
     roboto
@@ -161,21 +159,6 @@
       ];
     })
   ];
-
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # ''; 11
-  };
 
   home.sessionVariables = {
     EDITOR = "nvim";
