@@ -5,6 +5,7 @@
   pkgs,
   inputs,
   lib,
+  config,
   ...
 }: {
   imports = [
@@ -41,12 +42,12 @@
   nix.settings = {
     substituters = ["https://ghostty.cachix.org" "https://cache.garnix.io"];
     trusted-public-keys = ["ghostty.cachix.org-1:QB389yTa6gTyneehvqG58y0WnHjQOqgnA+wBnpWWxns=" "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="];
-    # access-tokens = [ "github.com=${config.sops.secrets.github.path}" ];
+    access-tokens = ["github.com=${config.sops.secrets.github.path}"];
   };
 
   services.avahi = {
     enable = true;
-    nssmdns = true;
+    nssmdns4 = true;
     publish = {
       enable = true;
       addresses = true;
@@ -64,7 +65,7 @@
   # X11
   services.xserver = {
     enable = true;
-    layout = "us,ara";
+    xkb.layout = "us,ara";
     displayManager.lightdm.enable = true;
     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
     desktopManager.xterm.enable = false;
@@ -86,7 +87,7 @@
   services.xserver.displayManager.startx.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkbOptions = "eurosign:e,caps:escape, grp:alt_space_toggle";
+  services.xserver.xkb.options = "eurosign:e,caps:escape, grp:alt_space_toggle";
   services.blueman.enable = true;
 
   services.flatpak.enable = true;
@@ -114,7 +115,7 @@
   hardware.opengl.driSupport32Bit = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   services.postgresql = {
     enable = true;
