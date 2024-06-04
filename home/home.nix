@@ -74,7 +74,7 @@
       configure = {...}: {
         scripts = with pkgs.weechatScripts; [
           (weechat-matrix.overrideAttrs (
-            final: prev: {
+            _: prev: {
               postFixup =
                 prev.postFixup
                 + ''
