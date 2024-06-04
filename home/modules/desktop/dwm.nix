@@ -32,7 +32,6 @@ in {
     };
 
     services.polybar.enable = lib.mkForce false;
-    # services.picom.enable = lib.mkForce false;
 
     services.sxhkd = {
       enable = true;
@@ -41,7 +40,7 @@ in {
         "super + space" = "dmenu_run";
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
-        "alt + l" = "betterlockscreen -l dim";
+        "ctrl + shift + l" = "betterlockscreen -l dim";
         "Print" = "flameshot gui";
         "XF86AudioNext" = "playerctl next";
         "XF86AudioPause" = "playerctl play-pause";
