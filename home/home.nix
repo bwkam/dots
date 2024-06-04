@@ -32,7 +32,7 @@
       firefox.enable = true;
     };
 
-    # dev = { lazygit.enable = true; };
+    dev = {tmux.enable = true;};
 
     terminal = {
       kitty.enable = true;
@@ -72,7 +72,6 @@
     nurl
     ranger
     zellij
-    tmux
     xcompmgr
     (weechat.override {
       configure = {...}: {
