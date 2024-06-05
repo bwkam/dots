@@ -352,11 +352,11 @@
         "rev": "955246d6a0b4d3b7c79ac606aa1441a4794b5c40",
         "revCount": 6258,
         "type": "git",
-        "url": "ssh://git@github.com/ghostty-org/ghostty"
+        "url": "ssh://git@github.com/bwkam/ghostty"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/ghostty-org/ghostty"
+        "url": "ssh://git@github.com/bwkam/ghostty"
       }
     },
     "gitignore": {
