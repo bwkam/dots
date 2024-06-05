@@ -166,7 +166,7 @@
 
   services = {
     playerctld.enable = true;
-    picom.enable = true;
+    # picom.enable = true;
     betterlockscreen.enable = true;
     # dunst.enable = true;
 
