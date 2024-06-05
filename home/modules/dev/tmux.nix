@@ -28,6 +28,10 @@ in {
                 bind -n M-k select-pane -U
                 bind -n M-j select-pane -D
 
+        # H/L window movement
+                bind -n M-H previous-window
+                bind -n M-L next-window
+
         # enable mouse
                 set -g mouse on
 
