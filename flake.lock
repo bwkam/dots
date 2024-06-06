@@ -591,11 +591,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1717515980,
-        "narHash": "sha256-9EfYCM79JwQZPyLtTnbSL26KWb5jbbZhLpT7Kg5hgQY=",
+        "lastModified": 1717671844,
+        "narHash": "sha256-6PKzDjZoEdmpZZBPJ/mIkpi+jTbU4D60OVNiBCtq5a0=",
         "owner": "bwkam",
         "repo": "nvim",
-        "rev": "5cdf950b7e900392a7cf3b634f6916e99f4048fd",
+        "rev": "56ceaef79a44c4556c0b5157d9cfb00a1f364e51",
         "type": "github"
       },
       "original": {
