@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    alphapkgs.url = "github:bwkam/nixpkgs/fix_fzf-fish_search_dirs";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,7 +29,7 @@
     haxe-overlay.url = "github:haxenix/haxe-overlay";
 
     ghostty = {
-      url = "git+ssh://git@github.com/bwkam/ghostty";
+      url = "git+ssh://git@github.com/ghostty-org/ghostty";
     };
   };
 
