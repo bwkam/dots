@@ -71,6 +71,8 @@ in {
     pandoc
     sad
     nurl
+    fd
+    bat
     ranger
     (weechat.override {
       configure = {...}: {

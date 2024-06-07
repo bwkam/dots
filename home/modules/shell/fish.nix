@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  inputs,
   ...
 }: let
   cfg = config.modules.shell.fish;
@@ -21,15 +20,12 @@ in {
 
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
-        fzf_configure_bindings
       '';
 
-      plugins = let
-        apkgs = import inputs.alphapkgs {system = "x86_64-linux";};
-      in [
+      plugins = [
         {
           name = "fzf-fish";
-          inherit (apkgs.fishPlugins.fzf-fish) src;
+          inherit (pkgs.fishPlugins.fzf-fish) src;
         }
       ];
 
