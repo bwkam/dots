@@ -20,6 +20,7 @@ in {
 
       interactiveShellInit = ''
         set fish_greeting # Disable greeting
+        fzf_configure_bindings
       '';
 
       plugins = [
