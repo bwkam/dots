@@ -28,7 +28,7 @@
     haxe-overlay.url = "github:haxenix/haxe-overlay";
 
     ghostty = {
-      url = "git+ssh://git@github.com/ghostty-org/ghostty";
+      url = "git+ssh://git@github.com/bwkam/ghostty";
     };
   };
 
