@@ -46,6 +46,8 @@ in {
       xdg.enable = true;
       starship.enable = true;
       xcompmgr.enable = false;
+      mpd.enable = true;
+      ncmp.enable = true;
     };
 
     shell = {
@@ -170,8 +172,9 @@ in {
 
   services = {
     playerctld.enable = true;
-    # picom.enable = true;
+    mpdris2.enable = true;
     betterlockscreen.enable = true;
+    # picom.enable = true;
     # dunst.enable = true;
 
     gnome-keyring.enable = true;

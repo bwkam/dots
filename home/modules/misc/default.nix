@@ -8,5 +8,7 @@
     ./xcompmgr.nix
     ./xdg.nix
     ./starship.nix
+    ./mpd.nix
+    ./ncmp.nix
   ];
 }
