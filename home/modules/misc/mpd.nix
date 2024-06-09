@@ -10,15 +10,15 @@ in {
   config = lib.mkIf cfg.enable {
     services.mpd = {
       enable = true;
-      musicDirectory = "${config.home.homeDirectory}/Music";
+      musicDirectory = "${config.home.homeDirectory}/Music/emo-rap";
       dataDir = "${config.home.homeDirectory}/.config/mpd";
       extraConfig = ''
         auto_update           "yes"
         restore_paused        "yes"
         audio_output {
-          type "pulse"
-          name "Pulseaudio"
-          server "127.0.0.1" # add this line - MPD must connect to the local sound server
+        type            "pipewire"
+        name            "PipeWire Sound Server"
+        server "127.0.0.1" # add this line - MPD must connect to the local sound server
         }
         audio_output {
         	type                "fifo"
