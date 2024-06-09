@@ -13,30 +13,22 @@ in {
       musicDirectory = "${config.home.homeDirectory}/Music/emo-rap";
       dataDir = "${config.home.homeDirectory}/.config/mpd";
       extraConfig = ''
-        auto_update           "yes"
-        restore_paused        "yes"
+         bind_to_address "127.0.0.1"
         audio_output {
-        type            "pipewire"
-        name            "PipeWire Sound Server"
-        server "127.0.0.1" # add this line - MPD must connect to the local sound server
-        }
-        audio_output {
-        	type                "fifo"
-        	name                "Visualizer"
-        	format              "44100:16:2"
-        	path                "/tmp/mpd.fifo"
-        }
+             type  "pulse"
+             name  "pulse audio"
+             server "127.0.0.1" # add this line - MPD must connect to the local sound server
+         }
 
         audio_output {
-        	type		            "httpd"
-        	name		            "lossless"
-        	encoder		          "flac"
-        	port		            "8000"
-        	max_client	        "8"
-        	mixer_type	        "software"
-        	format		          "44100:16:2"
+            type                    "fifo"
+            name                    "my_fifo"
+            path                    "/tmp/mpd.fifo"
+            format                  "44100:16:2"
         }
+
       '';
+
       network.startWhenNeeded = true;
     };
   };
