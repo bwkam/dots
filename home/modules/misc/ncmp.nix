@@ -10,11 +10,11 @@ in {
   config = lib.mkIf cfg.enable {
     programs.ncmpcpp = {
       enable = true;
-      # package = pkgs.ncmpcpp.override {
-      #   visualizerSupport = true;
-      #   clockSupport = true;
-      #   taglibSupport = true;
-      # };
+      package = pkgs.ncmpcpp.override {
+        visualizerSupport = true;
+        clockSupport = true;
+        taglibSupport = true;
+      };
       mpdMusicDir = "${config.home.homeDirectory}/Music/emo-rap";
       settings = {
         # Miscelaneous
