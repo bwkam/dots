@@ -28,6 +28,8 @@ in {
         }
 
       '';
+
+      network.startWhenNeeded = true;
     };
   };
 }

@@ -98,7 +98,6 @@ in {
     youtube-tui
     fzf
     cmatrix
-    mlterm
     htop
     eza
     gh
