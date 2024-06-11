@@ -2,9 +2,7 @@
   pkgs,
   inputs,
   ...
-}: let
-  apkgs = import inputs.alphapkgs {system = "x86_64-linux";};
-in {
+}: {
   imports = [
     ./modules/desktop
     ./modules/editors
