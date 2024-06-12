@@ -1,6 +1,5 @@
 {
   imports = [
-    ./neovim
     ./code.nix
   ];
 }
