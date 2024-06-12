@@ -14,11 +14,6 @@
   ];
 
   modules = {
-    editors = {
-      nvim.enable = true;
-      code.enable = false;
-    };
-
     desktop = {
       bspwm.enable = false;
       dwm.enable = true;
