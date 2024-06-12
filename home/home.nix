@@ -98,6 +98,7 @@
     gnumeric
     ripgrep
     xorg.xkill
+    nvimpager
     xsel
     xdotool
     playerctl
@@ -160,6 +161,7 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
+    PAGER = "nvimpager";
   };
 
   services = {
