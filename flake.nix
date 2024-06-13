@@ -26,7 +26,6 @@
     # my flakes
     suckless.url = "github:bwkam/suckless/master";
     neovim.url = "github:bwkam/nvim/master";
-    haxe-overlay.url = "github:haxenix/haxe-overlay";
 
     ghostty = {
       url = "git+ssh://git@github.com/bwkam/ghostty";
