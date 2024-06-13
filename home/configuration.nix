@@ -147,7 +147,7 @@ in {
     };
 
     overlays = [
-      inputs.haxe-overlay.overlays.default
+      # inputs.haxe-overlay.overlays.default
       (import ../overlays {inherit lib inputs;})
     ];
   };
