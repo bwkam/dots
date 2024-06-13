@@ -7,7 +7,9 @@
   lib,
   config,
   ...
-}: {
+}: let
+  nixpkgs-latest = import inputs.nixpkgs-latest {system = "x86_64-linux";};
+in {
   imports = [
     ./hardware-configuration.nix
     ./cachix.nix
@@ -76,6 +78,7 @@
 
   services.xserver.displayManager.startx.enable = true;
   services.tailscale.enable = true;
+  services.tailscale.package = nixpkgs-latest.tailscale;
 
   # Configure keymap in X11
   services.xserver.xkb.options = "eurosign:e,caps:escape, grp:alt_space_toggle";
