@@ -14,6 +14,10 @@
   ];
 
   modules = {
+    editors = {
+      code.enable = false;
+    };
+
     desktop = {
       bspwm.enable = false;
       dwm.enable = true;
@@ -69,6 +73,7 @@
     fd
     bat
     ranger
+    (inputs.neovim.packages.x86_64-linux.neovim)
     (weechat.override {
       configure = {...}: {
         scripts = with pkgs.weechatScripts; [
