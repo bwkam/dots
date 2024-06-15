@@ -99,7 +99,7 @@
     htop
     eza
     gh
-    (inputs.ghostty.packages.x86_64-linux.default)
+    # (inputs.ghostty.packages.x86_64-linux.default)
     gnumeric
     ripgrep
     xorg.xkill

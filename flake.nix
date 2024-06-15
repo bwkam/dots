@@ -27,9 +27,9 @@
     suckless.url = "github:bwkam/suckless/master";
     neovim.url = "github:bwkam/nvim/master";
 
-    ghostty = {
-      url = "git+ssh://git@github.com/bwkam/ghostty";
-    };
+  #  ghostty = {
+ #     url = "git+ssh://git@github.com/bwkam/ghostty";
+#    };
   };
 
   outputs = {
@@ -67,7 +67,7 @@
       };
     };
 
-    devShells.x84_64-linux = {
+    devShells."x86_64-linux" = {
       default = with nixpkgs.legacyPackages.x86_64-linux;
         mkShell {
           buildInputs = [
