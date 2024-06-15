@@ -15,7 +15,7 @@ in {
         clockSupport = true;
         taglibSupport = true;
       };
-      mpdMusicDir = "${config.home.homeDirectory}/Music/emo-rap";
+      mpdMusicDir = "${config.home.homeDirectory}/Music";
       settings = {
         # Miscelaneous
         ncmpcpp_directory = "${config.home.homeDirectory}/.config/ncmpcpp";

@@ -10,7 +10,7 @@ in {
   config = lib.mkIf cfg.enable {
     services.mpd = {
       enable = true;
-      musicDirectory = "${config.home.homeDirectory}/Music/emo-rap";
+      musicDirectory = "${config.home.homeDirectory}/Music";
       dataDir = "${config.home.homeDirectory}/.config/mpd";
       extraConfig = ''
          bind_to_address "127.0.0.1"
