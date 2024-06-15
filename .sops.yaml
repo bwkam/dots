@@ -3,7 +3,7 @@
 # Also see https://github.com/Mic92/dotfiles/blob/master/nixos/.sops.yaml
 # for a more complex example.
 keys:
-  - &bwkam age1c7zs3nerpm0vgqs08eu6vl0ncrqqflx98yavl4r7sacg4w9435gsjps47u
+  - &bwkam age1f4clr9zskkkqyr6cnde60cjdxw8tw0nhdn4ufsfaq0y0a59n9s0slga5jn
 creation_rules:
   - path_regex: secrets/secrets.yaml$
     key_groups:
