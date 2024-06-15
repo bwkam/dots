@@ -21,15 +21,14 @@
     nurpkgs.url = "github:nix-community/NUR";
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     # my flakes
     suckless.url = "github:bwkam/suckless/master";
     neovim.url = "github:bwkam/nvim/master";
 
-  #  ghostty = {
- #     url = "git+ssh://git@github.com/bwkam/ghostty";
-#    };
+    #  ghostty = {
+    #     url = "git+ssh://git@github.com/bwkam/ghostty";
+    #    };
   };
 
   outputs = {
