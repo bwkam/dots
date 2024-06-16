@@ -166,8 +166,8 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PAGER = "page -q 90000";
-    MANPAGER = "page -t man";
+    PAGER = "page -q 90000 -c NONE";
+    MANPAGER = "page -t man -c NONE";
   };
 
   services = {
