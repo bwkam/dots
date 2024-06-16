@@ -97,6 +97,7 @@
     fzf
     cmatrix
     htop
+    btop
     eza
     page
     gh
