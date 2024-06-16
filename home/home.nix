@@ -178,6 +178,8 @@
   };
 
   nix.extraOptions = "experimental-features = nix-command flakes";
+
+  # when hm standalone is enabled, enable this
   # nix.package = pkgs.nix;
 
   # dconf
