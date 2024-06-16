@@ -70,6 +70,7 @@
     nurl
     fd
     bat
+    cava
     ranger
     (inputs.neovim.packages.x86_64-linux.neovim)
     (weechat.override {
