@@ -98,12 +98,12 @@
     cmatrix
     htop
     eza
+    page
     gh
     # (inputs.ghostty.packages.x86_64-linux.default)
     gnumeric
     ripgrep
     xorg.xkill
-    nvimpager
     xsel
     xdotool
     playerctl
@@ -166,7 +166,8 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PAGER = "nvimpager";
+    PAGER = "page -q 90000";
+    MANPAGER = "page -t man";
   };
 
   services = {

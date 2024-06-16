@@ -129,6 +129,9 @@ in {
   # auto-cpufreq
   programs.auto-cpufreq.enable = true;
 
+  # zram
+  zramSwap.enable = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.bwkam = {
     isNormalUser = true;
