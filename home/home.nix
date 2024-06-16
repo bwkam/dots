@@ -67,8 +67,6 @@
   home.packages = with pkgs; [
     # cli
     sops
-    pandoc
-    sad
     nurl
     fd
     bat
@@ -93,7 +91,6 @@
     steam-run
     typst
     typst-preview
-    youtube-tui
     fzf
     cmatrix
     htop
@@ -101,7 +98,6 @@
     eza
     page
     gh
-    # (inputs.ghostty.packages.x86_64-linux.default)
     gnumeric
     ripgrep
     xorg.xkill
@@ -115,20 +111,19 @@
     zip
     openssl
 
-    tracker
-    tracker-miners
+    # for rhythmbox
+    # tracker
+    # tracker-miners
     hplip
     feh
 
     # gui
     flameshot
     networkmanagerapplet
-    rhythmbox
     mpv
     pavucontrol
     gnome.simple-scan
     gparted
-    google-chrome
     audacity
     nitrogen
     obs-studio
