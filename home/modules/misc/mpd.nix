@@ -13,7 +13,7 @@ in {
       musicDirectory = "${config.home.homeDirectory}/Music";
       dataDir = "${config.home.homeDirectory}/.config/mpd";
       extraConfig = ''
-         bind_to_address "127.0.0.1"
+        bind_to_address "127.0.0.1"
         audio_output {
              type  "pulse"
              name  "pulse audio"
