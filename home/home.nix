@@ -170,7 +170,7 @@
     playerctld.enable = true;
     mpdris2.enable = true;
     betterlockscreen.enable = true;
-    # picom.enable = true;
+    picom.enable = true;
     # dunst.enable = true;
 
     gnome-keyring.enable = true;
