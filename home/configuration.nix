@@ -150,10 +150,10 @@ in {
       firefox.speechSynthesisSupport = true;
     };
 
-    overlays = [
-      # inputs.haxe-overlay.overlays.default
-      (import ../overlays {inherit lib inputs;})
-    ];
+    # overlays = [
+    #   # inputs.haxe-overlay.overlays.default
+    #   (import ../overlays {inherit lib inputs;})
+    # ];
   };
 
   # List packages installed in system profile. To search, run:
