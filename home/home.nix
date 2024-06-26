@@ -15,7 +15,7 @@
 
   modules = {
     editors = {
-      code.enable = false;
+      code.enable = true;
     };
 
     desktop = {
@@ -93,6 +93,7 @@
     typst
     typst-preview
     fzf
+    google-chrome
     minetest
     cmatrix
     htop
