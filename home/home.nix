@@ -73,21 +73,7 @@
     cava
     ranger
     (inputs.neovim.packages.x86_64-linux.neovim)
-    (weechat.override {
-      configure = {...}: {
-        scripts = with pkgs.weechatScripts; [
-          (weechat-matrix.overrideAttrs (
-            _: prev: {
-              postFixup =
-                prev.postFixup
-                + ''
-                  substituteInPlace $out/lib/python3.11/site-packages/matrix/uploads.py --replace \"matrix_upload\" \"$out/bin/matrix_upload\"
-                '';
-            }
-          ))
-        ];
-      };
-    })
+    weechat
     translate-shell
     steam-run
     typst
