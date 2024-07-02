@@ -162,6 +162,12 @@
     picom.enable = false;
     # dunst.enable = true;
 
+    gammastep = {
+      enable = true;
+      enableVerboseLogging = true;
+      provider = "geoclue2";
+    };
+
     gnome-keyring.enable = true;
   };
 

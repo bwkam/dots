@@ -31,6 +31,9 @@ in {
   # Set your time zone.
   time.timeZone = "Africa/Cairo";
 
+  # for gammestep
+  location.provider = "geoclue2";
+
   services.gvfs.enable = true;
   services.tumbler.enable = true;
 
