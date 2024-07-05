@@ -128,12 +128,17 @@
     mpv
     pavucontrol
     gnome.simple-scan
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
     gparted
     audacity
     nitrogen
     obs-studio
     simplescreenrecorder
     peek
+    anki-bin
 
     # fonts
     material-icons
@@ -178,14 +183,14 @@
     mpdris2.enable = true;
     betterlockscreen.enable = true;
     picom.enable = false;
-    # 1
+    #
 
     gammastep = {
-      enable = true;
+      enable = false;
       enableVerboseLogging = true;
       provider = "manual";
-      longitude = config.sops.secrets.lon.path;
-      latitude = config.sops.secrets.lat.path;
+      longitude = ''${config.sops.secrets."lon"}'';
+      latitude = ''${config.sops.secrets."lat"}'';
     };
 
     gnome-keyring.enable = true;
