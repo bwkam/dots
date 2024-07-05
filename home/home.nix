@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -11,7 +12,22 @@
     ./modules/misc
     ./modules/terminal
     ./modules/browsers
+    inputs.sops-nix.homeManagerModules.sops
   ];
+
+  # sops
+  sops = {
+    defaultSopsFile = ../secrets/secrets.yaml;
+    defaultSopsFormat = "yaml";
+
+    age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
+
+    secrets = {
+      github = {};
+      lat = {};
+      lon = {};
+    };
+  };
 
   modules = {
     editors = {
@@ -155,17 +171,21 @@
     MANPAGER = "page -t man -c NONE";
   };
 
+  systemd.user.services.gammastep.Unit.After = ["sops-nix.service"];
+
   services = {
     playerctld.enable = true;
     mpdris2.enable = true;
     betterlockscreen.enable = true;
     picom.enable = false;
-    # dunst.enable = true;
+    # 1
 
     gammastep = {
       enable = true;
       enableVerboseLogging = true;
-      provider = "geoclue2";
+      provider = "manual";
+      longitude = config.sops.secrets.lon.path;
+      latitude = config.sops.secrets.lat.path;
     };
 
     gnome-keyring.enable = true;

@@ -32,19 +32,12 @@ in {
   time.timeZone = "Africa/Cairo";
 
   # for gammestep
-  location.provider = "geoclue2";
+  # location.provider = "geoclue2";
 
   services.gvfs.enable = true;
   services.tumbler.enable = true;
 
   security.polkit.enable = true;
-
-  # sops
-  sops.defaultSopsFile = ../secrets/secrets.yaml;
-  sops.defaultSopsFormat = "yaml";
-
-  sops.age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
-  sops.secrets.github = {};
 
   nix.settings = {
     substituters = ["https://ghostty.cachix.org" "https://cache.garnix.io"];
