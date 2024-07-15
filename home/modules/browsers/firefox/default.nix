@@ -24,7 +24,7 @@ in {
       profiles.myprofile = {
         settings."general.smoothScroll" = true;
         extraConfig = ''
-            user_pref("browser.urlbar.autoFill", false);
+          user_pref("browser.urlbar.autoFill", false);
           user_pref("toolkit.legacyUserProfileCustomizations.stylesheets", true);
           user_pref("layers.acceleration.force-enabled", true);
           user_pref("gfx.webrender.all", true);

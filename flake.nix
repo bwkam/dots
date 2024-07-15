@@ -28,7 +28,7 @@
 
     #  ghostty = {
     #     url = "git+ssh://git@github.com/bwkam/ghostty";
-    #    };
+    #  };
   };
 
   outputs = {
