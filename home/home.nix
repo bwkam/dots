@@ -124,6 +124,7 @@
 
     # gui
     flameshot
+    calibre
     networkmanagerapplet
     mpv
     pavucontrol
