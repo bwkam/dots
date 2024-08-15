@@ -115,10 +115,6 @@
     unzip
     zip
     openssl
-
-    # for rhythmbox
-    # tracker
-    # tracker-miners
     hplip
     feh
 
