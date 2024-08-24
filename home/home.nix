@@ -37,7 +37,6 @@
     desktop = {
       bspwm.enable = false;
       dwm.enable = true;
-      hyprland.enable = false;
       gtk.enable = true;
       rofi.enable = false;
       polybar.enable = true;
@@ -112,6 +111,7 @@
     yt-dlp
     cachix
     wine
+    bottles
     unzip
     zip
     openssl
