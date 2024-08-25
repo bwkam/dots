@@ -92,7 +92,6 @@
     translate-shell
     steam-run
     typst
-    typst-preview
     fzf
     google-chrome
     minetest
