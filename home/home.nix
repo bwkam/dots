@@ -209,6 +209,12 @@
       enable = true;
       enableFishIntegration = true;
     };
+
+    emacs = {
+      enable = true;
+      package = pkgs.emacs-unstable;
+      extraPackages = epkgs: [epkgs.vterm];
+    };
   };
 
   programs.git = {

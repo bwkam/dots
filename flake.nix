@@ -22,6 +22,8 @@
     nix-index-database.url = "github:Mic92/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
+
     # my flakes
     suckless.url = "github:bwkam/suckless/master";
     neovim.url = "github:bwkam/nvim/master";
@@ -71,6 +73,7 @@
           buildInputs = [
             git
             vim
+            nil
           ];
         };
     };
