@@ -31,6 +31,7 @@
 
   modules = {
     editors = {
+      emacs.enable = true;
       code.enable = true;
     };
 
@@ -46,7 +47,9 @@
       firefox.enable = true;
     };
 
-    dev = {tmux.enable = true;};
+    dev = {
+      tmux.enable = true;
+    };
 
     terminal = {
       kitty.enable = true;
@@ -158,12 +161,13 @@
     font-awesome_5
 
     (nerdfonts.override {
-      fonts = [
-        "Iosevka"
-        "JetBrainsMono"
-        "Meslo"
-      ];
-    })
+        fonts = [
+          "Iosevka"
+          "Jet
+BrainsMono"
+          "Meslo"
+        ];
+      })
   ];
 
   home.sessionVariables = {
@@ -208,12 +212,6 @@
     zoxide = {
       enable = true;
       enableFishIntegration = true;
-    };
-
-    emacs = {
-      enable = true;
-      package = pkgs.emacs-unstable;
-      extraPackages = epkgs: [epkgs.vterm];
     };
   };
 
