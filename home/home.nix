@@ -163,8 +163,7 @@
     (nerdfonts.override {
         fonts = [
           "Iosevka"
-          "Jet
-BrainsMono"
+          "JetBrainsMono"
           "Meslo"
         ];
       })
