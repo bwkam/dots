@@ -75,8 +75,6 @@ in {
   };
 
   services.xserver.displayManager.startx.enable = true;
-  services.tailscale.enable = true;
-  services.tailscale.package = nixpkgs-latest.tailscale;
 
   # Configure keymap in X11
   services.xserver.xkb.options = "eurosign:e,caps:escape, grp:alt_space_toggle";

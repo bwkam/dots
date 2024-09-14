@@ -119,6 +119,7 @@
     openssl
     hplip
     feh
+    zoom-us
 
     # gui
     flameshot
@@ -161,12 +162,12 @@
     font-awesome_5
 
     (nerdfonts.override {
-        fonts = [
-          "Iosevka"
-          "JetBrainsMono"
-          "Meslo"
-        ];
-      })
+      fonts = [
+        "Iosevka"
+        "JetBrainsMono"
+        "Meslo"
+      ];
+    })
   ];
 
   home.sessionVariables = {
