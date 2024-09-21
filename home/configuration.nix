@@ -20,7 +20,7 @@ in {
   boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
   boot.loader.grub.useOSProber = true;
 
-  boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_1;
+  # boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_1;
 
   networking.hostName = "wolfburger"; # Define your hostname.
   # Pick only one of the below networking options.

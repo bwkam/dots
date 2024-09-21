@@ -120,6 +120,7 @@
     hplip
     feh
     zoom-us
+    teams-for-linux
 
     # gui
     flameshot
