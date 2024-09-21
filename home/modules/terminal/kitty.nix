@@ -12,7 +12,7 @@ in {
     programs.kitty = {
       enable = true;
       settings = {
-        font_size = "11.0";
+        # font_size = "11.0";
       };
       extraConfig = ''
         # vim:ft=kitty
@@ -20,10 +20,12 @@ in {
         placement_strategy top-left
         allow_remote_control yes
 
-        font_family Iosevka Medium
-        bold_font Iosevka Bold
-        italic_font Iosevka Light italic
-        bold_italic_font Iosevka Bold Italic
+        font_size 9
+
+        font_family Fira Code
+        bold_font auto
+        italic_font auto
+        bold_italic_font auto
 
 
         # Cursor shape
