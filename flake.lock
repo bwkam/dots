@@ -689,11 +689,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1725440424,
-        "narHash": "sha256-EY/mq9HzJKIWYqZAsaLVnaEJ0zKq9hNFM4FWx3bXg3w=",
+        "lastModified": 1726953765,
+        "narHash": "sha256-JqC+9z6vPn3C9bPRygSfHia1O91w9PkguqJn21Os+Vc=",
         "owner": "bwkam",
         "repo": "suckless",
-        "rev": "c8710381896b994f7b1a50a5cdcb776c22cdd1fa",
+        "rev": "0444cd80bb02103fb625c1535c2827e74547e7c8",
         "type": "github"
       },
       "original": {
