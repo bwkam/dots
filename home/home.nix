@@ -56,7 +56,6 @@
     };
 
     misc = {
-      neofetch.enable = true;
       zathura.enable = true;
       xdg.enable = true;
       starship.enable = true;
@@ -114,6 +113,7 @@
     cachix
     wine
     bottles
+    fastfetch
     unzip
     zip
     openssl
