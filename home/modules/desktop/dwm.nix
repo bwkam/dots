@@ -37,7 +37,6 @@ in {
       enable = true;
       keybindings = {
         "super + Return" = "kitty";
-        "super + space" = "dmenu_run";
         "super + Escape" = "pkill -USR1 -x sxhkd";
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
         "ctrl + shift + l" = "betterlockscreen -l dim";
