@@ -101,7 +101,6 @@
     htop
     btop
     eza
-    page
     gh
     gnumeric
     ripgrep
@@ -174,8 +173,6 @@
 
   home.sessionVariables = {
     EDITOR = "nvim";
-    PAGER = "page -q 90000 -c NONE";
-    MANPAGER = "page -t man -c NONE";
   };
 
   systemd.user.services.gammastep.Unit.After = ["sops-nix.service"];
