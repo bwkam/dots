@@ -112,6 +112,7 @@
     cachix
     wine
     bottles
+    figlet
     fastfetch
     unzip
     zip
