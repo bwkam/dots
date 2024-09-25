@@ -113,6 +113,7 @@
     wine
     bottles
     figlet
+    nix-melt
     fastfetch
     unzip
     zip
