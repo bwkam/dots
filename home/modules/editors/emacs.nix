@@ -13,8 +13,11 @@ in {
 
     programs.emacs = {
       enable = true;
-      package = pkgs.emacs-unstable;
-      extraPackages = epkgs: [epkgs.vterm];
+      package = pkgs.emacs-unstable.override {
+        withXwidgets = true;
+        withGTK3 = true;
+      };
+      extraPackages = epkgs: with epkgs; [vterm treesit-grammars.with-all-grammars];
     };
 
     home.packages = with pkgs; [
@@ -28,6 +31,9 @@ in {
       ## Optional dependencies
       fd # faster projectile indexing
       zstd # for undo-fu-session/undo-tree compression
+
+      ## LSP
+      tinymist
 
       # :tools editorconfig
       editorconfig-core-c # per-project style confiig
