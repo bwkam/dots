@@ -34,6 +34,7 @@ in {
 
       ## LSP
       tinymist
+      typstyle
 
       # :tools editorconfig
       editorconfig-core-c # per-project style confiig
