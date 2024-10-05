@@ -11,9 +11,7 @@ in {
     # Enable the kitty terminal
     programs.kitty = {
       enable = true;
-      settings = {
-        # font_size = "11.0";
-      };
+
       extraConfig = ''
         # vim:ft=kitty
 
@@ -26,6 +24,9 @@ in {
         bold_font auto
         italic_font auto
         bold_italic_font auto
+
+        # goddamn it
+        enable_audio_bell no
 
 
         # Cursor shape
