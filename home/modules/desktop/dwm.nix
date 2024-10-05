@@ -38,6 +38,7 @@ in {
       keybindings = {
         "super + Return" = "kitty";
         "super + Escape" = "pkill -USR1 -x sxhkd";
+        "super + p" = "doom +everywhere";
         "super + r" = "rofi -i -show drun -modi drun -show-icons";
         "ctrl + shift + l" = "betterlockscreen -l dim";
         "Print" = "flameshot gui";
