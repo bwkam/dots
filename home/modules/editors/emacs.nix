@@ -31,6 +31,11 @@ in {
       ## Optional dependencies
       fd # faster projectile indexing
       zstd # for undo-fu-session/undo-tree compression
+      xorg.xwininfo # for emacs-everywhere
+
+      ## vterm
+      libtool
+      cmake
 
       ## LSP
       tinymist
