@@ -45,6 +45,6 @@ in {
       editorconfig-core-c # per-project style confiig
     ];
 
-    home.sessionPath = ["$XDG_CONFIG_HOME/emacs.d/bin"];
+    home.sessionPath = ["/home/bwkam/.emacs.d/bin"];
   };
 }
