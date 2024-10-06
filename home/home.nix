@@ -93,6 +93,7 @@
     weechat
     translate-shell
     steam-run
+    numbat
     typst
     fzf
     google-chrome
