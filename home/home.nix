@@ -23,9 +23,8 @@
     age.keyFile = "/home/bwkam/.config/sops/age/keys.txt";
 
     secrets = {
-      github = {};
-      lat = {};
-      lon = {};
+      "mail/bwkam/email" = {};
+      "mail/bwkam/password" = {};
     };
   };
 
@@ -61,6 +60,7 @@
       starship.enable = true;
       xcompmgr.enable = false;
       mpd.enable = true;
+      notmuch.enable = false;
       ncmp.enable = true;
     };
 
@@ -104,6 +104,7 @@
     eza
     gh
     gnumeric
+    pass
     ripgrep
     xorg.xkill
     xsel
@@ -184,15 +185,14 @@
     mpdris2.enable = true;
     betterlockscreen.enable = true;
     picom.enable = false;
-    #
 
-    gammastep = {
-      enable = false;
-      enableVerboseLogging = true;
-      provider = "manual";
-      longitude = ''${config.sops.secrets."lon"}'';
-      latitude = ''${config.sops.secrets."lat"}'';
-    };
+    # gammastep = {
+    #   enable = false;
+    #   enableVerboseLogging = true;
+    #   provider = "manual";
+    #   longitude = ''${config.sops.secrets."lon"}'';
+    #   latitude = ''${config.sops.secrets."lat"}'';
+    # };
 
     gnome-keyring.enable = true;
   };

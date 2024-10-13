@@ -10,5 +10,6 @@
     ./starship.nix
     ./mpd.nix
     ./ncmp.nix
+    ./notmuch.nix
   ];
 }

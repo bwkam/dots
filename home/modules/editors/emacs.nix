@@ -40,6 +40,7 @@ in {
       ## LSP
       tinymist
       typstyle
+      nodePackages.prettier
 
       # :tools editorconfig
       editorconfig-core-c # per-project style confiig

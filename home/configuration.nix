@@ -144,8 +144,9 @@ in {
     };
 
     overlays = [
-      # (import ../overlays {inherit lib inputs;})
+      (import ../overlays {inherit lib inputs;})
       inputs.emacs-overlay.overlays.default
+
     ];
   };
 
