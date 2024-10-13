@@ -90,6 +90,7 @@
     cava
     ranger
     (inputs.neovim.packages.x86_64-linux.neovim)
+    (inputs.suckless.packages.x86_64-linux.sent)
     weechat
     translate-shell
     steam-run
