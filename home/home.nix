@@ -99,6 +99,7 @@
     fzf
     google-chrome
     minetest
+    scrot
     cmatrix
     htop
     btop
