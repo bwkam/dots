@@ -148,6 +148,7 @@
     # fonts
     material-icons
     material-design-icons
+    cantarell-fonts
     roboto
     work-sans
     comic-neue
