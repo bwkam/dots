@@ -42,6 +42,7 @@ in {
       typstyle
       nodePackages.prettier
       typescript-language-server
+      typescript
 
       # :tools editorconfig
       editorconfig-core-c # per-project style confiig
