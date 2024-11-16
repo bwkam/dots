@@ -41,6 +41,7 @@ in {
       tinymist
       typstyle
       nodePackages.prettier
+      typescript-language-server
 
       # :tools editorconfig
       editorconfig-core-c # per-project style confiig
