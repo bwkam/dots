@@ -67,6 +67,9 @@ in {
     xkb.layout = "us,ara";
     displayManager.lightdm.enable = true;
     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
+    displayManager.sessionCommands = ''
+     feh --bg-center "$HOME/dots/home/wallpapers/fav.jpg"
+    '';
     desktopManager.xterm.enable = false;
 
     # displayManager.defaultSession = "none+bspwm";
