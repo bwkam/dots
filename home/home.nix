@@ -98,6 +98,7 @@
     typst
     fzf
     google-chrome
+    inkscape
     minetest
     scrot
     cmatrix
@@ -180,6 +181,11 @@
   home.sessionVariables = {
     EDITOR = "nvim";
   };
+
+  home.file.".ghci".text = ''
+    :set prompt " ghci>"
+    :set prompt-cont " ghci>| "
+  '';
 
   systemd.user.services.gammastep.Unit.After = ["sops-nix.service"];
 
