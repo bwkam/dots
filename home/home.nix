@@ -183,7 +183,7 @@
   };
 
   home.file.".ghci".text = ''
-    :set prompt " ghci>"
+    :set prompt " ghci> "
     :set prompt-cont " ghci>| "
   '';
 
