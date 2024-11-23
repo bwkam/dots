@@ -110,6 +110,10 @@ in {
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="tty", KERNEL=="ttyUSB[0-9]*", MODE="0666", GROUP="dialout"
+  '';
+
   services.postgresql = {
     enable = true;
     ensureDatabases = ["mydatabase"];
