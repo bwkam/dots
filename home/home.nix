@@ -129,6 +129,7 @@
 
     # gui
     flameshot
+    arandr
     calibre
     networkmanagerapplet
     mpv
@@ -141,6 +142,7 @@
     gparted
     audacity
     nitrogen
+    kdePackages.kdenlive
     obs-studio
     simplescreenrecorder
     peek
