@@ -95,6 +95,7 @@
     translate-shell
     steam-run
     numbat
+    (fontforge.override {withGTK = true;})
     typst
     fzf
     google-chrome
@@ -118,7 +119,9 @@
     wine
     bottles
     figlet
-    fastfetch
+    (fastfetch.overrideAttrs (final: prev: {
+      cmakeFlags = prev.cmakeFlags ++ ["-DENABLE_IMAGEMAGICK6:BOOL=TRUE"];
+    }))
     unzip
     zip
     openssl
@@ -167,6 +170,7 @@
     fira-code-symbols
     noto-fonts
     noto-fonts-cjk
+    etBook
     noto-fonts-emoji
     jetbrains-mono
     font-awesome_5

@@ -68,7 +68,7 @@ in {
     displayManager.lightdm.enable = true;
     displayManager.lightdm.extraConfig = "logind-check-graphical=true";
     displayManager.sessionCommands = ''
-     feh --bg-center "$HOME/dots/home/wallpapers/fav.jpg"
+      feh --bg-center "$HOME/dots/home/wallpapers/fav.jpg"
     '';
     desktopManager.xterm.enable = false;
 
@@ -112,6 +112,7 @@ in {
 
   services.udev.extraRules = ''
     SUBSYSTEM=="tty", KERNEL=="ttyUSB[0-9]*", MODE="0666", GROUP="dialout"
+    SUBSYSTEM=="usb", ATTR{idVendor}=="12d1", ATTR{idProduct}=="107d", MODE="0666", GROUP="plugdev", SYMLINK+="android%n"
   '';
 
   services.postgresql = {
@@ -153,7 +154,6 @@ in {
     overlays = [
       (import ../overlays {inherit lib inputs;})
       inputs.emacs-overlay.overlays.default
-
     ];
   };
 
